@@ -1,0 +1,1 @@
+No has verificado tu correo, por favor, hazlo antes de seguir adelante.

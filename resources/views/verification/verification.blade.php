@@ -1,0 +1,1 @@
+<h1>Te has registrado correctamente. Se te ha enviado un mail de confirmación</h1>
