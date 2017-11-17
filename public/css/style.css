@@ -1,33 +1,54 @@
 header{
-    background-color: #baefed;
-    background-image: url("../img/gothamMarker.jpg");
+    background-image: url("../img/gothamMarkerOpA.jpg");
     background-position: center center;
     background-attachment: fixed;
     background-size: cover;
     /*background-size: cover;*/
     padding-top: 15%;
 
+
 }
 
-.centrado{
+.centrado {
     text-align: center;
     font-weight: bold;
-    background-color: rgba(0, 154, 178, 0.81);
-    color: #000000;
-    max-width: 600px;
+    /*background-color: rgba(0, 154, 178, 0.81);*/
+    color: #F8E2D1;
+    max-width: 95%;
     margin: auto;
-    border: 2px solid black;
+    /*border: 2px solid black;*/
     border-radius: 10px;
-
 }
 .centrado>h2{
     font-family: quinzey;
+    /*text-shadow: -2px 0 #F96F00, 0 2px #F96F00, 2px 0 #F96F00, 0 -2px #F96F00;*/
 }
 .centrado>h1{
     font: normal 36px 'Cookie', cursive;
+    text-shadow:
+        -1px 1px #F96F00,
+        0px 1px #F96F00,
+        1px 1px #F96F00,
+        -1px 0px #F96F00,
+        0px 0px #F96F00,
+        1px 0px #F96F00,
+        -1px -1px #F96F00,
+        0px -1px #F96F00,
+        1px -1px #F96F00;
+    font-size: 100px;
 }
 .centrado>h1>label{
-    color:orange;
+    color:#F96F00;
+    text-shadow:
+            -1px 1px #F8E2D1,
+            0px 1px #F8E2D1,
+            1px 1px #F8E2D1,
+            -1px 0px #F8E2D1,
+            0px 0px #F8E2D1,
+            1px 0px #F8E2D1,
+            -1px -1px #F8E2D1,
+            0px -1px #F8E2D1,
+            1px -1px #F8E2D1;
 }
 /* ------------------------------------------------- paralax ------------------------------------*/
 section{
