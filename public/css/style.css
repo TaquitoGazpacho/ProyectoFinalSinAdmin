@@ -5,7 +5,29 @@ header{
     background-attachment: fixed;
     background-size: cover;
     /*background-size: cover;*/
+    padding-top: 15%;
 
+}
+
+.centrado{
+    text-align: center;
+    font-weight: bold;
+    background-color: rgba(0, 154, 178, 0.81);
+    color: #000000;
+    max-width: 600px;
+    margin: auto;
+    border: 2px solid black;
+    border-radius: 10px;
+
+}
+.centrado>h2{
+    font-family: quinzey;
+}
+.centrado>h1{
+    font: normal 36px 'Cookie', cursive;
+}
+.centrado>h1>label{
+    color:orange;
 }
 /* ------------------------------------------------- paralax ------------------------------------*/
 section{
@@ -28,6 +50,24 @@ section .parallax {
 }
 
 
+/* ------------------------------------------------- Font Family ------------------------------------*/
+@font-face {
+    font-family: blacksword;
+    src: url(../fonts/blacksword/Blacksword.otf);
+}
+@font-face {
+    font-family: chamLin;
+    src: url(../fonts/chamLin/ChamLinBold.ttf);
+}
+@font-face {
+    font-family: quinzey;
+    src: url(../fonts/quinzey/Quinzey_Bold.otf);
+}
+@font-face {
+    font-family: blackList;
+    src: url(../fonts/theBlacklist/TheBlacklist.ttf);
+}
+
 /* ------------------------------------------------- footer ------------------------------------*/
 
 
@@ -38,7 +78,6 @@ section .parallax {
     width: 100%;
     text-align: left;
     font: bold 16px sans-serif;
-
     padding: 55px 50px;
     margin-top: 80px;
 }

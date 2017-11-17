@@ -5,20 +5,15 @@
     </head>
     <body>
         <!--Pantalla principal-->
-        <header>
-            @yield('principal')
-        </header>
+        @yield('principal')
+
         <!--Navegador-->
-        <div id="nav">
-            @include('fijas.nav')
-        </div>
+        @include('fijas.nav')
+
         <!--Contenido-->
-        <section>
-                @yield('section')
-        </section>
+        @yield('section')
+
         <!--Footer-->
-        <footer class="footer-distributed">
-            @include('fijas.footer')
-        </footer>
+        @include('fijas.footer')
     </body>
 </html>
