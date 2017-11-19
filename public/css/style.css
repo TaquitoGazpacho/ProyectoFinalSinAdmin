@@ -20,8 +20,19 @@ header{
     border-radius: 10px;
 }
 .centrado>h2{
-    font-family: quinzey;
+    font-family: "Vollkorn SC", serif;
+    font-size: 40px;
     /*text-shadow: -2px 0 #F96F00, 0 2px #F96F00, 2px 0 #F96F00, 0 -2px #F96F00;*/
+    text-shadow:
+            -2px 2px #000000,
+            0px 2px #000000,
+            2px 2px #000000,
+            -2px 0px #000000,
+            0px 0px #000000,
+            2px 0px #000000,
+            -2px -2px #000000,
+            0px -2px #000000,
+            2px -2px #000000;
 }
 .centrado>h1{
     font: normal 36px 'Cookie', cursive;
@@ -50,6 +61,10 @@ header{
             0px -1px #F8E2D1,
             1px -1px #F8E2D1;
 }
+a {
+    text-decoration: none;
+    color: #F96F00;
+}
 /* ------------------------------------------------- paralax ------------------------------------*/
 section{
     margin-top: -22px;
@@ -70,37 +85,17 @@ section .parallax {
     background-size: cover;
 }
 
-
-/* ------------------------------------------------- Font Family ------------------------------------*/
-@font-face {
-    font-family: blacksword;
-    src: url(../fonts/blacksword/Blacksword.otf);
-}
-@font-face {
-    font-family: chamLin;
-    src: url(../fonts/chamLin/ChamLinBold.ttf);
-}
-@font-face {
-    font-family: quinzey;
-    src: url(../fonts/quinzey/Quinzey_Bold.otf);
-}
-@font-face {
-    font-family: blackList;
-    src: url(../fonts/theBlacklist/TheBlacklist.ttf);
-}
-
 /* ------------------------------------------------- footer ------------------------------------*/
 
 
 .footer-distributed{
-    background-color: #292c2f;
+    background-color: #222;
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
     box-sizing: border-box;
     width: 100%;
     text-align: left;
     font: bold 16px sans-serif;
     padding: 55px 50px;
-    margin-top: 80px;
 }
 
 .footer-distributed .footer-left,
@@ -125,7 +120,7 @@ section .parallax {
 }
 
 .footer-distributed h3 span{
-    color:  #5383d3;
+    color:  #F96F00;
 }
 
 /* Footer links */
@@ -167,6 +162,7 @@ section .parallax {
     line-height: 42px;
     margin: 10px 15px;
     vertical-align: middle;
+    color: #009AB2;
 }
 
 .footer-distributed .footer-center i.fa-envelope{
@@ -189,7 +185,7 @@ section .parallax {
 }
 
 .footer-distributed .footer-center p a{
-    color:  #5383d3;
+    color:  #F96F00;
     text-decoration: none;;
 }
 
@@ -220,6 +216,10 @@ section .parallax {
     margin-top: 25px;
 }
 
+.footer-distributed .footer-icons a i{
+    margin-top: 8px;
+}
+
 .footer-distributed .footer-icons a{
     display: inline-block;
     width: 35px;
@@ -229,7 +229,8 @@ section .parallax {
     border-radius: 2px;
 
     font-size: 20px;
-    color: #ffffff;
+    color: #009AB2;
+    /*color: #ffffff;*/
     text-align: center;
     line-height: 35px;
 
@@ -260,15 +261,32 @@ section .parallax {
 
 }
 
+.footer-distributed .footer-icons a:hover{
+    color: #F96F00;
+}
+
 /* -------------------------------------NAVBAR STYLE-------------------------------------------- */
 
 .navbar-form input, .form-inline input {
     width:auto;
 }
 
-header {
-    height: 90vh; /* coger el VH por javascript */
+.navbar-inverse{
+    border: 0px;
 }
+.navbar-inverse .navbar-nav > .active > a:hover,
+.navbar-inverse .navbar-nav > li > a:hover,
+.navbar-inverse .navbar-brand:hover{
+    color:#F96F00;
+}
+.navbar-inverse .navbar-nav > .active > a:hover,
+.navbar-inverse .navbar-nav > .active > a:focus{
+    background-color: #f8e2d142;
+}
+
+/*header {*/
+    /*height: 90vh; !* coger el VH por javascript *!*/
+/*}*/
 
 #nav.affix {
     position: fixed;
@@ -278,4 +296,35 @@ header {
 }
 .navbar-inverse>.container {
     padding-top: 8px;
+}
+
+/* -------------------------------------SECTIONS-------------------------------------------- */
+
+.sectionHeight {
+    background-image: url('../img/subtle_white_feathers.png');
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top:30px;
+    padding-bottom:30px;
+}
+.form-width {
+    max-width: 800px;
+    margin:auto;
+}
+#texto{
+    resize:none;
+    height: 150px;
+}
+.icons {
+
+    color: #F96F00;
+}
+.form .well{
+    background-color: #f5f5f54a;
+}
+
+.btn-primary{
+    color: #fff;
+    background-color: #F96F00;
+    border-color: #F96F00;
 }

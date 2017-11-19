@@ -34,7 +34,7 @@
 
         <div>
             <i class="fa fa-envelope"></i>
-            <p><a href="mailto:aespadamu16dw@ikzubirimanteo.com">mail@soporte.com</a></p>
+            <p><a href="mailto:taquitogazpacho@gmail.com">taquitogazpacho@gmail.com</a></p>
         </div>
 
     </div>
