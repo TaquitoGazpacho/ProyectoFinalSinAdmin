@@ -15,8 +15,34 @@
 
 @section('section')
     <section class="sectionHeight">
-        <div class="icons">
-            <i class="fa fa-th fa-5x" aria-hidden="true"></i>
+        <div class="container icons">
+            <div class="row">
+                <div class="col-lg-1 col-md-4 text-center">
+                    <i class="fa fa-th fa-5x text-primary" aria-hidden="true"></i>
+                    <h3>HOLA</h3>
+                    <p class="text-muted">Texto 1 asjkfvguasgfvj</p>
+                </div>
+                <div class="col-lg-1 col-md-4 text-center">
+                    <i class="fa fa-envelope-o fa-5x text-primary" aria-hidden="true"></i>
+                    <h3>HOLA</h3>
+                    <p class="text-muted">Texto 1 asjkfvguasgfvj</p>
+                </div>
+                <div class="col-lg-1 col-md-4 text-center">
+                    <i class="fa fa-handshake-o fa-5x text-primary" aria-hidden="true"></i>
+                    <h3>HOLA</h3>
+                    <p class="text-muted">Texto 1 asjkfvguasgfvj</p>
+                </div>
+                <div class="col-lg-1 col-md-4 text-center">
+                    <i class="fa fa-map-marker fa-5x text-primary" aria-hidden="true"></i>
+                    <h3>HOLA</h3>
+                    <p class="text-muted">Texto 1 asjkfvguasgfvj</p>
+                </div>
+                <div class="col-lg-1 col-md-4 text-center">
+                    <i class="fa fa-lock fa-5x text-primary" aria-hidden="true"></i>
+                    <h3>HOLA</h3>
+                    <p class="text-muted">Texto 1 asjkfvguasgfvj</p>
+                </div>
+            </div>
         </div>
     </section>
     <section>
@@ -49,5 +75,6 @@
         </form>
     </section>
 @endsection
+
 
 

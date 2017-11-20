@@ -13,7 +13,7 @@
 
 Route::get('/', function () {
     return view('index');
-});
+})->name('index');
 
 //Auth::routes();
 Route::get('/login', 'Auth\User\LoginController@showLoginForm')->name('login');
