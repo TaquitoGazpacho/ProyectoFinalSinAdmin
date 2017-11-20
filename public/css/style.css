@@ -4,7 +4,7 @@ header{
     background-attachment: fixed;
     background-size: cover;
     /*background-size: cover;*/
-    padding-top: 15%;
+    padding-top: 8%;
 
 
 }
@@ -304,8 +304,7 @@ section .parallax {
     background-image: url('../img/subtle_white_feathers.png');
     padding-left: 10px;
     padding-right: 10px;
-    padding-top:30px;
-    padding-bottom:30px;
+    padding-top:10px;
 }
 .form-width {
     max-width: 800px;
