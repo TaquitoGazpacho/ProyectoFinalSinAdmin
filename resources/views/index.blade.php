@@ -48,7 +48,7 @@
         <!-- COMENTARIOS USUARIOS -->
         <div class="container content">
             <div class="heading">
-                <h2 style="color: #F96F00;">Nuestros Usuarios Nos Avalan</strong></h2>
+                <h2 style="color: #F96F00;"><strong>Nuestros Usuarios Nos Avalan</strong></h2>
                 <p>Generamos confianza</p>
             </div><!-- //end heading -->
             <div class="row">
@@ -93,7 +93,7 @@
         <hr id="planes">
         <!-- PRECIO PLANES -->
         <div class="heading">
-            <h2 style="color: #F96F00;">Planes a gusto de todos</strong></h2>
+            <h2 style="color: #F96F00;"><strong>Planes a gusto de todos</strong></h2>
             <p>Nos adaptamos a tus necesidades</p>
         </div><!-- //end heading -->
         <div class="row db-padding-btm db-attached">
@@ -115,7 +115,7 @@
                         </ul>
                         <div class="pricing-footer">
 
-                            <a href="#" class="btn db-button-color-square btn-lg">BOOK ORDER</a>
+                            <a href="{{route('register')}}" class="btn db-button-color-square btn-lg">BOOK ORDER</a>
                         </div>
                     </div>
                 </div>
@@ -138,7 +138,7 @@
                         </ul>
                         <div class="pricing-footer">
 
-                            <a href="#" class="btn db-button-color-square btn-lg">BOOK ORDER</a>
+                            <a href="{{route('register')}}" class="btn db-button-color-square btn-lg">BOOK ORDER</a>
                         </div>
                     </div>
                 </div>
@@ -161,7 +161,7 @@
                         </ul>
                         <div class="pricing-footer">
 
-                            <a href="#" class="btn db-button-color-square btn-lg">BOOK ORDER</a>
+                            <a href="{{route('register')}}" class="btn db-button-color-square btn-lg">BOOK ORDER</a>
                         </div>
                     </div>
                 </div>
@@ -193,12 +193,6 @@
             <div class="form-group">
                 <label for="texto">Problema o pregunta</label>
                 <textarea class="form-control" id="texto" name="textarea" aria-describedby="emailHelp" placeholder="Problema o pregunta" required></textarea>
-            </div>
-            <div class="form-check">
-                <label class="form-check-label">
-                    <input type="checkbox" class="form-check-input">
-                    Check me out
-                </label>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
             <input type="reset" id="clear" class="btn btn-error" value="Clear"/>
