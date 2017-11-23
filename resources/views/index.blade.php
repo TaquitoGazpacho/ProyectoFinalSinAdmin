@@ -17,7 +17,7 @@
     <section class="sectionHeight" id="servicios">
         <div class="container">
             <div class="row text-center">
-                <h2 style="color: #F96F00;">SERVICIOS</h2>
+                <h2 style="color: #F96F00;">Servicios</h2>
             </div>
         </div>
         <div class="container icons">
@@ -40,10 +40,133 @@
                 <div class="col-lg-3 col-md-6 text-center distributed-icons">
                     <i class="fa fa-lock fa-5x text-primary" aria-hidden="true"></i>
                     <h3>Seguridad</h3>
-                    <p class="text-muted">Gracias a nuestro sistema de seguridad, solo tú podrás acceder</p>
+                    <p class="text-muted">Gracias a nuestro <istema de seguridad, solo tú podrás acceder</p>
                 </div>
             </div>
         </div>
+        <hr>
+        <!-- COMENTARIOS USUARIOS -->
+        <div class="container content">
+            <div class="heading">
+                <h2 style="color: #F96F00;">Nuestros Usuarios Nos Avalan</strong></h2>
+                <p>Generamos confianza</p>
+            </div><!-- //end heading -->
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="team-members">
+                        <div class="team-avatar">
+                            <img class="img-responsive" src="http://keenthemes.com/assets/bootsnipp/member1.png" alt="">
+                        </div>
+                        <div class="team-desc">
+                            <h4>El paquete siempre en su sitio</h4>
+                            <span>"Puedo hacer lo que quiera y olvidarme del pedido, se que siempre llegará a una taquilla"</span>
+                            <p>Ricardo Martinez, Ávila</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="team-members">
+                        <div class="team-avatar">
+                            <img class="img-responsive" src="http://keenthemes.com/assets/bootsnipp/member2.png" alt="">
+                        </div>
+                        <div class="team-desc">
+                            <h4>Facilidad y Comodidad</h4>
+                            <span>Es muy cómodo poder recoger el paquete cuando y donde quiera, ademas de la facilidad para localizar sus oficinas</span>
+                            <p>MªDolores Dominguez, Sevilla</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="team-members">
+                        <div class="team-avatar">
+                            <img class="img-responsive" src="http://keenthemes.com/assets/bootsnipp/member3.png" alt="">
+                        </div>
+                        <div class="team-desc">
+                            <h4>Tecnología de confianza</h4>
+                            <span>Gracias a su sistema de clave de usar y tirar mis pedidos estrán siempre a salvo</span>
+                            <p>Jacinto Bermudez, Zaragoza</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- FIN COMENTARIOS USUARIOS -->
+        <hr>
+        <!-- PRECIO PLANES -->
+        <div class="heading">
+            <h2 style="color: #F96F00;">Planes a gusto de todos</strong></h2>
+            <p>Nos adaptamos a tus necesidades</p>
+        </div><!-- //end heading -->
+        <div class="row db-padding-btm db-attached">
+            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                <div class="db-wrapper">
+                    <div class="db-pricing-eleven db-bk-color-one">
+                        <div class="price">
+                            <sup>$</sup>99
+                            <small>per quarter</small>
+                        </div>
+                        <div class="type">
+                            SMALL PLAN
+                        </div>
+                        <ul>
+
+                            <li><i class="glyphicon glyphicon-print"></i>30+ Accounts </li>
+                            <li><i class="glyphicon glyphicon-time"></i>150+ Projects </li>
+                            <li><i class="glyphicon glyphicon-trash"></i>Lead Required</li>
+                        </ul>
+                        <div class="pricing-footer">
+
+                            <a href="#" class="btn db-button-color-square btn-lg">BOOK ORDER</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                <div class="db-wrapper">
+                    <div class="db-pricing-eleven db-bk-color-two popular">
+                        <div class="price">
+                            <sup>$</sup>159
+                            <small>per quarter</small>
+                        </div>
+                        <div class="type">
+                            MEDIUM PLAN
+                        </div>
+                        <ul>
+
+                            <li><i class="glyphicon glyphicon-print"></i>30+ Accounts </li>
+                            <li><i class="glyphicon glyphicon-time"></i>150+ Projects </li>
+                            <li><i class="glyphicon glyphicon-trash"></i>Lead Required</li>
+                        </ul>
+                        <div class="pricing-footer">
+
+                            <a href="#" class="btn db-button-color-square btn-lg">BOOK ORDER</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                <div class="db-wrapper">
+                    <div class="db-pricing-eleven db-bk-color-three">
+                        <div class="price">
+                            <sup>$</sup>799
+                            <small>per quarter</small>
+                        </div>
+                        <div class="type">
+                            ADVANCE PLAN
+                        </div>
+                        <ul>
+
+                            <li><i class="glyphicon glyphicon-print"></i>30+ Accounts </li>
+                            <li><i class="glyphicon glyphicon-time"></i>150+ Projects </li>
+                            <li><i class="glyphicon glyphicon-trash"></i>Lead Required</li>
+                        </ul>
+                        <div class="pricing-footer">
+
+                            <a href="#" class="btn db-button-color-square btn-lg">BOOK ORDER</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- FIN PRECIO PLANES -->
     </section>
     <section>
         <div class="parallax" id="sobreLaEmpresa">
