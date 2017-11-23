@@ -59,7 +59,7 @@ class LoginController extends Controller
         }
 
         // If Unsuccessful, then redirect back to the login with the form data
-        return redirect()->back()->withInput($request->only('email', 'remember'));
-        //return view('verification.sinVerificar');
+        //return redirect()->back()->withInput($request->only('email', 'remember'));
+        return view('verification.sinVerificar');
     }
 }

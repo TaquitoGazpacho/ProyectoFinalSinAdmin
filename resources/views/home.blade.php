@@ -14,11 +14,16 @@
                                 {{ session('status') }}
                             </div>
                         @endif
-
                             @if(Auth::guard('admin')->check())
                                 Hola {{ Auth::guard('admin')->user()->name}}
                             @elseif(Auth::guard('web')->check())
-                                Hola {{ Auth::guard('web')->user()->name}}
+                                <p>Hola {{ Auth::guard('web')->user()->name}}</p>
+                                Eres usuario
+                                @if ( Auth::guard('web')->user()->invitado)
+                                    INVITADO
+                                @else
+                                    NORMAL
+                                @endif
                             @endif
                     </div>
                 </div>

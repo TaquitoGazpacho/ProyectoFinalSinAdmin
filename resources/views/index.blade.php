@@ -40,7 +40,7 @@
                 <div class="col-lg-3 col-md-6 text-center distributed-icons">
                     <i class="fa fa-lock fa-5x text-primary" aria-hidden="true"></i>
                     <h3>Seguridad</h3>
-                    <p class="text-muted">Gracias a nuestro <istema de seguridad, solo tú podrás acceder</p>
+                    <p class="text-muted">Gracias a nuestro sistema de seguridad, solo tú podrás acceder</p>
                 </div>
             </div>
         </div>
