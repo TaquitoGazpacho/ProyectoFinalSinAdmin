@@ -318,7 +318,21 @@ section .parallax {
 .navbar-inverse>.container {
     padding-top: 8px;
 }
+.navbar-dropdown {
+    margin-top: 12px;
+    text-decoration: none;
+    list-style-type: none;
+    margin-right: 20px;
+}
 
+.navbar-dropdown > a {
+    color: rgba(0, 0, 0, 0.59);
+}
+
+.navbar-dropdown > a:hover {
+    color: #F96F00;
+    text-decoration: none;
+}
 /* -------------------------------------SECTIONS-------------------------------------------- */
 
 .sectionHeight {

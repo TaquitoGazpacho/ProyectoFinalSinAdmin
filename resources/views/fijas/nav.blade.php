@@ -20,11 +20,22 @@
                     <li><a href="{{ route('index') }}#sobreLaEmpresa">Sobre la empresa</a></li>
                     <li><a href="{{ route('index') }}#contactanos">Contáctanos</a></li>
                 </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="{{ Route::current()->getName() === 'login' ? 'active' : null }}"><a href="{{ route('login') }}">Login</a></li>
-                    <li class="{{ Route::current()->getName() === 'register' ? 'active' : null }}"><a href="{{ route('register') }}">Regístrate</a></li>
+                @guest
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="{{ Route::current()->getName() === 'login' ? 'active' : null }}"><a href="{{ route('login') }}">Login</a></li>
+                        <li class="{{ Route::current()->getName() === 'register' ? 'active' : null }}"><a href="{{ route('register') }}">Regístrate</a></li>
+                    @else
+                        <li class="dropdown navbar-right navbar-dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                {{ Auth::user()->name }} <span class="caret"></span>
+                            </a>
 
-                </ul>
+                            <ul class="dropdown-menu" role="menu">
+                                <li class="{{ Route::current()->getName() === 'logout' ? 'active' : null }}"><a href="{{ route('logout') }}">Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                @endguest
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </div>
