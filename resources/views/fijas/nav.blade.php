@@ -16,8 +16,9 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li class="{{ Route::current()->getName() == 'index' ? 'active' : null }}"><a href="{{ route('index') }}">Home <span class="sr-only">(current)</span></a></li>
-                    <li><a href="">Link</a></li>
-                    <li><a href="">Servicios</a></li>
+                    <li><a href="{{ route('index') }}#servicios">Servicios</a></li>
+                    <li><a href="{{ route('index') }}#sobreLaEmpresa">Sobre la empresa</a></li>
+                    <li><a href="{{ route('index') }}#contactanos">Contáctanos</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="{{ Route::current()->getName() === 'login' ? 'active' : null }}"><a href="{{ route('login') }}">Login</a></li>

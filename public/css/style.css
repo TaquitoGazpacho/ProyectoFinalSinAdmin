@@ -371,10 +371,15 @@ section .parallax {
     max-width: 800px;
     margin: auto;
     text-align: center;
-    color: black;
-   padding-top: 10%;
+    color: white;
+    text-shadow: 1px 1px #F96F00;
+    padding-top: 10%;
 }
 
 .parallax .descripcionServicio h1, .parallax .descripcionServicio h2{
     font-weight: bold;
+}
+
+#errores{
+    margin-top: 20px;
 }

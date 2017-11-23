@@ -10,6 +10,7 @@ function getHeaderHeight(){
         //html.style.height = parseInt(window.innerHeight) + 'px';
         document.body.style.overflow = 'hidden';
     }
+    addEvent();
 }
 
 $( document ).ready( function() {
@@ -28,10 +29,48 @@ $( document ).ready( function() {
             // if you've scrolled further than the top of div1 plus it's height
             // change the color. either by adding a class or setting a css property
             if(scroll >= os){
-                $('#prueba').addClass('vg');
+                $('#servicios').addClass('vg');
             } else{
-                $('#prueba').removeClass('vg');
+                $('#servicios').removeClass('vg');
             }
         });
     });
 });
+
+function addEvent(){
+    document.getElementById("contactanos").addEventListener('submit',validate);
+}
+
+function validate(){
+    event.preventDefault()
+    var elementos = document.getElementById("contactanos").elements;
+    var errors="";
+    for (var i=0;i<elementos.length;i++){
+        var eInput = elementos[i];
+        if (eInput.name === "nombre"){
+            if (eInput.value.length == 0) {
+                errors += "<p>Tu nombre no puede estar vacío</p>";
+            }
+        }
+        if (eInput.name === "textarea"){
+            if (eInput.value.length <= 20){
+                errors+="<p>Tu texto es demasiado corto</p>";
+            }
+        }
+        if(eInput.name === "email"){
+            if(!validateEmail(eInput.value)){
+                errors+="<p>Tu email no es válido</p>";
+            }
+        }
+    }
+
+    if(errors!=""){
+        event.preventDefault();
+        document.getElementById('errores').innerHTML="<div class='alert alert-danger'>"+errors+"</div>";
+    }
+}
+
+function validateEmail(email) {
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+}
