@@ -66,13 +66,11 @@ a {
     color: #F96F00;
 }
 /* ------------------------------------------------- paralax ------------------------------------*/
-section{
-    margin-top: -22px;
-}
 section .parallax {
     /* The image used */
     /*background-image: url("https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/960w/J70T3LHQ2O.jpg");*/
-    background-image: url("http://abcblogs.abc.es/apuntes-sobre-ruedas/wp-content/uploads/sites/145/2015/12/1-carretera.jpeg");
+    /*background-image: url("http://abcblogs.abc.es/apuntes-sobre-ruedas/wp-content/uploads/sites/145/2015/12/1-carretera.jpeg");*/
+    background-image: url("../img/1-carretera.jpeg");
 
 
     /* Set a specific height */
@@ -266,6 +264,9 @@ section .parallax {
 }
 
 /* -------------------------------------NAVBAR STYLE-------------------------------------------- */
+.navbar {
+    margin-bottom: 0px;
+}
 
 .navbar-form input, .form-inline input {
     width:auto;
@@ -353,4 +354,27 @@ section .parallax {
     color: #fff;
     background-color: #F96F00;
     border-color: #F96F00;
+}
+.distributed-icons {
+    margin: auto;
+}
+
+.vg {
+    margin-top: 50px;
+}
+
+.parallax{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.parallax .descripcionServicio{
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+    color: black;
+   padding-top: 10%;
+}
+
+.parallax .descripcionServicio h1, .parallax .descripcionServicio h2{
+    font-weight: bold;
 }

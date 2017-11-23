@@ -14,39 +14,45 @@
 @endsection
 
 @section('section')
-    <section class="sectionHeight">
+    <section class="sectionHeight" id="prueba">
+        <div class="container">
+            <div class="row text-center">
+                <h2 style="color: #F96F00;">SERVICIOS</h2>
+            </div>
+        </div>
         <div class="container icons">
             <div class="row">
-                <div class="col-lg-1 col-md-4 text-center">
-                    <i class="fa fa-th fa-5x text-primary" aria-hidden="true"></i>
-                    <h3>HOLA</h3>
-                    <p class="text-muted">Texto 1 asjkfvguasgfvj</p>
-                </div>
-                <div class="col-lg-1 col-md-4 text-center">
+                <div class="col-lg-3 col-md-6 text-center distributed-icons">
                     <i class="fa fa-envelope-o fa-5x text-primary" aria-hidden="true"></i>
-                    <h3>HOLA</h3>
-                    <p class="text-muted">Texto 1 asjkfvguasgfvj</p>
+                    <h3>Envíos</h3>
+                    <p class="text-muted">Recibe cómodamente tu paquete sin tener que estar en casa</p>
                 </div>
-                <div class="col-lg-1 col-md-4 text-center">
+                <div class="col-lg-3 col-md-6 text-center distributed-icons">
                     <i class="fa fa-handshake-o fa-5x text-primary" aria-hidden="true"></i>
-                    <h3>HOLA</h3>
-                    <p class="text-muted">Texto 1 asjkfvguasgfvj</p>
+                    <h3>Digno de Confianza</h3>
+                    <p class="text-muted">Servicio que te permite acceder a tu envío de forma segura</p>
                 </div>
-                <div class="col-lg-1 col-md-4 text-center">
+                <div class="col-lg-3 col-md-6 text-center distributed-icons">
                     <i class="fa fa-map-marker fa-5x text-primary" aria-hidden="true"></i>
-                    <h3>HOLA</h3>
-                    <p class="text-muted">Texto 1 asjkfvguasgfvj</p>
+                    <h3>Localización</h3>
+                    <p class="text-muted">Encuentra siempre una oficina muy cerca de tu casa o trabajo</p>
                 </div>
-                <div class="col-lg-1 col-md-4 text-center">
+                <div class="col-lg-3 col-md-6 text-center distributed-icons">
                     <i class="fa fa-lock fa-5x text-primary" aria-hidden="true"></i>
-                    <h3>HOLA</h3>
-                    <p class="text-muted">Texto 1 asjkfvguasgfvj</p>
+                    <h3>Seguridad</h3>
+                    <p class="text-muted">Gracias a nuestro sistema de seguridad, solo tú podrás acceder</p>
                 </div>
             </div>
         </div>
     </section>
     <section>
         <div class="parallax">
+            <div class="descripcionServicio">
+                <h1>ServiceBox</h1>
+                <h2>Tu servicio de confianza</h2>
+                <p>¡Olvídate de tener que ir a casa corriendo para recibir un paquete! Gracias a nuestro servicio, podrás volver a casa cuando quieras y recoger tu paquete por el camino</p>
+                <p>Ofrecemos oficinas por toda la ciudad, solo tendrás que pedir en tu tienda que utilicen nuestro servicio. Será tan simple como recibir un código en tu móvil e introducirlo para abrir la taquilla. Sea la hora que sea.</p>
+            </div>
         </div>
     </section>
     <section class="sectionHeight">
