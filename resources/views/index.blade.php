@@ -44,7 +44,7 @@
                 </div>
             </div>
         </div>
-        <hr>
+        <hr id="opiniones">
         <!-- COMENTARIOS USUARIOS -->
         <div class="container content">
             <div class="heading">
@@ -90,7 +90,7 @@
                 </div>
             </div>
         </div><!-- FIN COMENTARIOS USUARIOS -->
-        <hr>
+        <hr id="planes">
         <!-- PRECIO PLANES -->
         <div class="heading">
             <h2 style="color: #F96F00;">Planes a gusto de todos</strong></h2>

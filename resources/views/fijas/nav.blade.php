@@ -17,6 +17,8 @@
                 <ul class="nav navbar-nav">
                     <li class="{{ Route::current()->getName() == 'index' ? 'active' : null }}"><a href="{{ route('index') }}">Home <span class="sr-only">(current)</span></a></li>
                     <li><a href="{{ route('index') }}#servicios">Servicios</a></li>
+                    <li><a href="{{ route('index') }}#opiniones">Opiniones</a></li>
+                    <li><a href="{{ route('index') }}#planes">Planes</a></li>
                     <li><a href="{{ route('index') }}#sobreLaEmpresa">Sobre la empresa</a></li>
                     <li><a href="{{ route('index') }}#contactanos">Contáctanos</a></li>
                 </ul>
@@ -25,25 +27,57 @@
                         <li class="{{ Route::current()->getName() === 'login' ? 'active' : null }}"><a href="{{ route('login') }}">Login</a></li>
                         <li class="{{ Route::current()->getName() === 'register' ? 'active' : null }}"><a href="{{ route('register') }}">Regístrate</a></li>
                     @else
+                    <div id="droup" class="dropup">
                         <li class="dropdown navbar-right navbar-dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                 {{ Auth::user()->name }} <span class="caret"></span>
                             </a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li>
+                                        <div class="row">
+                                            <div class="col-xs-12 col-sm-6 col-md-6">
+                                                <div class="well well-sm">
+                                                    <div class="row">
+                                                        <div class="col-sm-6 col-md-8">
+                                                            <h4>{{ Auth::user() -> name }} {{ Auth::user() -> surname }}</h4>
+                                                            <small><cite title="San Francisco, USA">San Francisco, USA <i class="glyphicon glyphicon-map-marker">
+                                                                    </i></cite></small>
+                                                            <p>
+                                                                <i class="glyphicon glyphicon-envelope"></i>email@example.com
+                                                                <br />
+                                                                <i class="glyphicon glyphicon-globe"></i><a href="http://www.jquery2dotnet.com">www.jquery2dotnet.com</a>
+                                                                <br />
+                                                                <i class="glyphicon glyphicon-gift"></i>June 02, 1988</p>
+                                                            <!-- Split button -->
+                                                            <div class="btn-group">
+                                                                <a href="" type="button" class="btn btn-primary">
+                                                                    Perfil</a>
+                                                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                                    {{ csrf_field() }}
+                                                                </form>
+                                                                <a href="{{ route('logout') }}"
+                                                                onclick="event.preventDefault();
+                                                                document.getElementById('logout-form').submit();"  type="button" class="btn btn-primary">
+                                                                    Logout</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--<a href="{{ route('logout') }}"
+                                           onclick="event.preventDefault();
+                                                         document.getElementById('logout-form').submit();">
+                                            Logout
+                                        </a>
 
-                            <ul class="dropdown-menu" role="menu">
-                                <li>
-                                    <a href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        Logout
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        {{ csrf_field() }}
-                                    </form>
-                                </li>
-                            </ul>
-                        </li>
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                                        </form>-->
+                                    </li>
+                                </ul>
+                            </li>
+                        </div>
                     </ul>
                 @endguest
             </div><!-- /.navbar-collapse -->

@@ -1,6 +1,6 @@
 @extends('fijas.master')
 
-@section('section')
+@section('principal')
 <header>
     <div class="container">
         <div class="row">

@@ -30,8 +30,10 @@ $( document ).ready( function() {
             // change the color. either by adding a class or setting a css property
             if(scroll >= os){
                 $('#servicios').addClass('vg');
+                $('#droup').removeClass('dropup');
             } else{
                 $('#servicios').removeClass('vg');
+                $('#droup').addClass('dropup');
             }
         });
     });

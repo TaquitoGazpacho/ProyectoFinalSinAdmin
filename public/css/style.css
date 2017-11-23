@@ -264,6 +264,21 @@ section .parallax {
 }
 
 /* -------------------------------------NAVBAR STYLE-------------------------------------------- */
+/*---- perfil----*/
+.glyphicon {  margin-bottom: 10px;margin-right: 10px;}
+
+small {
+    display: block;
+    line-height: 1.428571429;
+    color: #999;
+}
+.well-sm {
+    width: 400px;
+    margin: 5px;
+}
+
+
+
 .navbar {
     margin-bottom: 0px;
 }
