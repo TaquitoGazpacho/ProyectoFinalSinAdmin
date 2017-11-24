@@ -92,6 +92,7 @@
         </div><!-- FIN COMENTARIOS USUARIOS -->
         <hr id="planes">
         <!-- PRECIO PLANES -->
+        <div class="container">
         <div class="heading">
             <h2 style="color: #F96F00;"><strong>Planes a gusto de todos</strong></h2>
             <p>Nos adaptamos a tus necesidades</p>
@@ -101,21 +102,21 @@
                 <div class="db-wrapper">
                     <div class="db-pricing-eleven db-bk-color-one">
                         <div class="price">
-                            <sup>$</sup>99
-                            <small>per quarter</small>
+                            10<sup>€</sup>
+                            <small>anuales</small>
                         </div>
                         <div class="type">
-                            SMALL PLAN
+                            Básico
                         </div>
                         <ul>
 
-                            <li><i class="glyphicon glyphicon-print"></i>30+ Accounts </li>
-                            <li><i class="glyphicon glyphicon-time"></i>150+ Projects </li>
-                            <li><i class="glyphicon glyphicon-trash"></i>Lead Required</li>
+                            <li><i class="glyphicon glyphicon-print"></i>1 taquilla</li>
+                            <li><i class="glyphicon glyphicon-time"></i>Usos ilimitados</li>
+                            <li><i class="glyphicon glyphicon-trash"></i>Tamaño taquillas:<br>Pequeña y mediana</li>
                         </ul>
                         <div class="pricing-footer">
 
-                            <a href="{{route('register')}}" class="btn db-button-color-square btn-lg">BOOK ORDER</a>
+                            <a href="{{route('register')}}" class="btn db-button-color-square btn-lg">Contrata Plan</a>
                         </div>
                     </div>
                 </div>
@@ -124,21 +125,21 @@
                 <div class="db-wrapper">
                     <div class="db-pricing-eleven db-bk-color-two popular">
                         <div class="price">
-                            <sup>$</sup>159
-                            <small>per quarter</small>
+                            20<sup>€</sup>
+                            <small>anuales</small>
                         </div>
                         <div class="type">
-                            MEDIUM PLAN
+                            Premium
                         </div>
                         <ul>
 
-                            <li><i class="glyphicon glyphicon-print"></i>30+ Accounts </li>
-                            <li><i class="glyphicon glyphicon-time"></i>150+ Projects </li>
-                            <li><i class="glyphicon glyphicon-trash"></i>Lead Required</li>
+                            <li><i class="glyphicon glyphicon-print"></i>3 taquilla</li>
+                            <li><i class="glyphicon glyphicon-time"></i>Usos ilimitados</li>
+                            <li><i class="glyphicon glyphicon-trash"></i>Tamaño taquillas:<br>Peuqeña, mediana y grande</li>
                         </ul>
                         <div class="pricing-footer">
 
-                            <a href="{{route('register')}}" class="btn db-button-color-square btn-lg">BOOK ORDER</a>
+                            <a href="{{route('register')}}" class="btn db-button-color-square btn-lg">Contrata Plan</a>
                         </div>
                     </div>
                 </div>
@@ -147,25 +148,26 @@
                 <div class="db-wrapper">
                     <div class="db-pricing-eleven db-bk-color-three">
                         <div class="price">
-                            <sup>$</sup>799
-                            <small>per quarter</small>
+                            150<sup>€</sup>
+                            <small>anuales</small>
                         </div>
                         <div class="type">
-                            ADVANCE PLAN
+                            Empresas
                         </div>
                         <ul>
 
-                            <li><i class="glyphicon glyphicon-print"></i>30+ Accounts </li>
-                            <li><i class="glyphicon glyphicon-time"></i>150+ Projects </li>
-                            <li><i class="glyphicon glyphicon-trash"></i>Lead Required</li>
+                            <li><i class="glyphicon glyphicon-print"></i>10 taquillas</li>
+                            <li><i class="glyphicon glyphicon-time"></i>Usos ilimitados</li>
+                            <li><i class="glyphicon glyphicon-trash"></i>Tamaños extra aparte de los regulares, bajo necesidad.</li>
                         </ul>
                         <div class="pricing-footer">
 
-                            <a href="{{route('register')}}" class="btn db-button-color-square btn-lg">BOOK ORDER</a>
+                            <a href="{{route('register')}}" class="btn db-button-color-square btn-lg">Contrata Plan</a>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
         </div><!-- FIN PRECIO PLANES -->
     </section>
     <section>

@@ -3,7 +3,7 @@
 
         <h3>Service<span>Box</span></h3>
 
-        <p class="footer-links">
+        <!--<p class="footer-links">
             <a href="#">Home</a>
             ·
             <a href="#">Blog</a>
@@ -15,7 +15,7 @@
             <a href="#">Faq</a>
             ·
             <a href="#">Contact</a>
-        </p>
+        </p>-->
 
         <p class="footer-company-name">ServiceBox &copy; 2017</p>
     </div>
@@ -42,8 +42,8 @@
     <div class="footer-right">
 
         <p class="footer-company-about">
-            <span>About the company</span>
-            Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
+            <span>Sobre la compañía</span>
+            Startupt creada por alumnos de dos centros educativos del área informática y electrónica.
         </p>
 
         <div class="footer-icons">
