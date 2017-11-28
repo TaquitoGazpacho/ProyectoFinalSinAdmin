@@ -38,6 +38,6 @@ class Bootstrap extends Preset
     protected static function updateSass()
     {
         copy(__DIR__.'/bootstrap-stubs/_variables.scss', resource_path('assets/sass/_variables.scss'));
-        copy(__DIR__.'/bootstrap-stubs/app.scss', resource_path('assets/sass/app.scss'));
+        copy(__DIR__.'/bootstrap-stubs/app.scss', resource_path('assets/sass/style.scss'));
     }
 }
