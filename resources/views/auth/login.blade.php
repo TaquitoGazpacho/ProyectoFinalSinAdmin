@@ -16,7 +16,7 @@
                                 <label for="email" class="col-md-4 control-label">E-Mail Address</label>
 
                                 <div class="col-md-6">
-                                    <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" autofocus>
+                                    <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
 
                                     @if ($errors->has('email'))
                                         <span class="help-block">
@@ -49,12 +49,12 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-group{{ $errors->has('recaptcha') ? ' has-error' : '' }}">
+                            <div class="form-group{{ $errors->has('g-recaptcha-response') ? ' has-error' : '' }}">
                                 <div class="col-md4">
                                     {!! Recaptcha::render() !!}
-                                    @if ($errors->has('recaptcha'))
+                                    @if ($errors->has('g-recaptcha-response'))
                                         <span class="help-block">
-                                                <strong>{{ $errors->first('recaptcha') }}</strong>
+                                                <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
                                             </span>
                                     @endif
                                 </div>
