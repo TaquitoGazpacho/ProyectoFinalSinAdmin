@@ -12,6 +12,12 @@ class SuscripcionesSeeder extends Seeder
     public function run()
     {
         DB::table('suscripcions')->insert([
+            'name' => 'Gratis',
+            'description' => 'Descripción para perfil gratis',
+            'precio' => 0,
+        ]);
+
+        DB::table('suscripcions')->insert([
             'name' => 'Básico',
             'description' => 'Descripción para perfil básico',
             'precio' => 10,
