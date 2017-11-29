@@ -6,7 +6,7 @@ header {
   padding-top: 8%;
 }
 
-.centrado {
+header .centrado {
   text-align: center;
   font-weight: bold;
   /*background-color: rgba(0, 154, 178, 0.81);*/
@@ -17,20 +17,20 @@ header {
   border-radius: 10px;
 }
 
-.centrado h2 {
+header .centrado h2 {
   font-family: "Vollkorn SC", serif;
   font-size: 40px;
   /*text-shadow: -2px 0 #F96F00, 0 2px #F96F00, 2px 0 #F96F00, 0 -2px #F96F00;*/
   text-shadow: -2px 2px #000000, 0px 2px #000000, 2px 2px #000000, -2px 0px #000000, 0px 0px #000000, 2px 0px #000000, -2px -2px #000000, 0px -2px #000000, 2px -2px #000000;
 }
 
-.centrado h1 {
+header .centrado h1 {
   font: normal 36px 'Cookie', cursive;
   text-shadow: -1px 1px #F96F00, 0px 1px #F96F00, 1px 1px #F96F00, -1px 0px #F96F00, 0px 0px #F96F00, 1px 0px #F96F00, -1px -1px #F96F00, 0px -1px #F96F00, 1px -1px #F96F00;
   font-size: 100px;
 }
 
-.centrado > h1 > label {
+header .centrado h1 label {
   color: #F96F00;
   text-shadow: -1px 1px #F8E2D1, 0px 1px #F8E2D1, 1px 1px #F8E2D1, -1px 0px #F8E2D1, 0px 0px #F8E2D1, 1px 0px #F8E2D1, -1px -1px #F8E2D1, 0px -1px #F8E2D1, 1px -1px #F8E2D1;
 }
@@ -38,21 +38,6 @@ header {
 a {
   text-decoration: none;
   color: #F96F00;
-}
-
-/* ------------------------------------------------- paralax ------------------------------------*/
-section .parallax {
-  /* The image used */
-  /*background-image: url("https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/960w/J70T3LHQ2O.jpg");*/
-  /*background-image: url("http://abcblogs.abc.es/apuntes-sobre-ruedas/wp-content/uploads/sites/145/2015/12/1-carretera.jpeg");*/
-  background-image: url("../img/1-carretera.jpeg");
-  /* Set a specific height */
-  height: 500px;
-  /* Create the parallax scrolling effect */
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 /* ------------------------------------------------- footer ------------------------------------*/
@@ -66,6 +51,11 @@ section .parallax {
   text-align: left;
   font: bold 16px sans-serif;
   padding: 55px 50px;
+  /* Footer left */
+  /* The company logo */
+  /* Footer links */
+  /* Footer Center */
+  /* Footer Right */
 }
 
 .footer-distributed .footer-left,
@@ -75,12 +65,10 @@ section .parallax {
   vertical-align: top;
 }
 
-/* Footer left */
 .footer-distributed .footer-left {
   width: 40%;
 }
 
-/* The company logo */
 .footer-distributed h3 {
   color: #ffffff;
   font: normal 36px 'Cookie', cursive;
@@ -91,7 +79,6 @@ section .parallax {
   color: #F96F00;
 }
 
-/* Footer links */
 .footer-distributed .footer-links {
   color: #ffffff;
   margin: 20px 0 12px;
@@ -112,7 +99,6 @@ section .parallax {
   margin: 0;
 }
 
-/* Footer Center */
 .footer-distributed .footer-center {
   width: 35%;
 }
@@ -155,7 +141,6 @@ section .parallax {
   text-decoration: none;
 }
 
-/* Footer Right */
 .footer-distributed .footer-right {
   width: 20%;
 }
@@ -180,10 +165,6 @@ section .parallax {
   margin-top: 25px;
 }
 
-.footer-distributed .footer-icons a i {
-  margin-top: 8px;
-}
-
 .footer-distributed .footer-icons a {
   display: inline-block;
   width: 35px;
@@ -198,6 +179,14 @@ section .parallax {
   line-height: 35px;
   margin-right: 3px;
   margin-bottom: 5px;
+}
+
+.footer-distributed .footer-icons a i {
+  margin-top: 8px;
+}
+
+.footer-distributed .footer-icons a:hover {
+  color: #F96F00;
 }
 
 /* If you don't want the footer to be responsive, remove these media queries */
@@ -216,10 +205,6 @@ section .parallax {
   .footer-distributed .footer-center i {
     margin-left: 0;
   }
-}
-
-.footer-distributed .footer-icons a:hover {
-  color: #F96F00;
 }
 
 /* -------------------------------------NAVBAR STYLE-------------------------------------------- */
@@ -263,10 +248,6 @@ small {
   color: rgba(0, 0, 0, 0.59);
 }
 
-.navbar-toggle {
-  background-color: rgba(0, 0, 0, 0.54);
-}
-
 .navbar-inverse .navbar-toggle {
   border-color: rgba(0, 0, 0, 0.3);
 }
@@ -275,12 +256,12 @@ small {
   background-color: rgba(0, 0, 0, 0.3);
 }
 
-.navbar-inverse .navbar-toggle:focus {
-  background-color: rgba(0, 0, 0, 0.54);
-}
-
 .navbar-inverse .navbar-toggle:hover .icon-bar {
   background-color: #F96F00;
+}
+
+.navbar-inverse .navbar-toggle:focus {
+  background-color: rgba(0, 0, 0, 0.54);
 }
 
 .navbar-inverse .navbar-nav > .active > a:hover,
@@ -292,18 +273,19 @@ small {
   background-color: rgba(0, 0, 0, 0.54);
 }
 
-/*header {*/
-/*height: 90vh; !* coger el VH por javascript *!*/
-/*}*/
+.navbar-inverse .container {
+  padding-top: 8px;
+}
+
+.navbar-toggle {
+  background-color: rgba(0, 0, 0, 0.54);
+}
+
 #nav.affix {
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 10;
-}
-
-.navbar-inverse > .container {
-  padding-top: 8px;
 }
 
 .navbar-dropdown {
@@ -313,11 +295,11 @@ small {
   margin-right: 20px;
 }
 
-.navbar-dropdown > a {
+.navbar-dropdown a {
   color: rgba(0, 0, 0, 0.59);
 }
 
-.navbar-dropdown > a:hover {
+.navbar-dropdown a:hover {
   color: #F96F00;
   text-decoration: none;
 }
@@ -331,16 +313,6 @@ small {
   padding-bottom: 20px;
 }
 
-.form-width {
-  max-width: 800px;
-  margin: auto;
-}
-
-#texto {
-  resize: none;
-  height: 150px;
-}
-
 .icons {
   color: #F96F00;
   margin: auto;
@@ -348,7 +320,7 @@ small {
   text-align: center;
 }
 
-.icons > i {
+.icons i {
   padding-left: 40px;
   padding-right: 40px;
 }
@@ -357,14 +329,28 @@ small {
   background-color: #f5f5f54a;
 }
 
+.form #errores {
+  margin-top: 20px;
+}
+
+.form .form-width {
+  max-width: 800px;
+  margin: auto;
+}
+
+.form #texto {
+  resize: none;
+  height: 150px;
+}
+
+#servicios .distributed-icons {
+  margin: auto;
+}
+
 .btn-primary {
   color: #fff;
   background-color: #F96F00;
   border-color: #F96F00;
-}
-
-.distributed-icons {
-  margin: auto;
 }
 
 .vg {
@@ -374,6 +360,15 @@ small {
 .parallax {
   padding-left: 10px;
   padding-right: 10px;
+  /* The image used */
+  background-image: url("../img/1-carretera.jpeg");
+  /* Set a specific height */
+  height: 500px;
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .parallax .descripcionServicio {
@@ -387,10 +382,6 @@ small {
 
 .parallax .descripcionServicio h1, .parallax .descripcionServicio h2 {
   font-weight: bold;
-}
-
-#errores {
-  margin-top: 20px;
 }
 
 hr {
@@ -411,17 +402,6 @@ hr {
   margin-bottom: 100px;
 }
 
-.heading:after {
-  left: 50%;
-  height: 3px;
-  width: 50px;
-  content: " ";
-  bottom: -35px;
-  margin-left: -25px;
-  position: absolute;
-  background: #F96F00;
-}
-
 .heading h2 {
   font-size: 40px;
   font-weight: 500;
@@ -437,6 +417,17 @@ hr {
   color: #8693a7;
 }
 
+.heading:after {
+  left: 50%;
+  height: 3px;
+  width: 50px;
+  content: " ";
+  bottom: -35px;
+  margin-left: -25px;
+  position: absolute;
+  background: #F96F00;
+}
+
 /* Team Members */
 .team-members {
   width: 100%;
@@ -448,6 +439,12 @@ hr {
 
 .team-members .team-avatar {
   position: relative;
+}
+
+.team-members .team-avatar img {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .team-members .team-avatar:after {
@@ -464,12 +461,6 @@ hr {
   transition-property: all;
   -webkit-transition-timing-function: cubic-bezier(0.7, 1, 0.7, 1);
           transition-timing-function: cubic-bezier(0.7, 1, 0.7, 1);
-}
-
-.team-members .team-avatar img {
-  display: block;
-  margin: 0 auto;
-  text-align: center;
 }
 
 .team-members .team-desc {
@@ -621,15 +612,6 @@ PRICING STYLES
   padding: 20px;
 }
 
-/*.db-attached > .col-lg-4,
-.db-attached > .col-lg-3,
-.db-attached > .col-md-4,
-.db-attached > .col-md-3,
-.db-attached > .col-sm-4,
-.db-attached > .col-sm-3 {
-    padding-left: 0;
-    padding-right: 0;
-}*/
 .db-pricing-eleven.popular {
   margin-top: 10px;
 }

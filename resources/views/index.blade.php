@@ -169,7 +169,7 @@
             </div>
         </div>
         </div><!-- FIN PRECIO PLANES -->
-    </section>
+    </section> <!-- FIN ID SERVICIOS -->
     <section>
         <div class="parallax" id="sobreLaEmpresa">
             <div class="descripcionServicio">
@@ -180,7 +180,7 @@
             </div>
         </div>
     </section>
-    <section class="sectionHeight">
+    <section class="sectionHeight form">
         <form class="well form-width" id="contactanos">
                 <h3>Si tiene alguna duda sobre nuestro servicio, no dude en contactarnos.</h3>
             <div class="form-group">
