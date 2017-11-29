@@ -42,7 +42,7 @@ a {
 
 /* ------------------------------------------------- footer ------------------------------------*/
 .footer-distributed {
-  background-color: #222;
+  background-color: #000000;
   -webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
           box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
   -webkit-box-sizing: border-box;
@@ -174,7 +174,7 @@ a {
   border-radius: 2px;
   font-size: 20px;
   color: #009AB2;
-  /*color: #ffffff;*/
+  /*color: $white;*/
   text-align: center;
   line-height: 35px;
   margin-right: 3px;
@@ -245,7 +245,7 @@ small {
 }
 
 .navbar-inverse .navbar-nav > li > a {
-  color: rgba(0, 0, 0, 0.59);
+  color: rgba(0, 0, 0, 0.5);
 }
 
 .navbar-inverse .navbar-toggle {
@@ -261,7 +261,7 @@ small {
 }
 
 .navbar-inverse .navbar-toggle:focus {
-  background-color: rgba(0, 0, 0, 0.54);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .navbar-inverse .navbar-nav > .active > a:hover,
@@ -270,7 +270,7 @@ small {
 }
 
 .navbar-inverse .navbar-nav > .active > a {
-  background-color: rgba(0, 0, 0, 0.54);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .navbar-inverse .container {
@@ -278,7 +278,7 @@ small {
 }
 
 .navbar-toggle {
-  background-color: rgba(0, 0, 0, 0.54);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 #nav.affix {
@@ -296,7 +296,7 @@ small {
 }
 
 .navbar-dropdown a {
-  color: rgba(0, 0, 0, 0.59);
+  color: rgba(0, 0, 0, 0.5);
 }
 
 .navbar-dropdown a:hover {
@@ -348,7 +348,7 @@ small {
 }
 
 .btn-primary {
-  color: #fff;
+  color: #ffffff;
   background-color: #F96F00;
   border-color: #F96F00;
 }
@@ -385,7 +385,7 @@ small {
 }
 
 hr {
-  border-top: 1px solid #337AB7;
+  border-top: 1px solid #337ab7;
   width: 80%;
 }
 
@@ -470,7 +470,7 @@ hr {
   padding: 0 20px;
   position: absolute;
   opacity: 0;
-  color: #fff;
+  color: #ffffff;
   -webkit-transform: translate3d(0, 10%, 0);
   transform: translate3d(0, 10%, 0);
   -webkit-transition: opacity 0.3s;
@@ -481,7 +481,7 @@ hr {
   font-size: 22px;
   font-weight: 600;
   margin: 0 0 10px;
-  color: #fff;
+  color: #ffffff;
 }
 
 .team-members .team-desc span {
@@ -489,7 +489,7 @@ hr {
   font-size: 13px;
   font-weight: 600;
   text-transform: uppercase;
-  color: #fff;
+  color: #ffffff;
 }
 
 .team-members:hover .team-avatar:after {
@@ -524,7 +524,7 @@ BACKGROUND COLORS
 }
 
 .db-bk-color-two {
-  background-color: #46A6F7;
+  background-color: #337ab7;
 }
 
 .db-bk-color-three {
@@ -544,7 +544,7 @@ PRICING STYLES
 }
 
 .db-button-color-square {
-  color: #fff;
+  color: #ffffff;
   background-color: rgba(0, 0, 0, 0.5);
   border: none;
   border-radius: 0px;
@@ -553,7 +553,7 @@ PRICING STYLES
 }
 
 .db-button-color-square:hover {
-  color: #fff;
+  color: #ffffff;
   background-color: rgba(0, 0, 0, 0.5);
   border: none;
 }
@@ -564,7 +564,7 @@ PRICING STYLES
   text-align: center;
   -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
           box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-  color: #fff;
+  color: #ffffff;
   line-height: 30px;
 }
 
@@ -590,7 +590,7 @@ PRICING STYLES
   padding: 40px 20px 20px 20px;
   font-size: 60px;
   font-weight: 900;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .db-pricing-eleven .price small {
