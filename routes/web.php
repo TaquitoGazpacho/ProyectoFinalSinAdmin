@@ -43,3 +43,5 @@ Route::prefix('admin')->group(function() {
 });
 
 Route::get('/verifyemail/{token}', 'Auth\User\RegisterController@verify');
+
+Route::post('/changeSuscription', 'SuscripcionController@cambiarSuscripcion')->name('cambiarSuscripcion');
