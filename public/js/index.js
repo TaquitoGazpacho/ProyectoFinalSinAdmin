@@ -43,7 +43,7 @@ function addEvent(){
     document.getElementById("contactanos").addEventListener('submit',validate);
 }
 
-function validate(){
+function validate(event){
     event.preventDefault()
     var elementos = document.getElementById("contactanos").elements;
     var errors="";
