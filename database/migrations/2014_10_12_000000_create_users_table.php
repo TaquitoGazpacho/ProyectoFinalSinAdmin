@@ -17,8 +17,11 @@ class CreateUsersTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('surname');
+            $table->integer('phone');
+            $table->string('sex');
             $table->string('email')->unique();
             $table->string('password');
+            $table->string('image')->default("https://www.svgimages.com/svg-image/s5/man-passportsize-silhouette-icon-256x256.png");
             $table->boolean('verified')->default(false);
             $table->string('email_token')->nullable();
             $table->rememberToken();
