@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth\User;
 
 use App\Jobs\SendVerificationMail;
 use App\Models\User;
+use App\Models\Suscripcion;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -56,12 +57,14 @@ class RegisterController extends Controller
             'surname' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
+            'g-recaptcha-response' => 'required|recaptcha',
         ]);
     }
 
 
     protected function create(array $data)
     {
+        $suscripcion = Suscripcion::where('name', 'Gratis')->value('id');
         return User::create([
             'name' => $data['name'],
             'surname' => $data['surname'],
@@ -69,7 +72,7 @@ class RegisterController extends Controller
             'password' => bcrypt($data['password']),
             'email_token' => base64_encode($data['email']),
             'invitado' => true,
-            'suscripcion_id' => 0,
+            'suscripcion_id' => $suscripcion,
         ]);
     }
 
