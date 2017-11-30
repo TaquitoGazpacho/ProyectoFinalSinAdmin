@@ -77,6 +77,8 @@ function validateEmail(email) {
     return re.test(email);
 }
 
+
+//ESTO ES PARA EL USUARIO, PARA LAS PESTAÑITAS
 $('#userTabs a').click(function (e) {
     e.preventDefault()
     $(this).tab('show')

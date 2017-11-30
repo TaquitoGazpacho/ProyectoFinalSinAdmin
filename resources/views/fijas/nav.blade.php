@@ -50,7 +50,7 @@
                                                                 <i class="glyphicon glyphicon-gift"></i>June 02, 1988</p>
                                                             <!-- Split button -->
                                                             <div class="btn-group">
-                                                                <a href="" type="button" class="btn btn-primary">
+                                                                <a href="{{ route('home') }}" type="button" class="btn btn-primary">
                                                                     Perfil</a>
                                                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                                                     {{ csrf_field() }}
