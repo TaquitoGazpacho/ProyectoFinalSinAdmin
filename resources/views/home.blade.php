@@ -24,12 +24,7 @@
                 @elseif(Auth::guard('web')->check())
                     <p>Hola {{ Auth::guard('web')->user()->name}}</p>
                     Suscripcion {{Auth::guard('web')->user()->suscripcion->name}}<br/>
-                    Eres usuario
-                    @if ( Auth::guard('web')->user()->invitado)
-                        INVITADO
-                    @else
-                        NORMAL
-                    @endif
+
                 @endif
             </div>
 

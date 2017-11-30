@@ -71,7 +71,6 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
             'email_token' => base64_encode($data['email']),
-            'invitado' => true,
             'suscripcion_id' => $suscripcion,
         ]);
     }

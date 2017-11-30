@@ -17,7 +17,6 @@ class UserTableSeeder extends Seeder
             'email' => 'andrea@andrea.com',
             'password' => bcrypt('zubiri'),
             'verified' => true,
-            'invitado' => false,
             'suscripcion_id' => 1,
         ]);
 
@@ -27,7 +26,6 @@ class UserTableSeeder extends Seeder
             'email' => 'iker@iker.com',
             'password' => bcrypt('zubiri'),
             'verified' => true,
-            'invitado' => false,
             'suscripcion_id' => 2,
         ]);
 
@@ -37,7 +35,6 @@ class UserTableSeeder extends Seeder
             'email' => 'tibi@tibi.com',
             'password' => bcrypt('zubiri'),
             'verified' => true,
-            'invitado' => false,
             'suscripcion_id' => 3,
         ]);
     }
