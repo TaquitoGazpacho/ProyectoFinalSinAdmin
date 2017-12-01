@@ -18,6 +18,7 @@ class CreateSuscripcionsTable extends Migration
             $table->string('name');
             $table->string('description');
             $table->integer('precio');
+            $table->date('expiration');
             $table->timestamps();
         });
     }
