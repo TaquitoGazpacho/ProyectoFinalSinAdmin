@@ -10,4 +10,8 @@ class Taquilla extends Model
         'numero_taquilla', 'tamanio', 'ocupada',
     ];
 
+    public function oficina()
+    {
+        return $this->belongsTo('App\Models\Oficina');
+    }
 }

@@ -11,5 +11,8 @@ class Oficinas extends Model
         'ciudad', 'calle', 'numero', 'num_taquillas', 'num_taquillas_libres',
     ];
 
-
+    public function taquilla()
+    {
+        return $this->hasMany('App\Models\Taquilla');
+    }
 }
