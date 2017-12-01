@@ -19,4 +19,6 @@
 <script src="{{ asset('bootstrap/js/bootstrap.js') }}"></script>
 <script src="{{ asset('js/index.js') }}"></script>
 
-<link rel="shortcut icon" href="{{ asset('img/favicon.ico') }}">
+<!-- Favicon -->
+<!-- <link rel="shortcut icon" href="{{ asset('img/favicon.ico') }}"> -->
+<link rel="shortcut icon" type="image/x-icon" href="{{ asset('img/favicon.ico') }}">
