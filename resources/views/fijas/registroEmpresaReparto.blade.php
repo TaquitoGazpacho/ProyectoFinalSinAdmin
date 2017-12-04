@@ -7,23 +7,23 @@
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                 <h4 class="modal-title">Edit Profile</h4>
             </div>
-            <form>
+            <form method="post">
                 <div class="modal-body">
                     <div class="form-group">
-                        <label for="exampleInputCiudad">Ciudad</label>
-                        <input type="text" class="form-control" id="exampleInputCiudad" placeholder="Ciudad">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" class="form-control" id="nombre" placeholder="Nombre" name="nombre">
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputCalle">Calle</label>
-                        <input type="text" class="form-control" id="exampleInputCalle" placeholder="Calle">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="Email" name="email">
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputNumero">Número</label>
-                        <input type="text" class="form-control" id="exampleInputNumero" placeholder="Numero">
+                        <label for="telefono">Teléfono</label>
+                        <input type="text" class="form-control" id="telefono" placeholder="Teléfono" name="telefono">
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputCalle">Calle</label>
-                        <input type="text" class="form-control" id="exampleInputCalle" placeholder="Calle">
+                        <label for="nif">Nif</label>
+                        <input type="text" class="form-control" id="nif" placeholder="Nif" name="nif">
                     </div>
 
 
