@@ -7,6 +7,7 @@
             @if(Auth::guard('admin')->check())
                 <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
                 <li role="presentation"><a href="#registros" aria-controls="registro" role="tab" data-toggle="tab">Registros</a></li>
+                <li role="presentation"><a href="#editar" aria-controls="editar" role="tab" data-toggle="tab">Editar</a></li>
             @elseif(Auth::guard('web')->check())
                 <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
                 <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
@@ -195,12 +196,17 @@
             {{--SETTINGS--}}
             <div role="tabpanel" class="tab-pane" id="settings">...</div>
 
-            {{--Registros--}}
+            {{--REGISTROS--}}
             <div role="tabpanel" class="tab-pane" id="registros">
-                <a class="btn btn-default" href="{{ route('registroEmpresa') }}">Registrar Empresa</a>
-                <a class="btn btn-default">Editar Empresa</a>
+                <a class="btn btn-default" data-toggle="modal" data-target="#modalEmpresa">Registrar Empresa</a>
+                @include('fijas.registroEmpresaReparto')
                 <a class="btn btn-default" data-toggle="modal" data-target="#modalOficina">Registrar Oficina</a>
                 @include('fijas.registroOficinas')
+            </div>
+            {{--EDITAR--}}
+            <div role="tabpanel" class="tab-pane" id="editar">
+                <a class="btn btn-default">Editar Empresa</a>
+                <a class="btn btn-default">Editar Oficina</a>
             </div>
         </div>
     </div>
