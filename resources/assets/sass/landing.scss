@@ -96,6 +96,14 @@ a {
 
     .footer-left{
         width: 40%;
+
+        .logo-footer{
+          background-image: url("../img/logo.png");
+          height: 200px;
+          background-size: 150px;
+          background-repeat:no-repeat;
+
+        }
     }
 
     /* The company logo */
