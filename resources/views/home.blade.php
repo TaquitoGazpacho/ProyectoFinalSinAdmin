@@ -197,7 +197,7 @@
 
             {{--Registros--}}
             <div role="tabpanel" class="tab-pane" id="registros">
-                <a class="btn btn-default">Registrar Empresa</a>
+                <a class="btn btn-default" href="{{ route('registroEmpresa') }}">Registrar Empresa</a>
                 <a class="btn btn-default">Editar Empresa</a>
                 <a class="btn btn-default" data-toggle="modal" data-target="#modalOficina">Registrar Oficina</a>
                 @include('fijas.registroOficinas')
