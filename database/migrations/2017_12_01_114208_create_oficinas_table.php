@@ -17,9 +17,7 @@ class CreateOficinasTable extends Migration
             $table->increments('id');
             $table->string('ciudad');
             $table->string('calle');
-            $table->integer('numero');
-            $table->integer('num_taquillas');
-            $table->integer('num_taquillas_libres');
+            $table->integer('num_calle');
             $table->timestamps();
 
         });

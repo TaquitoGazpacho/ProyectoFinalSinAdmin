@@ -44,7 +44,7 @@ class UserTableSeeder extends Seeder
             'email' => 'pedro@pedro.com',
             'password' => bcrypt('zubiri'),
             'verified' => true,
-            'suscripcion_id' => 0,
+            'suscripcion_id' => 4,
         ]);
     }
 }
