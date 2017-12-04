@@ -14,11 +14,12 @@ class CreateSuscripcionsTable extends Migration
     public function up()
     {
         Schema::create('suscripcions', function (Blueprint $table) {
+            $now = Carbon\Carbon::now();
             $table->increments('id');
             $table->string('name');
             $table->string('description');
             $table->integer('precio');
-            $table->date('expiration');
+            $table->date('expiration')->default($now);
             $table->timestamps();
         });
     }

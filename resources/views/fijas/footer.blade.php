@@ -1,7 +1,8 @@
 <footer class="footer-distributed">
     <div class="footer-left">
-
-        <h3>Service<span>Box</span></h3>
+        <div class="logo-footer">
+            <a href="{{ route('index') }}"></a>
+        </div>
 
         <!--<p class="footer-links">
             <a href="#">Home</a>
