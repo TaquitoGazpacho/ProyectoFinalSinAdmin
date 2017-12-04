@@ -37,5 +37,14 @@ class UserTableSeeder extends Seeder
             'verified' => true,
             'suscripcion_id' => 3,
         ]);
+
+        DB::table('users')->insert([
+            'name' => 'Pedro',
+            'surname' => 'Rodriguez',
+            'email' => 'pedro@pedro.com',
+            'password' => bcrypt('zubiri'),
+            'verified' => true,
+            'suscripcion_id' => 0,
+        ]);
     }
 }
