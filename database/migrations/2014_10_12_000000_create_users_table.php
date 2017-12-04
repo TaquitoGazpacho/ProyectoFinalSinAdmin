@@ -9,7 +9,7 @@ class CreateUsersTable extends Migration
     /**
      * Run the migrations.
      *
-     * @return void
+     * @return voidRelacion tablas oficinas y taquillas - HECHO
      */
     public function up()
     {
