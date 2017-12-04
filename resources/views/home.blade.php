@@ -4,10 +4,15 @@
 
     <div class="container well">
         <ul class="nav nav-tabs" role="tablist" id="userTabs">
-            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
-            <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
-            <li role="presentation"><a href="#suscripcion" aria-controls="suscripcion" role="tab" data-toggle="tab">Suscripcion</a></li>
-            <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
+            @if(Auth::guard('admin')->check())
+                <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
+                <li role="presentation"><a href="#registros" aria-controls="registro" role="tab" data-toggle="tab">Registros</a></li>
+            @elseif(Auth::guard('web')->check())
+                <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
+                <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
+                <li role="presentation"><a href="#suscripcion" aria-controls="suscripcion" role="tab" data-toggle="tab">Suscripcion</a></li>
+                <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
+            @endif
         </ul>
 
         <!-- Tab panes -->
@@ -37,12 +42,20 @@
                     </div>
                     <div class="col-md-4 col-xs-12 col-sm-6 col-lg-4">
                         <div style="border-bottom:1px solid black">
-                            <h2>{{Auth::guard('web')->user()->name." ".Auth::guard('web')->user()->surname}}</h2>
+                            @if(Auth::guard('admin')->check())
+                                <h2>{{Auth::guard('admin')->user()->name }}</h2>
+                            @elseif(Auth::guard('web')->check())
+                                <h2>{{Auth::guard('web')->user()->name." ".Auth::guard('web')->user()->surname}}</h2>
+                            @endif
                         </div>
                         <br/>
                         <ul class="details">
                             <li><p><span class="glyphicon glyphicon-earphone one" style="width:50px;"></span>+91 90000 00000</p></li>
-                            <li><p><span class="glyphicon glyphicon-envelope one" style="width:50px;"></span>{{Auth::guard('web')->user()->email}}</p></li>
+                            @if(Auth::guard('admin')->check())
+                                <li><p><span class="glyphicon glyphicon-envelope one" style="width:50px;"></span>{{Auth::guard('admin')->user()->email}}</p></li>
+                            @elseif(Auth::guard('web')->check())
+                                <li><p><span class="glyphicon glyphicon-envelope one" style="width:50px;"></span>{{Auth::guard('web')->user()->email}}</p></li>
+                            @endif
                             <li><p><span class="glyphicon glyphicon-map-marker one" style="width:50px;"></span>Hyderabad</p></li>
                             <li><p><span class="glyphicon glyphicon-new-window one" style="width:50px;"></span><a href="#">www.example.com</a></p></li>
                         </ul>
@@ -181,6 +194,12 @@
             </div>
             {{--SETTINGS--}}
             <div role="tabpanel" class="tab-pane" id="settings">...</div>
+
+            {{--Registros--}}
+            <div role="tabpanel" class="tab-pane" id="registros">
+                <a href="{{ route('') }}" class="btn btn-default">Registrar Empresa</a>
+                <a href="{{ route('') }}" class="btn btn-default">Editar Empresa</a>
+            </div>
         </div>
     </div>
 
