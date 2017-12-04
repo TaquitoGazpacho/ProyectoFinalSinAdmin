@@ -197,8 +197,9 @@
 
             {{--Registros--}}
             <div role="tabpanel" class="tab-pane" id="registros">
-                <a href="{{ route('') }}" class="btn btn-default">Registrar Empresa</a>
-                <a href="{{ route('') }}" class="btn btn-default">Editar Empresa</a>
+                <a class="btn btn-default">Registrar Empresa</a>
+                <a class="btn btn-default">Editar Empresa</a>
+                <a class="btn btn-default">Registrar Oficina</a>
             </div>
         </div>
     </div>
