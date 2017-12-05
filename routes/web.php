@@ -29,6 +29,8 @@ Route::post('/register', 'Auth\User\RegisterController@register');
 Route::get('/register', 'Auth\User\RegisterController@showRegistrationForm')->name('register');
 
 
+Route::post('/admin/editarOficina', 'RefistroOficinaController@registrarOficina')->name('registroOficina');
+
 
 
 Route::get('/home', 'HomeController@index')->name('home');
