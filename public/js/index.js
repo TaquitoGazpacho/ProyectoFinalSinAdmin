@@ -63,6 +63,9 @@ function validateEmail(email) {
 }
 
 
+
+
+
 //ESTO ES PARA EL USUARIO, PARA LAS PESTAÑITAS
 $('#userTabs a').click(function (e) {
     e.preventDefault()
