@@ -18,6 +18,7 @@ class CreateTaquillasTable extends Migration
             $table->string('numero_taquilla');
             $table->string('tamanio');
             $table->boolean('ocupada')->default(false);
+            $table->string('estado')->default('Funcionando');
             $table->timestamps();
 
         });
