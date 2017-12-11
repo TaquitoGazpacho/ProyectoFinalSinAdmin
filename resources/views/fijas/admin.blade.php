@@ -44,6 +44,7 @@
             {{--EDITAR--}}
             <div role="tabpanel" class="tab-pane" id="editar">
                 <select>
+                    <option>Selecciona la empresa</option>
                     @foreach($empresas as $empresa)
                         <option>{{ $empresa->nombre }}</option>
                     @endforeach
@@ -51,8 +52,12 @@
                 <a class="btn btn-default">Editar Empresa</a>
                 <br>
                 <select>
-                    @foreach($oficinas as $oficina)
-                        <option>{{ $oficina->ciudad }}</option>
+                    <option>Selecciona la ciudad</option>
+                    @foreach($ciudades as $ciudad)
+                        <optgroup label="{{ $ciudad->ciudad }}"></optgroup>
+                        @foreach()
+                            <option></option>
+                        @endforeach
                     @endforeach
                 </select>
                 <a class="btn btn-default">Seleccionar Ciudad</a>
