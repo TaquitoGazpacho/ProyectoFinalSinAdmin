@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Empresa_reparto;
 use Illuminate\Http\Request;
+use \Validator;
 
 class RegistroEmpresaRepartoController extends Controller
 {
@@ -16,7 +17,7 @@ class RegistroEmpresaRepartoController extends Controller
         return Validator::make($data, [
             'nombre' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:empresa_repartos',
-            'telefono' => 'required|integer|max:255',
+            'telefono' => 'required|integer',
             'nif' => 'required|string|max:255',
         ]);
     }
@@ -30,4 +31,13 @@ class RegistroEmpresaRepartoController extends Controller
             'nif' => $data['nif'],
         ]);
     }
+
+    public function store(Request $request)
+    {
+        $this->validator($request->all())->validate();
+        $empresaReparto=$this->create($request->all());
+        $empresaReparto->save();
+        return view('/fijas/editarEmpresaReparto');
+    }
+
 }
