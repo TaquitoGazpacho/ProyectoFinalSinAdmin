@@ -202,6 +202,7 @@
                 @include('fijas.registroEmpresaReparto')
                 <a class="btn btn-default" data-toggle="modal" data-target="#modalOficina">Registrar Oficina</a>
                 @include('fijas.registroOficinas')
+
             </div>
             {{--EDITAR--}}
             <div role="tabpanel" class="tab-pane" id="editar">
