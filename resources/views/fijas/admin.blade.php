@@ -5,9 +5,8 @@
     <div class="container well">
         <ul class="nav nav-tabs" role="tablist" id="userTabs">
             <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
-            <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
-            <li role="presentation"><a href="#suscripcion" aria-controls="suscripcion" role="tab" data-toggle="tab">Suscripcion</a></li>
-            <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
+            <li role="presentation"><a href="#registros" aria-controls="registro" role="tab" data-toggle="tab">Registros</a></li>
+            <li role="presentation"><a href="#editar" aria-controls="editar" role="tab" data-toggle="tab">Editar</a></li>
         </ul>
 
         <!-- Tab panes -->
@@ -19,8 +18,7 @@
                         {{ session('status') }}
                     </div>
                 @endif
-                <p>Hola {{ Auth::guard('web')->user()->name}}</p>
-                Suscripcion {{Auth::guard('web')->user()->suscripcion->name}}<br/>
+                Hola {{ Auth::guard('admin')->user()->name}}
             </div>
 
 
@@ -32,12 +30,12 @@
                     </div>
                     <div class="col-md-4 col-xs-12 col-sm-6 col-lg-4">
                         <div style="border-bottom:1px solid black">
-                            <h2>{{Auth::guard('web')->user()->name." ".Auth::guard('web')->user()->surname}}</h2>
+                            <h2>{{Auth::guard('admin')->user()->name }}</h2>
                         </div>
                         <br/>
                         <ul class="details">
                             <li><p><span class="glyphicon glyphicon-earphone one" style="width:50px;"></span>+91 90000 00000</p></li>
-                            <li><p><span class="glyphicon glyphicon-envelope one" style="width:50px;"></span>{{Auth::guard('web')->user()->email}}</p></li>
+                            <li><p><span class="glyphicon glyphicon-envelope one" style="width:50px;"></span>{{Auth::guard('admin')->user()->email}}</p></li>
                             <li><p><span class="glyphicon glyphicon-map-marker one" style="width:50px;"></span>Hyderabad</p></li>
                             <li><p><span class="glyphicon glyphicon-new-window one" style="width:50px;"></span><a href="#">www.example.com</a></p></li>
                         </ul>
@@ -54,31 +52,31 @@
                                         <h4 class="modal-title">Edit Profile</h4>
                                     </div>
                                     <form>
-                                    <div class="modal-body">
-                                        <div class="form-group">
-                                            <label for="exampleInputEmail1">Email address</label>
-                                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="exampleInputPassword1">Password</label>
-                                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="exampleInputFile">File input</label>
-                                            <input type="file" id="exampleInputFile">
-                                            <p class="help-block">Example block-level help text here.</p>
-                                        </div>
-                                        <div class="checkbox">
-                                            <label>
-                                                <input type="checkbox"> Check me out
-                                            </label>
-                                        </div>
+                                        <div class="modal-body">
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">Email address</label>
+                                                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleInputPassword1">Password</label>
+                                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleInputFile">File input</label>
+                                                <input type="file" id="exampleInputFile">
+                                                <p class="help-block">Example block-level help text here.</p>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox"> Check me out
+                                                </label>
+                                            </div>
 
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="submit" class="btn btn-warning" data-dismiss="modal">Submit</button>
-                                        <button type="button" class="btn btn-error" data-dismiss="modal">Close</button>
-                                    </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="submit" class="btn btn-warning" data-dismiss="modal">Submit</button>
+                                            <button type="button" class="btn btn-error" data-dismiss="modal">Close</button>
+                                        </div>
                                     </form>
                                 </div>
 
