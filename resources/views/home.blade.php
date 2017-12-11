@@ -28,7 +28,7 @@
             <div role="tabpanel" class="tab-pane" id="profile">
                 <div class="row">
                     <div class="col-md-4 col-xs-12 col-sm-6 col-lg-4">
-                        <img src="https://www.svgimages.com/svg-image/s5/man-passportsize-silhouette-icon-256x256.png" alt="stack photo" class="img">
+                        <img src="{{Auth::guard('web')->user()->image}}" alt="stack photo" class="img">
                     </div>
                     <div class="col-md-4 col-xs-12 col-sm-6 col-lg-4">
                         <div style="border-bottom:1px solid black">
@@ -36,9 +36,9 @@
                         </div>
                         <br/>
                         <ul class="details">
-                            <li><p><span class="glyphicon glyphicon-earphone one" style="width:50px;"></span>+91 90000 00000</p></li>
-                            <li><p><span class="glyphicon glyphicon-envelope one" style="width:50px;"></span>{{Auth::guard('web')->user()->email}}</p></li>
-                            <li><p><span class="glyphicon glyphicon-map-marker one" style="width:50px;"></span>Hyderabad</p></li>
+                            <li><p><span class="glyphicon glyphicon-envelope one" style="width:50px;"></span>Email: {{Auth::guard('web')->user()->email}}</p></li>
+                            <li><p><span class="glyphicon glyphicon-earphone one" style="width:50px;"></span>Phone: {{Auth::guard('web')->user()->phone}}</p></li>
+                            <li><p><span class="glyphicon glyphicon-map-marker one" style="width:50px;"></span>Sex: {{Auth::guard('web')->user()->sex}}</p></li>
                             <li><p><span class="glyphicon glyphicon-new-window one" style="width:50px;"></span><a href="#">www.example.com</a></p></li>
                         </ul>
                         <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal">Edit Profile</button>
@@ -54,31 +54,18 @@
                                         <h4 class="modal-title">Edit Profile</h4>
                                     </div>
                                     <form>
-                                    <div class="modal-body">
-                                        <div class="form-group">
-                                            <label for="exampleInputEmail1">Email address</label>
-                                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="exampleInputPassword1">Password</label>
-                                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="exampleInputFile">File input</label>
-                                            <input type="file" id="exampleInputFile">
-                                            <p class="help-block">Example block-level help text here.</p>
-                                        </div>
-                                        <div class="checkbox">
-                                            <label>
-                                                <input type="checkbox"> Check me out
-                                            </label>
-                                        </div>
+                                        <div class="modal-body">
+                                            <div class="form-group">
+                                                <label for="Name">Email address</label>
+                                                <input type="text" class="form-control" id="Name" placeholder="Name">
+                                            </div>
 
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="submit" class="btn btn-warning" data-dismiss="modal">Submit</button>
-                                        <button type="button" class="btn btn-error" data-dismiss="modal">Close</button>
-                                    </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="submit" class="btn btn-warning" data-dismiss="modal">Submit</button>
+                                            <input type="reset" name="reset" value="clear" class="btn btn-default" />
+                                            <button type="button" class="btn btn-error" data-dismiss="modal">Close</button>
+                                        </div>
                                     </form>
                                 </div>
 
