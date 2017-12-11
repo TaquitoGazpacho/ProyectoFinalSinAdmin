@@ -35,6 +35,6 @@ class EditUserController extends Controller
         $this->validator($request->all())->validate();
         $this->actualizar($request);
 
-        return redirect()->route('home', ['id' => 'profile']);
+        return redirect()->route('home');
     }
 }
