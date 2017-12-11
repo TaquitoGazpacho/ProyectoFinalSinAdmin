@@ -27,11 +27,10 @@ Route::post('/password/reset', 'Auth\User\ForgotPasswordController@reset');
 Route::get('/password/reset/{token}', 'Auth\User\ForgotPasswordController@showResetForm')->name('password.reset');
 Route::post('/register', 'Auth\User\RegisterController@register');
 Route::get('/register', 'Auth\User\RegisterController@showRegistrationForm')->name('register');
+Route::post('/editarUsuario', 'Auth\User\EditUserController@ejecutar')->name('editarUsuario');
+Route::get('/perfil', 'HomeController@index')->name('home');
 
 
-
-
-Route::get('/home', 'HomeController@index')->name('home');
 
 Route::prefix('admin')->group(function() {
     Route::get('/', 'AdminController@index')->name('admin.home');
@@ -40,6 +39,8 @@ Route::prefix('admin')->group(function() {
     Route::post('/logout', 'App\Http\Controllers\Auth\LoginController@logout')->name('admin.logout');
     Route::post('/editarOficina', 'RegistroOficinaController@store')->name('editarOficina');
     Route::post('/', 'RegistroOficinaController@actualizar')->name('actualizarOficina');
+    Route::post('/editarEmpresaReparto', 'RegistroEmpresaRepartoController@store')->name('registrarEmpresaReparto');
+    Route::post('/', 'RegistroEmpresaRepartoController@actualizar')->name('actualizarEmpresaReparto');
 
     //Route::get('/password/reset', 'AuthAdmin\ForgotPasswordController@showLinkRequestForm')->name('admin.password.request');
     //Route::post('/password/email', 'AuthAdmin\ForgotPasswordController@sendResetLinkEmail')->name('admin.password.email');

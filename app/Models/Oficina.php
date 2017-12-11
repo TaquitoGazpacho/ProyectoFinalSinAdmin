@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class Oficina extends Model
 {
@@ -14,5 +15,11 @@ class Oficina extends Model
     public function taquilla()
     {
         return $this->hasMany('App\Models\Taquilla');
+    }
+
+    public static function getOficinas() {
+        $oficinas = DB::table('oficinas')->select('ciudad')->groupBy('ciudad')->get();
+
+        return $oficinas;
     }
 }
