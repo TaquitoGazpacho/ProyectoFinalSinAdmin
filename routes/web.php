@@ -27,6 +27,7 @@ Route::post('/password/reset', 'Auth\User\ForgotPasswordController@reset');
 Route::get('/password/reset/{token}', 'Auth\User\ForgotPasswordController@showResetForm')->name('password.reset');
 Route::post('/register', 'Auth\User\RegisterController@register');
 Route::get('/register', 'Auth\User\RegisterController@showRegistrationForm')->name('register');
+Route::post('/editarUsuario', 'Auth\User\EditUserController@ejecutar')->name('editarUsuario');
 
 
 
