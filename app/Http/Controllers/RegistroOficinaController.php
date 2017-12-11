@@ -67,4 +67,5 @@ class RegistroOficinaController extends Controller
         return view('/home');
 
     }
+
 }

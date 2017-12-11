@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Oficina;
+use App\Models\Empresa_reparto;
 
 class AdminController extends Controller
 {
@@ -18,6 +20,8 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('fijas.admin');
+        $oficinas = Oficina::getOficinas();
+        $empresas = Empresa_reparto::getEmpresas();
+        return view('fijas.admin', ['oficinas' => $oficinas, 'empresas' => $empresas]);
     }
 }
