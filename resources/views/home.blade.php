@@ -42,7 +42,8 @@
                             <li><p><span class="glyphicon glyphicon-new-window one" style="width:50px;"></span>Suscripción: {{Auth::guard('web')->user()->suscripcion->name }}</p></li>
                             <li><p><span class="glyphicon glyphicon-new-window one" style="width:50px;"></span>Oficina:</p></li>
                         </ul>
-                        <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editProfile">Edit Profile</button>
+                        <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editProfile">Editar Perfil</button>
+                        <button type="button" class="btn btn-warning" data-toggle="modal">Cambiar Oficina</button>
 
                         <!-- Modal -->
                         <div id="editProfile" class="modal fade" role="dialog">
@@ -52,7 +53,7 @@
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                        <h4 class="modal-title">Edit Profile</h4>
+                                        <h4 class="modal-title">Editar Perfil</h4>
                                     </div>
                                     <form action="{{ route('editarUsuario') }}" method="post">
                                         {{ csrf_field() }}
