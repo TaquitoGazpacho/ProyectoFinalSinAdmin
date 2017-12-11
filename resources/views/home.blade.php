@@ -39,7 +39,9 @@
             <div role="tabpanel" class="tab-pane" id="profile">
                 <div class="row">
                     <div class="col-md-4 col-xs-12 col-sm-6 col-lg-4">
+                        @if(Auth::guard('web')->check())
                         <img src="{{Auth::guard('web')->user()->image}}" alt="stack photo" class="img">
+                        @endif
                     </div>
                     <div class="col-md-4 col-xs-12 col-sm-6 col-lg-4">
                         <div style="border-bottom:1px solid black">
