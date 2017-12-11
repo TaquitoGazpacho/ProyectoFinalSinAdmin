@@ -1,0 +1,72 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\Oficina;
+use Illuminate\Support\Facades\DB;
+use \Validator;
+use Illuminate\Http\Request;
+
+
+
+class RegistroOficinaController extends Controller
+{
+    protected function validator(array $data)
+    {
+        return Validator::make($data, [
+            'ciudad' => 'required|string|max:255',
+            'calle' => 'required|string|max:255',
+            'num_calle' => 'required|integer',
+        ]);
+    }
+
+    protected function create(array $data)
+    {
+
+        return Oficina::create([
+            'ciudad' => $data['ciudad'],
+            'calle' => $data['calle'],
+            'num_calle' => $data['num_calle'],
+
+        ]);
+    }
+
+    public function store(Request $request)
+    {
+        $this->validator($request->all())->validate();
+        $oficina=$this->create($request->all());
+        $oficina->save();
+        $id=$oficina->id;
+        $datos = $this->mostrarDatos($id);
+        $num = $this->calculaTaquillas($id);
+        return view('/fijas/editarOficina')->with('datos',$datos)->with('num',$num)->with('id',$id);
+
+    }
+    public function index()
+    {
+        return view('/fijas/editarOficina');
+    }
+
+    public function mostrarDatos($id)
+    {
+        return $datosOficina =DB::table('oficinas')->select('ciudad', 'calle', 'num_calle')->where('id', $id)->get();
+    }
+
+    public function calculaTaquillas($id)
+    {
+        return $taquillas = DB::table('taquillas')->select('id')->where('id_oficina',$id)->count();
+    }
+
+    public function actualizar(Request $request)
+    {
+        DB::table('oficinas')
+            ->where('id', $request->id)
+            ->update([  'ciudad' => $request->ciudad,
+                        'calle' => $request->calle,
+                        'num_calle' => $request->num_calle,
+                ]);
+
+        return view('/home');
+
+    }
+}

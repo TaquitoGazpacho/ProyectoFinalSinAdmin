@@ -29,8 +29,6 @@ Route::post('/register', 'Auth\User\RegisterController@register');
 Route::get('/register', 'Auth\User\RegisterController@showRegistrationForm')->name('register');
 
 
-Route::post('/admin/editarOficina', 'RefistroOficinaController@registrarOficina')->name('registroOficina');
-
 
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -40,6 +38,9 @@ Route::prefix('admin')->group(function() {
     Route::get('/login', 'Auth\Admin\LoginController@showLoginForm')->name('admin.login');
     Route::post('/login', 'Auth\Admin\LoginController@login')->name('admin.login.submit');
     Route::post('/logout', 'App\Http\Controllers\Auth\LoginController@logout')->name('admin.logout');
+    Route::post('/editarOficina', 'RegistroOficinaController@store')->name('editarOficina');
+    Route::post('/', 'RegistroOficinaController@actualizar')->name('actualizarOficina');
+
     //Route::get('/password/reset', 'AuthAdmin\ForgotPasswordController@showLinkRequestForm')->name('admin.password.request');
     //Route::post('/password/email', 'AuthAdmin\ForgotPasswordController@sendResetLinkEmail')->name('admin.password.email');
     //Route::get('/password/reset/{token}', 'AuthAdmin\ResetPasswordController@showResetForm')->name('admin.password.reset');
