@@ -8,6 +8,7 @@
                 <h4 class="modal-title">Edit Profile</h4>
             </div>
             <form method="POST" action="{{ route('registroOficina') }}">
+                {{ csrf_field() }}
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="exampleInputCiudad">Ciudad</label>
