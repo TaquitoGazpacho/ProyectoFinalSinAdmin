@@ -16,7 +16,7 @@ class UserForeignKey extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->integer('suscripcion_id')->unsigned();
 
-            $table->foreign('suscripcion_id')->references('id')->on('suscripcions');
+            $table->foreign('suscripcion_id')->references('id')->on('suscripcions')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 
@@ -27,6 +27,9 @@ class UserForeignKey extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropForeign('users_suscripcion_id_foreign');
+            $table->dropColumn('suscripcion_id');
+        });
     }
 }

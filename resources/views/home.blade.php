@@ -39,34 +39,63 @@
                             <li><p><span class="glyphicon glyphicon-envelope one" style="width:50px;"></span>Email: {{Auth::guard('web')->user()->email}}</p></li>
                             <li><p><span class="glyphicon glyphicon-earphone one" style="width:50px;"></span>Phone: {{Auth::guard('web')->user()->phone}}</p></li>
                             <li><p><span class="glyphicon glyphicon-map-marker one" style="width:50px;"></span>Sex: {{Auth::guard('web')->user()->sex}}</p></li>
-                            <li><p><span class="glyphicon glyphicon-new-window one" style="width:50px;"></span><a href="#">www.example.com</a></p></li>
+                            <li><p><span class="glyphicon glyphicon-new-window one" style="width:50px;"></span>Suscripción: {{Auth::guard('web')->user()->suscripcion->name }}</p></li>
+                            <li><p><span class="glyphicon glyphicon-new-window one" style="width:50px;"></span>Oficina:</p></li>
                         </ul>
-                        <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal">Edit Profile</button>
+                        <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editProfile">Editar Perfil</button>
+                        <button type="button" class="btn btn-warning" data-toggle="modal">Cambiar Oficina</button>
 
                         <!-- Modal -->
-                        <div id="myModal" class="modal fade" role="dialog">
+                        <div id="editProfile" class="modal fade" role="dialog">
                             <div class="modal-dialog">
 
                                 <!-- Modal content-->
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                        <h4 class="modal-title">Edit Profile</h4>
+                                        <h4 class="modal-title">Editar Perfil</h4>
                                     </div>
-                                    <form>
+                                    <form action="{{ route('editarUsuario') }}" method="post">
+                                        {{ csrf_field() }}
                                         <div class="modal-body">
                                             <div class="form-group">
-                                                <label for="Name">Email address</label>
-                                                <input type="text" class="form-control" id="Name" placeholder="Name">
+                                                <label for="nombre">Nombre:</label>
+                                                <input type="text" class="form-control" name="nombre" id="nombre" value="{{Auth::guard('web')->user()->name}}">
                                             </div>
-
+                                            <div class="form-group">
+                                                <label for="apellido">Apellido:</label>
+                                                <input type="text" class="form-control" name="apellido" id="apellido" value="{{Auth::guard('web')->user()->surname}}">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="telefono">Teléfono:</label>
+                                                <input type="number" class="form-control" name="telefono" id="telefono" placeholder="Teléfono" value="{{Auth::guard('web')->user()->phone}}">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="sexo">Sexo:</label><br/>
+                                                    <label><input name="sexo" class="form-check-input" type="radio" value="Hombre"> Masculino</label> <br/>
+                                                    <label><input name="sexo" class="form-check-input" type="radio" value="Mujer"> Femenino</label> <br/>
+                                                    <label><input name="sexo" class="form-check-input" type="radio" value="Androgino" checked> Androgino</label>
+                                            </div>
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="submit" class="btn btn-warning" data-dismiss="modal">Submit</button>
-                                            <input type="reset" name="reset" value="clear" class="btn btn-default" />
+                                            <input type="submit" value="Submit" class="btn btn-warning"/>
+                                            <input type="reset" name="reset" value="Reset" class="btn btn-error" />
                                             <button type="button" class="btn btn-error" data-dismiss="modal">Close</button>
                                         </div>
                                     </form>
+                                    @if ($errors->any())
+                                        <script>
+                                            $('#profile').show();
+                                            $("#editProfile").modal();
+                                        </script>
+                                        <div class="alert alert-danger">
+                                            <ul>
+                                                @foreach ($errors->all() as $error)
+                                                    <li>{{ $error }}</li>
+                                                @endforeach
+                                            </ul>
+                                        </div>
+                                    @endif
                                 </div>
 
                             </div>
