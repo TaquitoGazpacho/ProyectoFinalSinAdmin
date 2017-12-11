@@ -8,7 +8,7 @@ class Oficina extends Model
 {
 
     protected $fillable = [
-        'ciudad', 'calle', 'numero',
+        'ciudad', 'calle', 'num_calle',
     ];
 
     public function taquilla()
