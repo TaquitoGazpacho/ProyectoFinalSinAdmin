@@ -17,9 +17,13 @@ class Oficina extends Model
         return $this->hasMany('App\Models\Taquilla');
     }
 
-    public static function getOficinas() {
-        $oficinas = DB::table('oficinas')->select('ciudad')->groupBy('ciudad')->get();
+    public static function getCiudades() {
+        $ciudades = DB::table('oficinas')->select('ciudad')->groupBy('ciudad')->get();
 
-        return $oficinas;
+        return $ciudades;
+    }
+
+    public static function getCalles() {
+        $calles = DB::table('oficinas')->select('calle', 'num_calle');
     }
 }
