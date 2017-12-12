@@ -9,7 +9,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{{ route('index') }}">ServiceBox</a>
+                <a class="navbar-brand" href="{{ route('index') }}">LockBox</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -18,7 +18,6 @@
                     <li class="{{ Route::current()->getName() == 'index' ? 'active' : null }}"><a href="{{ route('index') }}">Home <span class="sr-only">(current)</span></a></li>
                     <li><a href="{{ route('index') }}#servicios">Servicios</a></li>
                     <li><a href="{{ route('index') }}#opiniones">Opiniones</a></li>
-                    <li><a href="{{ route('index') }}#planes">Planes</a></li>
                     <li><a href="{{ route('index') }}#sobreLaEmpresa">Sobre la empresa</a></li>
                     <li><a href="{{ route('index') }}#contactanos">Contáctanos</a></li>
                 </ul>
