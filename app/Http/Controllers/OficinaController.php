@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 
 
-class RegistroOficinaController extends Controller
+class OficinaController extends Controller
 {
     protected function validator(array $data)
     {

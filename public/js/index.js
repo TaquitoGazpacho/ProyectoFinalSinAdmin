@@ -22,6 +22,7 @@ $( document ).ready( function() {
             }
         });
     });
+    $('#botonEmpresa').on('click', mostrarEmpresa);
 });
 
 function addEvent(){
@@ -65,7 +66,34 @@ function validateEmail(email) {
     return re.test(email);
 }
 
+function mostrarEmpresa() {
+    let url = 'http://localhost/admin/editarEmpresa/mostrarDatos?empresa='+document.getElementsByName('empresa')[0].value;
+    let http = new XMLHttpRequest();
+    http.open("GET", url, true);
+    http.send();
 
+
+    http.onreadystatechange = function () {
+        if (http.readyState === 4) {
+            // Se ha recibido la respuesta.
+            if (http.status === 200) {
+                // Aquí escribiremos lo que queremos que
+                // se ejecute tras recibir la respuesta
+                let datosDoc = JSON.parse(http.responseText);
+                document.getElementById('inputId').value = datosDoc[0]['id'];
+                document.getElementById('inputNombre').value = datosDoc[0]['nombre'];
+                document.getElementById('inputEmail').value = datosDoc[0]['email'];
+                document.getElementById('inputTelefono').value = datosDoc[0]['telefono'];
+                document.getElementById('inputNif').value = datosDoc[0]['nif'];
+            } else {
+                // Ha ocurrido un error
+                alert(
+                    "Error:" + http.statusText);
+            }
+        }
+    }
+
+}
 
 
 

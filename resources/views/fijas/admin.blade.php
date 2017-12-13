@@ -46,20 +46,19 @@
             </div>
             {{--EDITAR--}}
             <div role="tabpanel" class="tab-pane" id="editar">
-                <form method="POST" action="{{ route('editarEmpresa') }}">
-                    {{ csrf_field() }}
-                    <select>
-                        <option>Selecciona la empresa</option>
-                        @foreach($empresas as $empresa)
-                            <option>{{ $empresa->nombre }}</option>
-                        @endforeach
-                    </select>
-                    <input type="submit" class="btn btn-default" value="Seleccionar empresa">
-                </form>
+                <select name="empresa">
+                    <option>Selecciona la empresa</option>
+                    @foreach($empresas as $empresa)
+                        <option value="{{ $empresa->nombre }}">{{ $empresa->nombre }}</option>
+                    @endforeach
+                </select>
+                <input id="botonEmpresa" type="button" class="btn btn-default" data-toggle="modal" data-target="#modalEditarEmpresa" value="Seleccionar empresa">
+                @include('fijas.editarEmpresaReparto')
+
                 <form method="POST" action="{{ route('editarOficina') }}">
                     {{ csrf_field() }}
                     <select name="oficina">
-                        <option>Selecciona la ciudad</option>
+                        <option>Selecciona la oficina</option>
                         @foreach($oficinas as $oficina)
                             @if($ciudad === $oficina->ciudad)
                                 //No hace nada

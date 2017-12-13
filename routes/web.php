@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('index');
 })->name('index');
 
-Route::get('/admin/registroEmpresaReparto', 'RegistroEmpresaRepartoController@index')->name('registroEmpresa');
+Route::get('/admin/registroEmpresaReparto', 'EmpresaRepartoController@index')->name('registroEmpresa');
 
 //Auth::routes();
 Route::get('/login', 'Auth\User\LoginController@showLoginForm')->name('login');
@@ -38,11 +38,13 @@ Route::prefix('admin')->group(function() {
     Route::get('/login', 'Auth\Admin\LoginController@showLoginForm')->name('admin.login');
     Route::post('/login', 'Auth\Admin\LoginController@login')->name('admin.login.submit');
     Route::post('/logout', 'App\Http\Controllers\Auth\LoginController@logout')->name('admin.logout');
-    Route::post('/editarOficina', 'RegistroOficinaController@index')->name('editarOficina');
-    Route::post('/editarOficina/actualizar', 'RegistroOficinaController@actualizar')->name('editarOficina.actualizarOficina');
-    Route::post('/editarOficina/registro', 'RegistroOficinaController@store')->name('registrarOficina');
-    Route::post('/editarEmpresaReparto', 'RegistroEmpresaRepartoController@store')->name('registrarEmpresaReparto');
-    Route::post('/', 'RegistroEmpresaRepartoController@actualizar')->name('actualizarEmpresaReparto');
+    Route::post('/editarOficina', 'OficinaController@index')->name('editarOficina');
+    Route::post('/editarOficina/actualizar', 'OficinaController@actualizar')->name('editarOficina.actualizarOficina');
+    Route::post('/editarOficina/registro', 'OficinaController@store')->name('registrarOficina');
+    Route::post('/editarEmpresa', 'EmpresaRepartoController@index')->name('editarEmpresa');
+    Route::post('/registrarEmpresaReparto', 'EmpresaRepartoController@store')->name('registrarEmpresaReparto');
+    Route::post('/editarEmpresa/actualizar', 'EmpresaRepartoController@actualizar')->name('editarEmpresa.actualizarEmpresaReparto');
+    Route::get('/editarEmpresa/mostrarDatos', 'EmpresaRepartoController@mostrarDatos')->name('mostrarDatos');
 
     //Route::get('/password/reset', 'AuthAdmin\ForgotPasswordController@showLinkRequestForm')->name('admin.password.request');
     //Route::post('/password/email', 'AuthAdmin\ForgotPasswordController@sendResetLinkEmail')->name('admin.password.email');
