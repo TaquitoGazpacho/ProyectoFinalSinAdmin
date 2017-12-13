@@ -7,7 +7,7 @@
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                 <h4 class="modal-title">Crear Oficina</h4>
             </div>
-            <form id="registroOficina" method="POST" action="{{ route('editarOficina') }} ">
+            <form id="registroOficina" method="POST" action="{{ route('registrarOficina') }} ">
                 {{ csrf_field() }}
                 <div class="modal-body">
                     <div class="form-group">
@@ -25,7 +25,7 @@
 
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-warning">Nueva oficina</button>
+                    <input type="submit" class="btn btn-warning" value="Nueva oficina">
                     <button type="button" class="btn btn-error" data-dismiss="modal">Close</button>
                 </div>
 

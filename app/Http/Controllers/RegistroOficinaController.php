@@ -35,9 +35,9 @@ class RegistroOficinaController extends Controller
         $oficina=$this->create($request->all());
         $oficina->save();
         $id=$oficina->id;
-        $datos = $this->mostrarDatos($id);
-        $num = $this->calculaTaquillas($id);
-        return view('/fijas/editarOficina')->with('datos',$datos)->with('num',$num)->with('id',$id);
+        $num = $this->calculaTaquillas($oficina->id);
+        $datosOficina = $this->mostrarDatos($oficina->id);
+        return view('/fijas/editarOficina', ['datosOficina' => $datosOficina]);
 
     }
     public function index(Request $request)
