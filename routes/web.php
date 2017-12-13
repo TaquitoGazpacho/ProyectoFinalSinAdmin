@@ -37,8 +37,8 @@ Route::prefix('admin')->group(function() {
     Route::get('/login', 'Auth\Admin\LoginController@showLoginForm')->name('admin.login');
     Route::post('/login', 'Auth\Admin\LoginController@login')->name('admin.login.submit');
     Route::post('/logout', 'App\Http\Controllers\Auth\LoginController@logout')->name('admin.logout');
-    Route::post('/editarOficina', 'RegistroOficinaController@store')->name('editarOficina');
-    Route::post('/', 'RegistroOficinaController@actualizar')->name('actualizarOficina');
+    Route::post('/editarOficina', 'RegistroOficinaController@index')->name('editarOficina');
+    Route::post('/editarOficina/actualizar', 'RegistroOficinaController@actualizar')->name('editarOficina.actualizarOficina');
     Route::post('/editarEmpresaReparto', 'RegistroEmpresaRepartoController@store')->name('registrarEmpresaReparto');
     Route::post('/', 'RegistroEmpresaRepartoController@actualizar')->name('actualizarEmpresaReparto');
 

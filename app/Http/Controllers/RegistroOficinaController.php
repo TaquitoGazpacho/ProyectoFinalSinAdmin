@@ -40,14 +40,16 @@ class RegistroOficinaController extends Controller
         return view('/fijas/editarOficina')->with('datos',$datos)->with('num',$num)->with('id',$id);
 
     }
-    public function index()
+    public function index(Request $request)
     {
-        return view('/fijas/editarOficina');
+        $id = $request->get('oficina');
+        $datosOficina = $this->mostrarDatos($id);
+        return view('/fijas/editarOficina', ['datosOficina' => $datosOficina]);
     }
 
     public function mostrarDatos($id)
     {
-        return $datosOficina =DB::table('oficinas')->select('ciudad', 'calle', 'num_calle')->where('id', $id)->get();
+        return $datosOficina =DB::table('oficinas')->select('id','ciudad', 'calle', 'num_calle')->where('id', $id)->get();
     }
 
     public function calculaTaquillas($id)
@@ -64,8 +66,7 @@ class RegistroOficinaController extends Controller
                         'num_calle' => $request->num_calle,
                 ]);
 
-        return view('/home');
-
+        return redirect()->route('admin.home');
     }
 
 }

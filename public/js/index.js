@@ -25,7 +25,7 @@ $( document ).ready( function() {
 });
 
 function addEvent(){
-    document.getElementById("contactanos").addEventListener('submit',validate);
+    document.getElementById("contactanos").addEventListener('submit', validate);
 }
 
 function validate(event){
@@ -41,11 +41,12 @@ function validate(event){
         }
         if (eInput.name === "textarea"){
             if (eInput.value.length <= 20){
-                errors+="<p>Tu texto es demasiado corto</p>";
+                errors += "<p>Tu texto es demasiado corto</p>";
             }
         }
         if(eInput.name === "email"){
             if(!validateEmail(eInput.value)){
+                //la validación esta dando FALSE
                 errors+="<p>Tu email no es válido</p>";
             }
         }
@@ -59,6 +60,8 @@ function validate(event){
 
 function validateEmail(email) {
     var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    //esta otra también es válida
+    //var re = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
     return re.test(email);
 }
 

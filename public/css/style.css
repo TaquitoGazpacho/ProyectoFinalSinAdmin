@@ -212,6 +212,9 @@ a {
   .footer-distributed .footer-center i {
     margin-left: 0;
   }
+  .footer-distributed .logo-footer {
+    background-position: center;
+  }
 }
 
 /* -------------------------------------NAVBAR STYLE-------------------------------------------- */

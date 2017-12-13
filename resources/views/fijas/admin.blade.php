@@ -1,3 +1,6 @@
+@php
+    $ciudad = null;
+@endphp
 @extends('fijas.master')
 
 @section('section')
@@ -43,19 +46,36 @@
             </div>
             {{--EDITAR--}}
             <div role="tabpanel" class="tab-pane" id="editar">
-                <select>
-                    @foreach($empresas as $empresa)
-                        <option>{{ $empresa->nombre }}</option>
-                    @endforeach
-                </select>
-                <a class="btn btn-default">Editar Empresa</a>
-                <br>
-                <select>
-                    @foreach($oficinas as $oficina)
-                        <option>{{ $oficina->ciudad }}</option>
-                    @endforeach
-                </select>
-                <a class="btn btn-default">Seleccionar Ciudad</a>
+                <form>
+                    {{ csrf_field() }}
+                    <select>
+                        <option>Selecciona la empresa</option>
+                        @foreach($empresas as $empresa)
+                            <option>{{ $empresa->nombre }}</option>
+                        @endforeach
+                    </select>
+                    <input type="submit" class="btn btn-default" value="Seleccionar empresa">
+                </form>
+                <form method="POST" action="{{ route('editarOficina') }}">
+                    {{ csrf_field() }}
+                    <select name="oficina">
+                        <option>Selecciona la ciudad</option>
+                        @foreach($oficinas as $oficina)
+                            @if($ciudad === $oficina->ciudad)
+                                //No hace nada
+                            @else
+                                <optgroup label="{{ $oficina->ciudad }}"></optgroup>
+                                @php
+                                    $ciudad = $oficina->ciudad;
+                                @endphp
+                            @endif
+                            @if($ciudad === $oficina->ciudad)
+                                    <option value="{{ $oficina->id }}">{{ $oficina->calle }}, {{ $oficina->num_calle }}</option>
+                            @endif
+                        @endforeach
+                    </select>
+                    <input type="submit" class="btn btn-default" value="Seleccionar oficina">
+                </form>
             </div>
         </div>
     </div>

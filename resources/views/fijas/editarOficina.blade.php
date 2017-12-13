@@ -3,30 +3,30 @@
 @section('section')
 
 
-<form id="editarOficina" method="POST" action="{{ route('actualizarOficina') }} ">
+<form id="editarOficina" method="POST" action="{{ route('editarOficina.actualizarOficina') }}">
     {{ csrf_field() }}
     <div class="modal-body">
         <div class="form-group">
+            <label for="id">Id</label>
+            <input type="text" name="id" class="form-control" id="id" value="<?= $datosOficina[0]->id;?>" readonly>
+        </div>
+        <div class="form-group">
             <label for="exampleInputCiudad">Ciudad</label>
-            <input type="text" name="ciudad" class="form-control" id="exampleInputCiudad" value="<?= $datos[0]->ciudad;?>">
+            <input type="text" name="ciudad" class="form-control" id="exampleInputCiudad" value="<?= $datosOficina[0]->ciudad;?>" readonly>
         </div>
         <div class="form-group">
             <label for="exampleInputCalle">Calle</label>
-            <input type="text" name="calle" class="form-control" id="exampleInputCalle" value="<?= $datos[0]->calle;?>">
+            <input type="text" name="calle" class="form-control" id="exampleInputCalle" value="<?= $datosOficina[0]->calle;?>">
         </div>
         <div class="form-group">
             <label for="exampleInputNumero">Número</label>
-            <input type="text" name="num_calle" class="form-control" id="exampleInputNumero" value="<?= $datos[0]->num_calle;?>">
+            <input type="text" name="num_calle" class="form-control" id="exampleInputNumero" value="<?= $datosOficina[0]->num_calle;?>">
         </div>
-        <div class="form-group">
-            <label for="exampleInputNumero">Número de taquillas</label>
-            <input type="text" class="form-control" id="exampleInputNumero" disabled value="<?= $num?>">
-            <input type="text" name="id" hidden value="<?= $id?>">
-        </div>
+
 
     </div>
     <div class="modal-footer">
-        <button type="submit" class="btn btn-warning">Editar oficina</button>
+        <input type="submit" class="btn btn-warning" value="Editar Oficina" />
         <button type="button" class="btn btn-error" data-dismiss="modal">Close</button>
     </div>
 

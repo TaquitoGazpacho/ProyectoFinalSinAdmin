@@ -3,7 +3,6 @@
         <div class="logo-footer">
             <a href="{{ route('index') }}"></a>
         </div>
-
         <!--<p class="footer-links">
             <a href="#">Home</a>
             ·

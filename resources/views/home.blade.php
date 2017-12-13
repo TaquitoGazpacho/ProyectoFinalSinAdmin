@@ -55,7 +55,7 @@
                                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                                         <h4 class="modal-title">Editar Perfil</h4>
                                     </div>
-                                    <form action="{{ route('editarUsuario') }}" method="post">
+                                    <form enctype="multipart/form-data" action="{{ route('editarUsuario') }}" method="post">
                                         {{ csrf_field() }}
                                         <div class="modal-body">
                                             <div class="form-group">
@@ -75,6 +75,11 @@
                                                     <label><input name="sexo" class="form-check-input" type="radio" value="Hombre"> Masculino</label> <br/>
                                                     <label><input name="sexo" class="form-check-input" type="radio" value="Mujer"> Femenino</label> <br/>
                                                     <label><input name="sexo" class="form-check-input" type="radio" value="Androgino" checked> Androgino</label>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="imagen">Imagen de Perfil:</label>
+                                                <input type="file" name="imagen" id="imagen">
+                                                <p class="help-block">Imagen de perfil</p>
                                             </div>
                                         </div>
                                         <div class="modal-footer">
