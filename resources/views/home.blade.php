@@ -43,7 +43,7 @@
                             <li><p><span class="glyphicon glyphicon-new-window one" style="width:50px;"></span>Oficina:</p></li>
                         </ul>
                         <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editProfile">Editar Perfil</button>
-                        <button type="button" class="btn btn-warning" data-toggle="modal">Cambiar Oficina</button>
+                        <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#cambiarOficina">Cambiar Oficina</button>
 
                         <!-- Modal -->
                         <div id="editProfile" class="modal fade" role="dialog">
@@ -105,6 +105,51 @@
 
                             </div>
                         </div>
+
+
+
+
+                        <div id="cambiarOficina" class="modal fade" role="dialog">
+                            <div class="modal-dialog">
+
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">Editar Perfil</h4>
+                                    </div>
+                                    <form enctype="multipart/form-data" action="{{ route('editarUsuario') }}" method="post">
+                                        {{ csrf_field() }}
+                                        <div class="modal-body">
+                                            @foreach ($oficinas as $oficina)
+                                                {{$oficina->ciudad}}
+                                                {{$oficina->calle}}
+                                                <br/>
+                                            @endforeach
+                                        </div>
+                                        <div class="modal-footer">
+                                            <input type="submit" value="Submit" class="btn btn-warning"/>
+                                            <input type="reset" name="reset" value="Reset" class="btn btn-error" />
+                                            <button type="button" class="btn btn-error" data-dismiss="modal">Close</button>
+                                        </div>
+                                    </form>
+                                    @if ($errors->any())
+                                        <div class="alert alert-danger">
+                                            <ul>
+                                                @foreach ($errors->all() as $error)
+                                                    <li>{{ $error }}</li>
+                                                @endforeach
+                                            </ul>
+                                        </div>
+                                    @endif
+                                </div>
+
+                            </div>
+                        </div>
+
+
+
+
 
                     </div>
                 </div>
@@ -198,19 +243,6 @@
             {{--SETTINGS--}}
             <div role="tabpanel" class="tab-pane" id="settings">...</div>
 
-            {{--REGISTROS--}}
-            <div role="tabpanel" class="tab-pane" id="registros">
-                <a class="btn btn-default" data-toggle="modal" data-target="#modalEmpresa">Registrar Empresa</a>
-                @include('fijas.registroEmpresaReparto')
-                <a class="btn btn-default" data-toggle="modal" data-target="#modalOficina">Registrar Oficina</a>
-                @include('fijas.registroOficinas')
-
-            </div>
-            {{--EDITAR--}}
-            <div role="tabpanel" class="tab-pane" id="editar">
-                <a class="btn btn-default">Editar Empresa</a>
-                <a class="btn btn-default">Editar Oficina</a>
-            </div>
         </div>
     </div>
 
