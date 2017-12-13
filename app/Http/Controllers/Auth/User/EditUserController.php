@@ -16,6 +16,7 @@ class EditUserController extends Controller
             'nombre' => 'required|string|max:30',
             'apellido' => 'required|string|max:50',
             'telefono' => 'required|integer',
+            'imagen' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
     }
     public function actualizar(Request $request)
@@ -30,9 +31,30 @@ class EditUserController extends Controller
             ]);
 
     }
+    public function guardarImagen($imagen){
+        $imageName = 'prueba' . '.jpg';// . $imagen->getClientOriginalExtension();
+
+        $imagen->move(
+            base_path() . '/public/img/userImg/', $imageName
+        );
+    }
     public function ejecutar(Request $request)
     {
         $this->validator($request->all())->validate();
+
+
+        if ($request->file('imagen')){
+            $image = $request->file('imagen');
+
+            $input['imagename'] = time() . '-' . Auth::guard('web')->user()->id . '-' . Auth::guard('web')->user()->name . '.' . $image->getClientOriginalExtension();
+
+            $destinationPath = public_path('/img/userImg');
+
+            $image->move($destinationPath, $input['imagename']);
+
+            Auth::guard('web')->user()->changeImage($input['imagename']);
+        }
+
         $this->actualizar($request);
 
         return redirect()->route('home');
