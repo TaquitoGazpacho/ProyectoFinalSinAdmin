@@ -31,7 +31,10 @@ class User extends Authenticatable
     {
         return $this->belongsTo('App\Models\Suscripcion');
     }
-
+    public function oficina()
+    {
+        return $this->belongsTo('App\Models\Oficina');
+    }
     public function changeImage($image){
         User::where('id', $this->id)
             ->update(['image' => 'img/userImg/'.$image]);
