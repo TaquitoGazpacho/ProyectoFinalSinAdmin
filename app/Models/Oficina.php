@@ -17,6 +17,11 @@ class Oficina extends Model
         return $this->hasMany('App\Models\Taquilla');
     }
 
+    public function user()
+    {
+        return $this->hasMany('App\Models\User');
+    }
+
     public static function getOficinas()
     {
         $oficinas = DB::table('oficinas')->select('id', 'ciudad', 'calle', 'num_calle')->orderBy('ciudad')->get();
