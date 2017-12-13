@@ -24,7 +24,7 @@ class Oficina extends Model
     }
 
     public static function getCalles() {
-        $calles = DB::table('oficinas')->select('calle', 'num_calle');
+        $calles = DB::table('oficinas')->select('ciudad', 'calle', 'num_calle');
 
         return $calles;
     }
