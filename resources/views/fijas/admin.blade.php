@@ -46,7 +46,7 @@
             </div>
             {{--EDITAR--}}
             <div role="tabpanel" class="tab-pane" id="editar">
-                <form>
+                <form method="POST" action="{{ route('editarEmpresa') }}">
                     {{ csrf_field() }}
                     <select>
                         <option>Selecciona la empresa</option>
