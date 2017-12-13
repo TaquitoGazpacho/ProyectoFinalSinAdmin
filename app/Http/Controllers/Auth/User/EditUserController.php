@@ -59,4 +59,11 @@ class EditUserController extends Controller
 
         return redirect()->route('home');
     }
+
+    public function cambiarOficina(Request $request){
+        $oficina = $request->ciudad;
+        Auth::guard('web')->user()->cambiarOficina($oficina);
+
+        return redirect()->route('home');
+    }
 }

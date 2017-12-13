@@ -40,7 +40,13 @@
                             <li><p><span class="glyphicon glyphicon-earphone one" style="width:50px;"></span>Phone: {{Auth::guard('web')->user()->phone}}</p></li>
                             <li><p><span class="glyphicon glyphicon-map-marker one" style="width:50px;"></span>Sex: {{Auth::guard('web')->user()->sex}}</p></li>
                             <li><p><span class="glyphicon glyphicon-new-window one" style="width:50px;"></span>Suscripción: {{Auth::guard('web')->user()->suscripcion->name }}</p></li>
-                            <li><p><span class="glyphicon glyphicon-new-window one" style="width:50px;"></span>Oficina:</p></li>
+                            <li><p><span class="glyphicon glyphicon-new-window one" style="width:50px;"></span>Oficina:
+                                    @if(Auth::guard('web')->user()->oficina_id)
+                                        {{Auth::guard('web')->user()->oficina->calle}} ({{Auth::guard('web')->user()->oficina->ciudad}})
+                                    @else
+                                        selecciona oficina
+                                    @endif
+                                </p></li>
                         </ul>
                         <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editProfile">Editar Perfil</button>
                         <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#cambiarOficina">Cambiar Oficina</button>
@@ -118,12 +124,17 @@
                                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                                         <h4 class="modal-title">Editar Perfil</h4>
                                     </div>
-                                    <form enctype="multipart/form-data" action="{{ route('editarUsuario') }}" method="post">
+                                    <form enctype="multipart/form-data" action="{{route('editarUsuario.oficina')}}" method="post">
                                         {{ csrf_field() }}
                                         <div class="modal-body">
+                                            <?php $ciudad=""; ?>
                                             @foreach ($oficinas as $oficina)
-                                                {{$oficina->ciudad}}
-                                                {{$oficina->calle}}
+                                                @if ($ciudad != $oficina->ciudad)
+                                                    <h3>{{ $oficina->ciudad }}</h3>
+                                                    <?php $ciudad=$oficina->ciudad ?>
+                                                @endif
+
+                                                    <label><input type="radio" name="ciudad" value="{{$oficina->id}}"/> {{$oficina->calle}}, {{$oficina->num_calle}}</label>
                                                 <br/>
                                             @endforeach
                                         </div>

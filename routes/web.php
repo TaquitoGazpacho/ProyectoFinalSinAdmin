@@ -28,6 +28,7 @@ Route::get('/password/reset/{token}', 'Auth\User\ForgotPasswordController@showRe
 Route::post('/register', 'Auth\User\RegisterController@register');
 Route::get('/register', 'Auth\User\RegisterController@showRegistrationForm')->name('register');
 Route::post('/editarUsuario', 'Auth\User\EditUserController@ejecutar')->name('editarUsuario');
+Route::post('/editarUsuario/oficina', 'Auth\User\EditUserController@cambiarOficina')->name('editarUsuario.oficina');
 Route::get('/perfil', 'HomeController@index')->name('home');
 
 
