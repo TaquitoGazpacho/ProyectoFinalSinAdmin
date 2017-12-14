@@ -12,6 +12,13 @@ class Oficina extends Model
         'ciudad', 'calle', 'num_calle',
     ];
 
+    public function __construct($id, $ciudad, $calle, $num_calle){
+        $this->id = $id;
+        $this->ciudad = $ciudad;
+        $this->calle = $calle;
+        $this->num_calle = $num_calle;
+    }
+
     public function taquilla()
     {
         return $this->hasMany('App\Models\Taquilla');

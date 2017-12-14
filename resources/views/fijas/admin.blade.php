@@ -10,6 +10,7 @@
             <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
             <li role="presentation"><a href="#registros" aria-controls="registro" role="tab" data-toggle="tab">Registros</a></li>
             <li role="presentation"><a href="#editar" aria-controls="editar" role="tab" data-toggle="tab">Editar</a></li>
+            <li role="presentation"><a href="#oficinas" aria-controls="oficinas" role="tab" data-toggle="tab">Oficinas</a></li>
         </ul>
 
         <!-- Tab panes -->
@@ -76,6 +77,37 @@
                     <input type="submit" class="btn btn-default" value="Seleccionar oficina">
                 </form>
             </div>
+
+            <div role="tabpanel" class="tab-pane" id="oficinas">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Ciudad</th>
+                            <th>Calle</th>
+                            <th>Número</th>
+                            <th>Cant. Taquillas</th>
+                            <th>Añadir Taquillas</th>
+                            <th>Editar/Borrar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($oficinas as $oficina)
+                            <tr>
+                                <td>{{ $oficina->id }}</td>
+                                <td>{{ $oficina->ciudad }}</td>
+                                <td>{{ $oficina->calle }}</td>
+                                <td>{{ $oficina->num_calle }}</td>
+                                <?php $ofi = new \App\Models\Oficina($oficina->id, $oficina->ciudad, $oficina->calle, $oficina->num_calle); ?>
+                                <td>{{ sizeof($ofi->taquilla) }}</td>
+                                <td><a href="" class="btn btn-warning">Añadir taquillas</a></td>
+                                <td><input type="checkbox" name="editdelete" /></td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+
         </div>
     </div>
 

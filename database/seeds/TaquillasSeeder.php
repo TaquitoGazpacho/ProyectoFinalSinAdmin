@@ -16,7 +16,7 @@ class TaquillasSeeder extends Seeder
             'tamanio' => 'Grande',
             'ocupada' => false,
             'estado' => 'Funcionando',
-            'id_oficina' => 1,
+            'oficina_id' => 1,
 
         ]);
 
@@ -25,7 +25,7 @@ class TaquillasSeeder extends Seeder
             'tamanio' => 'Grande',
             'ocupada' => false,
             'estado' => 'Funcionando',
-            'id_oficina' => 1,
+            'oficina_id' => 1,
 
         ]);
         DB::table('taquillas')->insert([
@@ -33,7 +33,7 @@ class TaquillasSeeder extends Seeder
             'tamanio' => 'Mediana',
             'ocupada' => false,
             'estado' => 'Funcionando',
-            'id_oficina' => 1,
+            'oficina_id' => 1,
 
         ]);
 
@@ -42,7 +42,7 @@ class TaquillasSeeder extends Seeder
             'tamanio' => 'Grande',
             'ocupada' => false,
             'estado' => 'Funcionando',
-            'id_oficina' => 2,
+            'oficina_id' => 2,
 
         ]);
 
@@ -51,7 +51,7 @@ class TaquillasSeeder extends Seeder
             'tamanio' => 'Grande',
             'ocupada' => false,
             'estado' => 'Funcionando',
-            'id_oficina' => 2,
+            'oficina_id' => 2,
 
         ]);
         DB::table('taquillas')->insert([
@@ -59,7 +59,7 @@ class TaquillasSeeder extends Seeder
             'tamanio' => 'Mediana',
             'ocupada' => false,
             'estado' => 'Funcionando',
-            'id_oficina' => 3,
+            'oficina_id' => 3,
 
         ]);
     }
