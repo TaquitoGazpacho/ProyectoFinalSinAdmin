@@ -67,9 +67,11 @@ function validateEmail(email) {
 }
 
 function mostrarEmpresa() {
-    let url = 'http://localhost/admin/editarEmpresa/mostrarDatos?empresa='+document.getElementsByName('empresa')[0].value;
+    let url = window.location.href;
+    let urlFija = '/editarEmpresa/mostrarDatos?empresa='+document.getElementsByName('empresa')[0].value;
+    let urlCompleta = url + urlFija;
     let http = new XMLHttpRequest();
-    http.open("GET", url, true);
+    http.open("GET", urlCompleta, true);
     http.send();
 
 
