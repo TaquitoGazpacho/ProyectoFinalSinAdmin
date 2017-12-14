@@ -38,6 +38,7 @@ class EmpresaRepartoController extends Controller
         $this->validator($request->all())->validate();
         $empresaReparto=$this->create($request->all());
         $empresaReparto->save();
+
         return view('/fijas/editarEmpresaReparto');
     }
 

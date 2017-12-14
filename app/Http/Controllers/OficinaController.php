@@ -37,6 +37,7 @@ class OficinaController extends Controller
         $id=$oficina->id;
         $num = $this->calculaTaquillas($oficina->id);
         $datosOficina = $this->mostrarDatos($oficina->id);
+
         return view('/fijas/editarOficina', ['datosOficina' => $datosOficina]);
 
     }
