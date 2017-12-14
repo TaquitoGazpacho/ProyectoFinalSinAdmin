@@ -32,10 +32,10 @@ class OficinaController extends Controller
     public function store(Request $request)
     {
         $this->validator($request->all())->validate();
-        $oficina=$this->create($request->all());
+        $oficina= new Oficina($request->id,$request->ciudad,$request->calle,$request->num_calle);//$this->create($request->all());
         $oficina->save();
-        $id=$oficina->id;
-        $num = $this->calculaTaquillas($oficina->id);
+
+        //se cambiara
         $datosOficina = $this->mostrarDatos($oficina->id);
 
         return view('/fijas/editarOficina', ['datosOficina' => $datosOficina]);
@@ -55,7 +55,7 @@ class OficinaController extends Controller
 
     public function calculaTaquillas($id)
     {
-        return $taquillas = DB::table('taquillas')->select('id')->where('id_oficina',$id)->count();
+        return $taquillas = DB::table('taquillas')->select('id')->where('oficina_id',$id)->count();
     }
 
     public function actualizar(Request $request)
@@ -67,6 +67,13 @@ class OficinaController extends Controller
                         'num_calle' => $request->num_calle,
                 ]);
 
+        return redirect()->route('admin.home');
+    }
+
+    public function dropOficinas(Request $request){
+       for ($i=0; $i<sizeof($request->delete); $i++){
+           DB::table('oficinas')->where('id',$request->delete[$i])->delete();
+        }
         return redirect()->route('admin.home');
     }
 

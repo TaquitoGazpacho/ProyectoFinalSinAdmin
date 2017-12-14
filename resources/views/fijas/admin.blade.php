@@ -79,35 +79,49 @@
             </div>
 
             <div role="tabpanel" class="tab-pane" id="oficinas">
-                <table class="table table-hover">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Ciudad</th>
-                            <th>Calle</th>
-                            <th>Número</th>
-                            <th>Cant. Taquillas</th>
-                            <th>Añadir Taquillas</th>
-                            <th>Editar/Borrar</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($oficinas as $oficina)
+                <form action="{{route('eliminarOficinas')}}" method="post">
+                    {{ csrf_field() }}
+                    <table class="table table-hover">
+                        <thead>
                             <tr>
-                                <td>{{ $oficina->id }}</td>
-                                <td>{{ $oficina->ciudad }}</td>
-                                <td>{{ $oficina->calle }}</td>
-                                <td>{{ $oficina->num_calle }}</td>
-                                <?php $ofi = new \App\Models\Oficina($oficina->id, $oficina->ciudad, $oficina->calle, $oficina->num_calle); ?>
-                                <td>{{ sizeof($ofi->taquilla) }}</td>
-                                <td><a href="" class="btn btn-warning">Añadir taquillas</a></td>
-                                <td><input type="checkbox" name="editdelete" /></td>
+                                <th>ID</th>
+                                <th>Ciudad</th>
+                                <th>Calle</th>
+                                <th>Número</th>
+                                <th>Cant. Taquillas</th>
+                                <th>Añadir Taquillas</th>
+                                <th>Editar</th>
+                                <th>Borrar</th>
                             </tr>
-                        @endforeach
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                            @foreach ($oficinas as $oficina)
+                                <tr>
+                                    <td>{{ $oficina->id }}</td>
+                                    <td>{{ $oficina->ciudad }}</td>
+                                    <td>{{ $oficina->calle }}</td>
+                                    <td>{{ $oficina->num_calle }}</td>
+                                    <?php $ofi = new \App\Models\Oficina($oficina->id, $oficina->ciudad, $oficina->calle, $oficina->num_calle); ?>
+                                    <td>{{ sizeof($ofi->taquilla) }}</td>
+                                    <td><a href="" class="btn btn-warning">Añadir taquillas</a></td>
+                                    <td><a href="" class="btn btn-warning">Editar</a></td>
+                                    <td><input type="checkbox" name="delete[]" value="{{$oficina->id}}" /></td>
+                                </tr>
+                            @endforeach
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><input type="submit" value="Eliminar" class="btn btn-error"/></td>
+                                </tr>
+                        </tbody>
+                    </table>
+                </form>
             </div>
-
         </div>
     </div>
 
