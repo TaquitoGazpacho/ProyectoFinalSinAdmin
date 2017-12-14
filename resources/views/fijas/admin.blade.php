@@ -41,8 +41,6 @@
             <div role="tabpanel" class="tab-pane" id="registros">
                 <a class="btn btn-default" data-toggle="modal" data-target="#modalEmpresa">Registrar Empresa</a>
                 @include('fijas.registroEmpresaReparto')
-                <a class="btn btn-default" data-toggle="modal" data-target="#modalOficina">Registrar Oficina</a>
-                @include('fijas.registroOficinas')
 
             </div>
             {{--EDITAR--}}
@@ -108,19 +106,12 @@
                                     <td><input type="checkbox" name="delete[]" value="{{$oficina->id}}" /></td>
                                 </tr>
                             @endforeach
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td><input type="submit" value="Eliminar" class="btn btn-error"/></td>
-                                </tr>
                         </tbody>
                     </table>
+                    <a class="btn btn-default" data-toggle="modal" data-target="#modalOficina">Registrar Oficina</a>
+                    <input type="submit" value="Eliminar" class="btn btn-error pull-right"/>
                 </form>
+                @include('fijas.registroOficinas')
             </div>
         </div>
     </div>
