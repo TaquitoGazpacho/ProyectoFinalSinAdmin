@@ -23,6 +23,13 @@
             <input type="text" name="num_calle" class="form-control" id="exampleInputNumero" value="<?= $datosOficina[0]->num_calle;?>">
         </div>
 
+        <div>
+
+
+
+        </div>
+
+
 
     </div>
     <div class="modal-footer">

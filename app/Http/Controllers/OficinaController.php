@@ -32,10 +32,10 @@ class OficinaController extends Controller
     public function store(Request $request)
     {
         $this->validator($request->all())->validate();
-        $oficina= new Oficina($request->id,$request->ciudad,$request->calle,$request->num_calle);//$this->create($request->all());
+        $oficina=$this->create($request->all());
         $oficina->save();
-
-        //se cambiara
+        $id=$oficina->id;
+        $num = $this->calculaTaquillas($oficina->id);
         $datosOficina = $this->mostrarDatos($oficina->id);
 
         return view('/fijas/editarOficina', ['datosOficina' => $datosOficina]);
@@ -55,7 +55,7 @@ class OficinaController extends Controller
 
     public function calculaTaquillas($id)
     {
-        return $taquillas = DB::table('taquillas')->select('id')->where('oficina_id',$id)->count();
+        return $taquillas = DB::table('taquillas')->select('id')->where('id_oficina',$id)->count();
     }
 
     public function actualizar(Request $request)
@@ -70,11 +70,12 @@ class OficinaController extends Controller
         return redirect()->route('admin.home');
     }
 
-    public function dropOficinas(Request $request){
-       for ($i=0; $i<sizeof($request->delete); $i++){
-           DB::table('oficinas')->where('id',$request->delete[$i])->delete();
-        }
-        return redirect()->route('admin.home');
+    public function getTaquillasPorIdOficina($idOficina)
+    {
+        $taquillas = DB::table('taquillas')->select('id', 'num_taquilla', 'tamanio', 'ocupada','estado','id_oficina')->where('id_oficina',$idOficina)->get();
+
+        return $taquillas;
     }
+
 
 }

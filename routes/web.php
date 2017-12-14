@@ -47,6 +47,8 @@ Route::prefix('admin')->group(function() {
     Route::get('/editarEmpresa/mostrarDatos', 'EmpresaRepartoController@mostrarDatos')->name('mostrarDatos');
     Route::post('/editarOficina/eliminar', 'OficinaController@dropOficinas')->name('eliminarOficinas');
 
+
+
     //Route::get('/password/reset', 'AuthAdmin\ForgotPasswordController@showLinkRequestForm')->name('admin.password.request');
     //Route::post('/password/email', 'AuthAdmin\ForgotPasswordController@sendResetLinkEmail')->name('admin.password.email');
     //Route::get('/password/reset/{token}', 'AuthAdmin\ResetPasswordController@showResetForm')->name('admin.password.reset');
