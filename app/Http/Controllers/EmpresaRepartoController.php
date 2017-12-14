@@ -39,9 +39,7 @@ class EmpresaRepartoController extends Controller
         $empresaReparto=$this->create($request->all());
         $empresaReparto->save();
 
-
-
-        return route('admin.home');
+        return redirect()->route('admin.home');
     }
 
     public function mostrarDatos(Request $request) {

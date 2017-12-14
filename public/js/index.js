@@ -22,7 +22,6 @@ $( document ).ready( function() {
             }
         });
     });
-    $('#botonEmpresa').on('click', mostrarEmpresa);
 });
 
 function addEvent(){
@@ -66,9 +65,9 @@ function validateEmail(email) {
     return re.test(email);
 }
 
-function mostrarEmpresa() {
+function mostrarEmpresa(event) {
     let url = window.location.href;
-    let urlFija = '/editarEmpresa/mostrarDatos?empresa='+document.getElementsByName('empresa')[0].value;
+    let urlFija = '/editarEmpresa/mostrarDatos?empresa='+event.target.name;//document.getElementsByName('empresa')[0].value;
     let urlCompleta = url + urlFija;
     let http = new XMLHttpRequest();
     http.open("GET", urlCompleta, true);

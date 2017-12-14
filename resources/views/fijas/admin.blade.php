@@ -9,7 +9,7 @@
         <ul class="nav nav-tabs" role="tablist" id="userTabs">
             <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
             <li role="presentation"><a href="#registros" aria-controls="registro" role="tab" data-toggle="tab">Registros</a></li>
-            <li role="presentation"><a href="#editar" aria-controls="editar" role="tab" data-toggle="tab">Editar</a></li>
+            <li role="presentation"><a href="#empresas" aria-controls="empresas" role="tab" data-toggle="tab">Empresas</a></li>
             <li role="presentation"><a href="#oficinas" aria-controls="oficinas" role="tab" data-toggle="tab">Oficinas</a></li>
         </ul>
 
@@ -39,41 +39,41 @@
 
             {{--REGISTROS--}}
             <div role="tabpanel" class="tab-pane" id="registros">
-                <a class="btn btn-default" data-toggle="modal" data-target="#modalEmpresa">Registrar Empresa</a>
-                @include('fijas.registroEmpresaReparto')
+               <h2>Estoy vacío por dentro :(</h2>
 
             </div>
-            {{--EDITAR--}}
-            <div role="tabpanel" class="tab-pane" id="editar">
-                <select name="empresa">
-                    <option>Selecciona la empresa</option>
-                    @foreach($empresas as $empresa)
-                        <option value="{{ $empresa->nombre }}">{{ $empresa->nombre }}</option>
-                    @endforeach
-                </select>
-                <input id="botonEmpresa" type="button" class="btn btn-default" data-toggle="modal" data-target="#modalEditarEmpresa" value="Seleccionar empresa">
+            {{--Empresas--}}
+            <div role="tabpanel" class="tab-pane" id="empresas">
+
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Email</th>
+                            <th>Teléfono</th>
+                            <th>Nif</th>
+                            <th>Editar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($empresas as $empresa)
+                            <tr>
+                                <td>{{$empresa->id}}</td>
+                                <td>{{$empresa->nombre}}</td>
+                                <td>{{$empresa->email}}</td>
+                                <td>{{$empresa->telefono}}</td>
+                                <td>{{$empresa->nif}}</td>
+                                <td><button name="{{$empresa->nombre}}" class="btn btn-default" onclick="mostrarEmpresa(event)" data-toggle="modal" data-target="#modalEditarEmpresa">Editar</button></td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+                <a class="btn btn-warning" data-toggle="modal" data-target="#modalEmpresa">Registrar Empresa</a>
+                @include('fijas.registroEmpresaReparto')
+                {{--Modal--}}
                 @include('fijas.editarEmpresaReparto')
 
-                <form method="POST" action="#">
-                    {{ csrf_field() }}
-                    <select name="oficina">
-                        <option>Selecciona la oficina</option>
-                        @foreach($oficinas as $oficina)
-                            @if($ciudad === $oficina->ciudad)
-                                //No hace nada
-                            @else
-                                <optgroup label="{{ $oficina->ciudad }}"></optgroup>
-                                @php
-                                    $ciudad = $oficina->ciudad;
-                                @endphp
-                            @endif
-                            @if($ciudad === $oficina->ciudad)
-                                    <option value="{{ $oficina->id }}">{{ $oficina->calle }}, {{ $oficina->num_calle }}</option>
-                            @endif
-                        @endforeach
-                    </select>
-                    <input type="submit" class="btn btn-default" value="Seleccionar oficina">
-                </form>
             </div>
 
             <div role="tabpanel" class="tab-pane" id="oficinas">
@@ -101,14 +101,14 @@
                                     <td>{{ $oficina->num_calle }}</td>
                                     <?php $ofi = new \App\Models\Oficina($oficina->id, $oficina->ciudad, $oficina->calle, $oficina->num_calle); ?>
                                     <td>{{ sizeof($ofi->taquilla) }}</td>
-                                    <td><a href="" class="btn btn-warning">Añadir taquillas</a></td>
-                                    <td><a href="{{ route('editarOficina', ['id' => $oficina->id ]) }}" class="btn btn-warning">Editar</a></td>
+                                    <td><a href="" class="btn btn-default">Añadir taquillas</a></td>
+                                    <td><a href="{{ route('editarOficina', ['id' => $oficina->id ]) }}" class="btn btn-default">Editar</a></td>
                                     <td><input type="checkbox" name="delete[]" value="{{$oficina->id}}" /></td>
                                 </tr>
                             @endforeach
                         </tbody>
                     </table>
-                    <a class="btn btn-default" data-toggle="modal" data-target="#modalOficina">Registrar Oficina</a>
+                    <a class="btn btn-warning" data-toggle="modal" data-target="#modalOficina">Registrar Oficina</a>
                     <input type="submit" value="Eliminar" class="btn btn-error pull-right"/>
                 </form>
                 @include('fijas.registroOficinas')
