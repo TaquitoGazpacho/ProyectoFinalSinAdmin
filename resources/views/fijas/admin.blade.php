@@ -54,7 +54,7 @@
                 <input id="botonEmpresa" type="button" class="btn btn-default" data-toggle="modal" data-target="#modalEditarEmpresa" value="Seleccionar empresa">
                 @include('fijas.editarEmpresaReparto')
 
-                <form method="POST" action="{{ route('editarOficina') }}">
+                <form method="POST" action="#">
                     {{ csrf_field() }}
                     <select name="oficina">
                         <option>Selecciona la oficina</option>
@@ -102,7 +102,7 @@
                                     <?php $ofi = new \App\Models\Oficina($oficina->id, $oficina->ciudad, $oficina->calle, $oficina->num_calle); ?>
                                     <td>{{ sizeof($ofi->taquilla) }}</td>
                                     <td><a href="" class="btn btn-warning">Añadir taquillas</a></td>
-                                    <td><a href="" class="btn btn-warning">Editar</a></td>
+                                    <td><a href="{{ route('editarOficina', ['id' => $oficina->id ]) }}" class="btn btn-warning">Editar</a></td>
                                     <td><input type="checkbox" name="delete[]" value="{{$oficina->id}}" /></td>
                                 </tr>
                             @endforeach

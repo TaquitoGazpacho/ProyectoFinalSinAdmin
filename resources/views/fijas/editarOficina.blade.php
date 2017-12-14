@@ -34,7 +34,7 @@
     </div>
     <div class="modal-footer">
         <input type="submit" class="btn btn-warning" value="Editar Oficina" />
-        <button type="button" class="btn btn-error" data-dismiss="modal">Close</button>
+        <a href="{{route('admin.home')}}" class="btn btn-danger">Close</a>
     </div>
 
 </form>

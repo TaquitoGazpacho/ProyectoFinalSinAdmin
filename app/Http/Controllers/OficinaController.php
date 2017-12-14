@@ -31,9 +31,9 @@ class OficinaController extends Controller
         $datosOficina = $this->mostrarDatos($oficina->id);
         return redirect()->route('admin.home');
     }
-    public function index(Request $request)
+    public function index($id_request)
     {
-        $id = $request->get('oficina');
+        $id = $id_request;
         $datosOficina = $this->mostrarDatos($id);
         return view('/fijas/editarOficina', ['datosOficina' => $datosOficina]);
     }
