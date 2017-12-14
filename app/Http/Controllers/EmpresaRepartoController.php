@@ -39,7 +39,9 @@ class EmpresaRepartoController extends Controller
         $empresaReparto=$this->create($request->all());
         $empresaReparto->save();
 
-        return view('/fijas/editarEmpresaReparto');
+
+
+        return route('admin.home');
     }
 
     public function mostrarDatos(Request $request) {
