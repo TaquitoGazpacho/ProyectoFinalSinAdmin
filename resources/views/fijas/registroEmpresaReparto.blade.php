@@ -30,7 +30,7 @@
 
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-warning">Submit</button>
+                    <input type="submit" class="btn btn-warning" value="Registrar"/>
                     <button type="button" class="btn btn-error" data-dismiss="modal">Close</button>
                 </div>
             </form>
