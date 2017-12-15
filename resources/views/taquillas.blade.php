@@ -3,10 +3,10 @@
 @section('section')
     <?php
         $oficina = new \App\Models\Oficina();
-        $oficina->getOficina($taquillas[0]->oficina_id);
+        $oficina->getOficina($ofi_id);
     ?>
-
     <div class="container">
+        {{--@if (isset($taquillas))--}}
         <h3>Oficina {{ $oficina->id.": ".$oficina->calle.", ".$oficina->num_calle." (".$oficina->ciudad.")" }}</h3>
         <table class="table table-hover">
             <thead>
@@ -46,7 +46,8 @@
 
                 <!-- Modal content-->
                 <div class="modal-content">
-                    <form action="#" method="post">
+                    <form action="{{route('crearTaquillas')}}" method="post">
+                        {{ csrf_field() }}
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                             <h4 class="modal-title">Modal Header</h4>
@@ -54,15 +55,15 @@
                         <div class="modal-body">
                                 <div class="form-group">
                                     <label for="taquillaG">Taquillas grandes:</label>
-                                    <input type="number" class="form-control" name="taquillaG" id="taquillaG">
+                                    <input type="number" class="form-control" value="0" name="taquillaG" id="taquillaG">
                                 </div>
                                 <div class="form-group">
                                     <label for="taquillaM">Taquillas medianas:</label>
-                                    <input type="number" class="form-control" name="taquillaM" id="taquillaM">
+                                    <input type="number" class="form-control" value="0" name="taquillaM" id="taquillaM">
                                 </div>
                                 <div class="form-group">
                                     <label for="taquillaS">Taquillas pequeñas:</label>
-                                    <input type="number" class="form-control" name="taquillaS" id="taquillaS">
+                                    <input type="number" class="form-control" value="0" name="taquillaS" id="taquillaS">
                                 </div>
                                 <div class="form-group">
                                     <label for="oficina_id">Oficina:</label>
@@ -72,13 +73,14 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <input type="submit" class="btn btn-warning" value="Submit" />
                         </div>
                     </form>
                 </div>
 
             </div>
         </div>
-
+    {{--@endif--}}
     </div>
 
 @endsection

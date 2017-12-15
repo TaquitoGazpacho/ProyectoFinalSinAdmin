@@ -66,6 +66,6 @@ class OficinaController extends Controller
         $taquillas= DB::table('taquillas')
             ->where('oficina_id', $oficina_id)
             ->get();
-        return view( 'taquillas',['taquillas' => $taquillas]);
+        return view( 'taquillas',['taquillas' => $taquillas, 'ofi_id' => $oficina_id]);
     }
 }

@@ -47,6 +47,7 @@ Route::prefix('admin')->group(function() {
     Route::get('/editarEmpresa/mostrarDatos', 'EmpresaRepartoController@mostrarDatos')->name('mostrarDatos');
     Route::post('/editarOficina/eliminar', 'OficinaController@dropOficinas')->name('eliminarOficinas');
     Route::get('/listarTaquillas/{id}', 'OficinaController@showTaquillas')->name('listarTaquillas');
+    Route::post('/añadirTaquillas', 'TaquillasController@añadirTaquillas')->name('crearTaquillas');
 
 
 
