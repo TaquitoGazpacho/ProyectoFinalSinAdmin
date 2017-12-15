@@ -25,7 +25,10 @@ class OficinaController extends Controller
     public function store(Request $request)
     {
         $this->validator($request->all())->validate();
-        $oficina= new Oficina($request->id,$request->ciudad,$request->calle,$request->num_calle);//$this->create($request->all());
+        $oficina= new Oficina();
+        $oficina->setCalle($request->calle);
+        $oficina->setCiudad($request->ciudad);
+        $oficina->setNumCalle($request->num_calle);
         $oficina->save();
         //se cambiara
         $datosOficina = $this->mostrarDatos($oficina->id);
