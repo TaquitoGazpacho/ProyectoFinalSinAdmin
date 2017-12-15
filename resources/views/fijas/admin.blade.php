@@ -101,7 +101,7 @@
                                     <td>{{ $oficina->num_calle }}</td>
                                     <?php $ofi = new \App\Models\Oficina($oficina->id, $oficina->ciudad, $oficina->calle, $oficina->num_calle); ?>
                                     <td>{{ sizeof($ofi->taquilla) }}</td>
-                                    <td><a href="" class="btn btn-default">Añadir taquillas</a></td>
+                                    <td><a href="{{ route( 'listarTaquillas', ['id' => $oficina->id]) }}" class="btn btn-default">Listar taquillas</a></td>
                                     <td><a href="{{ route('editarOficina', ['id' => $oficina->id ]) }}" class="btn btn-default">Editar</a></td>
                                     <td><input type="checkbox" name="delete[]" value="{{$oficina->id}}" /></td>
                                 </tr>

@@ -12,11 +12,24 @@ class Oficina extends Model
         'ciudad', 'calle', 'num_calle',
     ];
 
-    public function __construct($id, $ciudad, $calle, $num_calle){
-        $this->id = $id;
-        $this->ciudad = $ciudad;
-        $this->calle = $calle;
-        $this->num_calle = $num_calle;
+
+//    public function __construct($id, $ciudad, $calle, $num_calle){
+//        $this->id = $id;
+//        $this->ciudad = $ciudad;
+//        $this->calle = $calle;
+//        $this->num_calle = $num_calle;
+//    }
+
+    public function __construct(){
+
+    }
+
+    public function getCiudad(){}
+    public function getCalle(){}
+    public function getNumCalle(){}
+
+    public function getOficina($id){
+
     }
 
     public function taquilla()

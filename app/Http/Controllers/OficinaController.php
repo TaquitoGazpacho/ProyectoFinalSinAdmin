@@ -29,7 +29,7 @@ class OficinaController extends Controller
         $oficina->save();
         //se cambiara
         $datosOficina = $this->mostrarDatos($oficina->id);
-        return redirect()->route('admin.home');
+        return view('fijas.admin');
     }
     public function index($id_request)
     {
@@ -60,5 +60,12 @@ class OficinaController extends Controller
             DB::table('oficinas')->where('id',$request->delete[$i])->delete();
         }
         return redirect()->route('admin.home');
+    }
+
+    public function showTaquillas($oficina_id){
+        $taquillas= DB::table('taquillas')
+            ->where('oficina_id', $oficina_id)
+            ->get();
+        return view( 'taquillas',['taquillas' => $taquillas]);
     }
 }

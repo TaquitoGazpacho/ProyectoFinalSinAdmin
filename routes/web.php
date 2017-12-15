@@ -46,6 +46,7 @@ Route::prefix('admin')->group(function() {
     Route::post('/editarEmpresa/actualizar', 'EmpresaRepartoController@actualizar')->name('editarEmpresa.actualizarEmpresaReparto');
     Route::get('/editarEmpresa/mostrarDatos', 'EmpresaRepartoController@mostrarDatos')->name('mostrarDatos');
     Route::post('/editarOficina/eliminar', 'OficinaController@dropOficinas')->name('eliminarOficinas');
+    Route::get('/listarTaquillas/{id}', 'OficinaController@showTaquillas')->name('listarTaquillas');
 
 
 
