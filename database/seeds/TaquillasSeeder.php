@@ -15,7 +15,7 @@ class TaquillasSeeder extends Seeder
             'numero_taquilla' => 1,
             'tamanio' => 'Grande',
             'ocupada' => false,
-            'estado' => 'Funcionando',
+            'estado' => 'funcionando',
             'oficina_id' => 1,
 
         ]);
@@ -24,7 +24,7 @@ class TaquillasSeeder extends Seeder
             'numero_taquilla' => 2,
             'tamanio' => 'Grande',
             'ocupada' => false,
-            'estado' => 'Funcionando',
+            'estado' => 'funcionando',
             'oficina_id' => 1,
 
         ]);
@@ -32,7 +32,7 @@ class TaquillasSeeder extends Seeder
             'numero_taquilla' => 3,
             'tamanio' => 'Mediana',
             'ocupada' => false,
-            'estado' => 'Funcionando',
+            'estado' => 'funcionando',
             'oficina_id' => 1,
 
         ]);
@@ -41,7 +41,7 @@ class TaquillasSeeder extends Seeder
             'numero_taquilla' => 4,
             'tamanio' => 'Grande',
             'ocupada' => false,
-            'estado' => 'Funcionando',
+            'estado' => 'funcionando',
             'oficina_id' => 2,
 
         ]);
@@ -50,7 +50,7 @@ class TaquillasSeeder extends Seeder
             'numero_taquilla' => 5,
             'tamanio' => 'Grande',
             'ocupada' => false,
-            'estado' => 'Funcionando',
+            'estado' => 'funcionando',
             'oficina_id' => 2,
 
         ]);
@@ -58,7 +58,7 @@ class TaquillasSeeder extends Seeder
             'numero_taquilla' => 6,
             'tamanio' => 'Mediana',
             'ocupada' => false,
-            'estado' => 'Funcionando',
+            'estado' => 'funcionando',
             'oficina_id' => 3,
 
         ]);

@@ -21,6 +21,7 @@ class TaquillasController extends Controller
         $taquillasM = $request->taquillaM;
         $taquillasS = $request->taquillaS;
         $insert=[];
+        $taquillaCreada = true;
         for ($i=0;$i<$taquillasG;$i++) {
             array_push($insert,['numero_taquilla' => $max_taquilla, 'tamanio' => 'Grande', 'ocupada' => false, 'estado' => 'funcionando', 'oficina_id' => $request->oficina_id]);
             $max_taquilla++;
@@ -34,7 +35,7 @@ class TaquillasController extends Controller
             $max_taquilla++;
         };
         DB::table('taquillas')->insert($insert);
-        return redirect()->route('listarTaquillas', ['id'=> $request->oficina_id]);
+        return redirect()->route('listarTaquillas', ['id'=> $request->oficina_id, 'taquillaCreada'=> $taquillaCreada]);
 
     }
 

@@ -88,5 +88,10 @@
     {{--@endif--}}
     </div>
 
-@endsection
+    @if(Request::input('taquillaCreada') &&  Request::input('taquillaCreada') == true)
+        <script>
+            swal("Taquillas añadidas", "Has añadido las taquillas satisfactoriamente", "success");
+        </script>
+    @endif
 
+@endsection

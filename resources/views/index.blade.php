@@ -4,7 +4,7 @@
     <header>
         <div class="centrado">
             <h1>
-                Service<label>Box</label>
+                Lock<label>Box</label>
             </h1>
             <h2 id="TextoLanding">
                 Nuestras oficinas en cualquier lado!!
