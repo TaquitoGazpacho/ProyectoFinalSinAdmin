@@ -1,5 +1,11 @@
 @php
+
+    use App\Models\Oficina;
+    use App\Models\Empresa_reparto;
+
     $ciudad = null;
+    $oficinas = Oficina::getOficinas();
+    $empresas = Empresa_reparto::getEmpresas();
 @endphp
 @extends('fijas.master')
 
@@ -115,5 +121,15 @@
             </div>
         </div>
     </div>
+
+    @if(isset($empresaRegistrada) &&  $empresaRegistrada)
+        <script>
+            swal("Registro realizado", "Has registrado una empresa", "success");
+        </script>
+    @elseif(isset($oficinaRegistrada) &&  $oficinaRegistrada)
+        <script>
+            swal("Registro realizado", "Has registrado una oficina", "success");
+        </script>
+    @endif
 
 @endsection

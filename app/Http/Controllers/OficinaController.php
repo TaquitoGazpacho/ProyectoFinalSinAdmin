@@ -32,7 +32,8 @@ class OficinaController extends Controller
         $oficina->save();
         //se cambiara
         $datosOficina = $this->mostrarDatos($oficina->id);
-        return view('fijas.admin');
+        $oficinaRegistrada = true;
+        return view('fijas.admin', ['oficinaRegistrada'=>$oficinaRegistrada]);
     }
     public function index($id_request)
     {

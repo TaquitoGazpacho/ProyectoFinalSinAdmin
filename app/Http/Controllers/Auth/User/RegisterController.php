@@ -80,7 +80,8 @@ class RegisterController extends Controller
         $this->validator($request->all())->validate();
         event(new Registered($user = $this->create($request->all())));
         dispatch(new SendVerificationMail($user));
-        return view('verification.verification');
+        $usuarioRegistrado = true;
+        return view('index', ['usuarioRegistrado'=>$usuarioRegistrado]);
     }
 
     protected function verify($token)

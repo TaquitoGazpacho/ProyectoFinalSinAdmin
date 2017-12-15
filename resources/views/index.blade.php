@@ -124,6 +124,18 @@
             <div id="errores"></div>
         </form>
     </section>
+
+    @if(isset($usuarioRegistrado) &&  $usuarioRegistrado)
+        <script>
+            swal("Registro realizado", "Te has registrado satisfactoriamente", "success")
+                .then((value)=> {
+                    if (value) {
+                        swal("Verifica email", "En breve recibiras un email de confirmación", "info")
+                    }
+                });
+        </script>
+    @endif
+
 @endsection
 
 

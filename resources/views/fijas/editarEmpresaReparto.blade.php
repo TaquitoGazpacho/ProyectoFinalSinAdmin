@@ -12,11 +12,11 @@
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="InputId">Id</label>
-                        <input type="text" name="id" class="form-control" id="inputId" value="">
+                        <input type="text" name="id" class="form-control" id="inputId" value="" readonly>
                     </div>
                     <div class="form-group">
                         <label for="InputNombre">Nombre</label>
-                        <input type="text" name="nombre" class="form-control" id="inputNombre" value="">
+                        <input type="text" name="nombre" class="form-control" id="inputNombre" value="" readonly>
                     </div>
                     <div class="form-group">
                         <label for="InputEmail">Email</label>

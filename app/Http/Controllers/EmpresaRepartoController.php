@@ -38,8 +38,10 @@ class EmpresaRepartoController extends Controller
         $this->validator($request->all())->validate();
         $empresaReparto=$this->create($request->all());
         $empresaReparto->save();
+        $empresaRegistrada = true;
 
-        return redirect()->route('admin.home');
+
+        return view('fijas.admin', ['empresaRegistrada'=>$empresaRegistrada]);
     }
 
     public function mostrarDatos(Request $request) {

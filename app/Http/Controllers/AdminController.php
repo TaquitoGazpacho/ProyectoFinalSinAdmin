@@ -20,8 +20,6 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $oficinas = Oficina::getOficinas();
-        $empresas = Empresa_reparto::getEmpresas();
-        return view('fijas.admin', ['oficinas' => $oficinas, 'empresas' => $empresas]);
+        return view('fijas.admin');
     }
 }
