@@ -51,18 +51,22 @@ class LoginController extends Controller
         $credential = [
             'email' => $request->email,
             'password' => $request->password,
-            'verified' => true,
+            //'verified' => true,
         ];
 
         // Attempt to log the user in
-        if (Auth::attempt($credential, $request->member)){
-            // If login successful, then redirect to their intended location
+        //if (Auth::attempt($credential, $request->member)){
+        Auth::attempt($credential, $request->member);
+        if(Auth::check() && Auth::user()->verified) {
             return redirect()->intended(route('home'));
-        } elseif(Auth::guard('web')->user()->email->exist() && Auth::guard('web')->user()->verified === 0) {
+        } elseif (Auth::check()) {
+            Auth::logout();
             return view('verification.sinVerificar');
-        } else {
-            return view('auth.login');
         }
+        return $this->sendFailedLoginResponse($request);
+        //}
+        //return redirect()->back()->withInput($request->only('email', 'remember'));
+
 
         // If Unsuccessful, then redirect back to the login with the form data
         //return redirect()->back()->withInput($request->only('email', 'remember'));

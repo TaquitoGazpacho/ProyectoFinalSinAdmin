@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'surname', 'phone', 'sex', 'email', 'password', 'image', 'email_token', 'suscripcion_id', 'oficina_id',
+        'name', 'surname', 'phone', 'sex', 'email', 'password', 'image', 'email_token', 'suscripcion_id', 'oficina_id', 'verified',
     ];
 
     /**
@@ -42,5 +42,8 @@ class User extends Authenticatable
     public function cambiarOficina($office_id){
         User::where('id', $this->id)
             ->update(['oficina_id'=>$office_id]);
+    }
+    public function isVerified(){
+        return $this->verified;
     }
 }

@@ -15,6 +15,7 @@ Route::get('/', function () {
     return view('index');
 })->name('index');
 
+
 Route::get('/admin/registroEmpresaReparto', 'EmpresaRepartoController@index')->name('registroEmpresa');
 
 //Auth::routes();
