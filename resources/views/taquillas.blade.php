@@ -31,7 +31,12 @@
                                 Si
                             @endif
                         </td>
-                        <td>{{$taquilla->estado}}</td>
+                        {{--<td>{{$taquilla->estado}}</td>--}}
+                        <td>
+                            <select onchange="estadoTaquilla(event, {{$taquilla->id}})">
+                                <option name="Funcionando">Funcionando</option>
+                                <option name="Estropeada">Estropeada</option>
+                            </select></td>
                     </tr>
                 @endforeach
             </tbody>
@@ -84,3 +89,4 @@
     </div>
 
 @endsection
+

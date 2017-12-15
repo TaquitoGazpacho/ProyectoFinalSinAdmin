@@ -37,4 +37,10 @@ class TaquillasController extends Controller
         return redirect()->route('listarTaquillas', ['id'=> $request->oficina_id]);
 
     }
+
+    public function editar(Request $request){
+        DB::table('taquillas')->where('id', $request->ids)->update(['estado'=>$request->event]);
+        return $request->event;
+    }
+
 }

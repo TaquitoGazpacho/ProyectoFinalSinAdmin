@@ -96,6 +96,44 @@ function mostrarEmpresa(event) {
 
 }
 
+function estadoTaquilla(event, id){
+    //event.target.value;
+
+    let url = window.location.href;
+    let urlFija = "/editarEstado?ids="+id+"&event="+event.target.value;//document.getElementsByName('empresa')[0].value;
+    let urlCompleta = url + urlFija;
+    let http = new XMLHttpRequest();
+    http.open("GET", urlCompleta, true);
+    http.send();
+
+
+    http.onreadystatechange = function () {
+        if (http.readyState === 4) {
+            console.log(http.readyState);
+            // Se ha recibido la respuesta.
+            if (http.status === 200) {
+                // Aquí escribiremos lo que queremos que
+                // se ejecute tras recibir la respuesta
+                let datosDoc = http.responseText;
+                console.log(datosDoc);
+                // document.getElementById('inputId').value = datosDoc[0]['id'];
+                // document.getElementById('inputNombre').value = datosDoc[0]['nombre'];
+                // document.getElementById('inputEmail').value = datosDoc[0]['email'];
+                // document.getElementById('inputTelefono').value = datosDoc[0]['telefono'];
+                // document.getElementById('inputNif').value = datosDoc[0]['nif'];
+
+            } else {
+                // Ha ocurrido un error
+                alert(
+                    "Error:" + http.statusText);
+            }
+        }
+    }
+
+}
+
+
+
 
 
 //ESTO ES PARA EL USUARIO, PARA LAS PESTAÑITAS
