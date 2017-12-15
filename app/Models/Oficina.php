@@ -13,7 +13,6 @@ class Oficina extends Model
     ];
 
     public function __construct(){
-        $this->id="";
         $this->ciudad="";
         $this->calle="";
         $this->num_calle="";
