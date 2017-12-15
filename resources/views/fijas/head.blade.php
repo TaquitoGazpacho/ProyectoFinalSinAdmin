@@ -22,7 +22,6 @@
 <!-- SweetAlert -->
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
-@if(Request::url() != 'http://localhost/proyectoFinal/register')
     <script>
         window.onload = getHeaderHeight;
         function getHeaderHeight(){
@@ -42,7 +41,6 @@
         }
 
     </script>
-@endif
 
 <!-- Favicon -->
 <!-- <link rel="shortcut icon" href="{{ asset('img/favicon.ico') }}"> -->
