@@ -41,7 +41,7 @@ class EmpresaRepartoController extends Controller
         $empresaRegistrada = true;
 
 
-        return view('fijas.admin', ['empresaRegistrada'=>$empresaRegistrada]);
+        return redirect()->route('admin.home', ['empresaRegistrada'=>$empresaRegistrada]);
     }
 
     public function mostrarDatos(Request $request) {
