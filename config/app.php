@@ -164,7 +164,6 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Greggilbert\Recaptcha\RecaptchaServiceProvider::class,
-        Infinety\Alerts\AlertServiceProvider::class,
 
         /*
          * Package Service Providers...
