@@ -64,6 +64,11 @@ class Oficina extends Model
         return $this->hasMany('App\Models\User');
     }
 
+    public function reparto()
+    {
+        return $this->hasMany('App\Models\Reparto');
+    }
+
     public static function getOficinas()
     {
         $oficinas = DB::table('oficinas')->select('id', 'ciudad', 'calle', 'num_calle')->orderBy('ciudad')->get();

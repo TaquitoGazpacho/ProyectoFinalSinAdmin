@@ -15,6 +15,11 @@ class Empresa_reparto extends Model
         'password',
     ];
 
+    public function reparto()
+    {
+        return $this->hasMany('App\Models\Reparto');
+    }
+
     public static function getEmpresas() {
         $empresas = DB::table('empresa_repartos')->get();
 

@@ -14,4 +14,9 @@ class Taquilla extends Model
     {
         return $this->belongsTo('App\Models\Oficina');
     }
+
+    public function reparto()
+    {
+        return $this->hasMany('App\Models\Reparto');
+    }
 }
