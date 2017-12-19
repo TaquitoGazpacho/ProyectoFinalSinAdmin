@@ -11,6 +11,10 @@ class Empresa_reparto extends Model
         'nombre', 'email', 'telefono', 'nif', 'password',
     ];
 
+    protected $hidden = [
+        'password',
+    ];
+
     public static function getEmpresas() {
         $empresas = DB::table('empresa_repartos')->get();
 
