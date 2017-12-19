@@ -15,7 +15,7 @@ class CreateTaquillasTable extends Migration
     {
         Schema::create('taquillas', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('numero_taquilla');
+            $table->integer('numero_taquilla');
             $table->string('tamanio');
             $table->boolean('ocupada')->default(false);
             $table->string('estado')->default('Funcionando');
