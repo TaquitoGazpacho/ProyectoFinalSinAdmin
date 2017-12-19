@@ -5,9 +5,13 @@ namespace App\Http\Controllers\Auth\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class LoginController extends Controller
 {
+
+    use AuthenticatesUsers;
+
 
     public function __construct()
     {
@@ -30,7 +34,6 @@ class LoginController extends Controller
      */
     public function login(Request $request)
     {
-        $this->logout();
 
         $this->validate($request, [
             'email' => 'required|email',
