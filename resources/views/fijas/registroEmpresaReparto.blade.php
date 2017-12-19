@@ -26,6 +26,10 @@
                         <label for="nif">Nif</label>
                         <input type="text" class="form-control" id="nif" placeholder="Nif" name="nif">
                     </div>
+                    <div class="form-group">
+                        <label for="password">Nif</label>
+                        <input type="password" class="form-control" id="password" placeholder="Password" name="password">
+                    </div>
 
 
                 </div>

@@ -14,6 +14,7 @@ class CreateEmpresaRepartosTable extends Migration
             $table->string('email')->unique();
             $table->string('telefono')->unique();
             $table->string('nif')->unique();
+            $table->string('password');
             $table->timestamps();
         });
     }

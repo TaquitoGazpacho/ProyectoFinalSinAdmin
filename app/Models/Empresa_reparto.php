@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 class Empresa_reparto extends Model
 {
     protected $fillable = [
-        'nombre', 'email', 'telefono', 'nif',
+        'nombre', 'email', 'telefono', 'nif', 'password',
     ];
 
     public static function getEmpresas() {

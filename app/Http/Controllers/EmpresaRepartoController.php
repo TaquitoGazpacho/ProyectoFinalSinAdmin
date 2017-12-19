@@ -20,6 +20,7 @@ class EmpresaRepartoController extends Controller
             'email' => 'required|string|email|max:255|unique:empresa_repartos',
             'telefono' => 'required|integer',
             'nif' => 'required|string|max:255',
+            'password'=> 'required|min:6'
         ]);
     }
 
@@ -30,6 +31,7 @@ class EmpresaRepartoController extends Controller
             'email' => $data['email'],
             'telefono' => $data['telefono'],
             'nif' => $data['nif'],
+            'password' => bcrypt($data['password']),
         ]);
     }
 

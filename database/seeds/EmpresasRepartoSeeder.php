@@ -16,6 +16,7 @@ class EmpresasRepartoSeeder extends Seeder
             'email' => 'mrw@mrw.com',
             'telefono' => '666777888',
             'nif' => 'A09876543',
+            'password' => bcrypt('zubiri'),
 
         ]);
         DB::table('empresa_repartos')->insert([
@@ -23,6 +24,7 @@ class EmpresasRepartoSeeder extends Seeder
             'email' => 'seur@seur.com',
             'telefono' => '999888777',
             'nif' => 'B72056291',
+            'password' => bcrypt('zubiri'),
 
         ]);
         DB::table('empresa_repartos')->insert([
@@ -30,6 +32,7 @@ class EmpresasRepartoSeeder extends Seeder
             'email' => 'tourline@tourline.com',
             'telefono' => '111222333',
             'nif' => 'C83926572',
+            'password' => bcrypt('zubiri'),
 
         ]);
     }
