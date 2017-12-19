@@ -56,8 +56,10 @@
                                 <label for="surname" class="col-md-4 control-label">Sex</label>
 
                                 <div class="col-md-6">
-                                    <input id="sex" type="text" class="form-control" name="sex" value="{{ old('sex') }}" autofocus>
-
+                                    {{--<input id="sex" type="text" class="form-control" name="sex" value="{{ old('sex') }}" autofocus>--}}
+                                    <input type="radio" name="sex" value="male"> Male<br>
+                                    <input type="radio" name="sex" value="female"> Female<br>
+                                    <input type="radio" name="sex" value="other"> Other
                                     @if ($errors->has('sex'))
                                         <span class="help-block">
                                             <strong>{{ $errors->first('sex') }}</strong>

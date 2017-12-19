@@ -69,6 +69,8 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'surname' => $data['surname'],
             'email' => $data['email'],
+            'phone' => $data['phone'],
+            'sex' => $data['sex'],
             'password' => bcrypt($data['password']),
             'email_token' => base64_encode($data['email']),
             'suscripcion_id' => $suscripcion,
