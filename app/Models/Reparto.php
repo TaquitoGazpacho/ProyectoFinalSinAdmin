@@ -6,11 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Reparto extends Model
 {
-    protected $table='empresa_repartos';
-
-    protected $fillable = ['nombre', 'email', 'telefono', 'nif'];
-
-    protected $hidden = [
-        'password',
-    ];
+    //empresa_id, oficina_id, taquilla_id, clave_repartidor, clave_usuario
 }
