@@ -4,9 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Empresa_reparto extends Model
+class Empresa_reparto extends Authenticatable
 {
+    protected $table= "empresa_repartos";
+
     protected $fillable = [
         'nombre', 'email', 'telefono', 'nif', 'password',
     ];

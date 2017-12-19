@@ -11,7 +11,7 @@ class LoginController extends Controller
 
     public function __construct()
     {
-        $this->middleware('guest:admin')->except(['logout']);
+        $this->middleware('guest:admin')->except('logout');
     }
     /**
      * Show the application's login form.
@@ -30,6 +30,8 @@ class LoginController extends Controller
      */
     public function login(Request $request)
     {
+        $this->logout();
+
         $this->validate($request, [
             'email' => 'required|email',
             'password' => 'required'

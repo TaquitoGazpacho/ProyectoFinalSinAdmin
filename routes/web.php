@@ -35,7 +35,9 @@ Route::get('/perfil', 'HomeController@index')->name('home');
 
 
 Route::prefix('empresa')->group(function() {
-    Route::get('/','Auth\Empresa\LoginController@showLoginForm');
+    Route::get('/', 'EmpresaRepartoController@index')->name('empresa.home');
+    Route::get('/login','Auth\Empresa\LoginController@showLoginForm')->name('empresa.login');
+    Route::post('/login', 'Auth\Empresa\LoginController@login')->name('empresa.login.submit');
 });
 
 //Admin Routes

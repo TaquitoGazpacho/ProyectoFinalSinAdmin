@@ -1,17 +1,20 @@
 <?php
 
-namespace App\Http\Controllers\Auth\Admin;
+namespace App\Http\Controllers\Auth\Empresa;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class LoginController extends Controller
 {
 
+    use AuthenticatesUsers;
+
     public function __construct()
     {
-        $this->middleware('guest:empresa')->except(['logout']);
+        $this->middleware('guest:empresa')->except('logout');
     }
     /**
      * Show the application's login form.
@@ -30,6 +33,7 @@ class LoginController extends Controller
      */
     public function login(Request $request)
     {
+
         $this->validate($request, [
             'email' => 'required|email',
             'password' => 'required'

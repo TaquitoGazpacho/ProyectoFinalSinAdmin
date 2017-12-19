@@ -9,8 +9,13 @@ use \Validator;
 
 class EmpresaRepartoController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth:empresa')->except('logout');
+    }
+
     public function index(){
-        return view('fijas.registroEmpresaReparto');
+        return view('fijas.empresa');
     }
 
     protected function validator(array $data)
