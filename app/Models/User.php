@@ -27,6 +27,11 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    public function reparto()
+    {
+        return $this->hasMany('App\Models\Reparto');
+    }
+
     public function suscripcion()
     {
         return $this->belongsTo('App\Models\Suscripcion');

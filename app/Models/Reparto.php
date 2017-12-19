@@ -7,8 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 class Reparto extends Model
 {
     protected $fillable = [
-        'clave_repartidor', 'clave_usuario', 'empresa_id', 'oficina_id', 'taquilla_id'
+        'clave_repartidor', 'clave_usuario', 'usuario_id','empresa_id', 'oficina_id', 'taquilla_id',
     ];
+
+    public function usuario()
+    {
+        return $this->belongsTo('App\Models\User');
+    }
 
     public function empresa()
     {
