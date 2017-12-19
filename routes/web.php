@@ -32,6 +32,9 @@ Route::post('/editarUsuario', 'Auth\User\EditUserController@ejecutar')->name('ed
 Route::post('/editarUsuario/oficina', 'Auth\User\EditUserController@cambiarOficina')->name('editarUsuario.oficina');
 Route::get('/perfil', 'HomeController@index')->name('home');
 
+Route::prefix('empresa')->group(function() {
+    Route::get('/','Auth\Empresa\LoginController@showLoginForm');
+});
 
 
 Route::prefix('admin')->group(function() {
@@ -39,14 +42,20 @@ Route::prefix('admin')->group(function() {
     Route::get('/login', 'Auth\Admin\LoginController@showLoginForm')->name('admin.login');
     Route::post('/login', 'Auth\Admin\LoginController@login')->name('admin.login.submit');
     Route::post('/logout', 'App\Http\Controllers\Auth\LoginController@logout')->name('admin.logout');
-    Route::get('/editarOficina/{id}', 'OficinaController@index')->name('editarOficina');
-    Route::post('/editarOficina/actualizar', 'OficinaController@actualizar')->name('editarOficina.actualizarOficina');
-    Route::post('/editarOficina/registro', 'OficinaController@store')->name('registrarOficina');
+
+        Route::prefix('editarOficina')->group(function (){
+
+            Route::get('/{id}', 'OficinaController@index')->name('editarOficina');
+            Route::post('/actualizar', 'OficinaController@actualizar')->name('editarOficina.actualizarOficina');
+            Route::post('/registro', 'OficinaController@store')->name('registrarOficina');
+            Route::post('/eliminar', 'OficinaController@dropOficinas')->name('eliminarOficinas');
+
+        });
+
     Route::post('/editarEmpresa', 'EmpresaRepartoController@index')->name('editarEmpresa');
     Route::post('/registrarEmpresaReparto', 'EmpresaRepartoController@store')->name('registrarEmpresaReparto');
     Route::post('/editarEmpresa/actualizar', 'EmpresaRepartoController@actualizar')->name('editarEmpresa.actualizarEmpresaReparto');
     Route::get('/editarEmpresa/mostrarDatos', 'EmpresaRepartoController@mostrarDatos')->name('mostrarDatos');
-    Route::post('/editarOficina/eliminar', 'OficinaController@dropOficinas')->name('eliminarOficinas');
     Route::get('/listarTaquillas/{id}', 'OficinaController@showTaquillas')->name('listarTaquillas');
     Route::get('/listarTaquillas/{id}/editarEstado', 'TaquillasController@editar')->name('editarEstado');
     Route::post('/añadirTaquillas', 'TaquillasController@añadirTaquillas')->name('crearTaquillas');
