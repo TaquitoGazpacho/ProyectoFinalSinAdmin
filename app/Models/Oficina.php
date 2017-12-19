@@ -18,8 +18,12 @@ class Oficina extends Model
         $this->num_calle="";
     }
 
+    public function setId($id){
+        $this->id=$id;
+    }
+
     public function getCiudad(){
-        return $this->id;
+        return $this->ciudad;
     }
 
     public function setCiudad($ciudad){

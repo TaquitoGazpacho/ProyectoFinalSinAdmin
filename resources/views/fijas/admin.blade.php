@@ -105,7 +105,9 @@
                                     <td>{{ $oficina->ciudad }}</td>
                                     <td>{{ $oficina->calle }}</td>
                                     <td>{{ $oficina->num_calle }}</td>
-                                    <?php $ofi = new \App\Models\Oficina($oficina->id, $oficina->ciudad, $oficina->calle, $oficina->num_calle); ?>
+                                    <?php $ofi = new \App\Models\Oficina();
+                                        $ofi->setId($oficina->id);
+                                    ?>
                                     <td>{{ sizeof($ofi->taquilla) }}</td>
                                     <td><a href="{{ route( 'listarTaquillas', ['id' => $oficina->id]) }}" class="btn btn-default">Listar taquillas</a></td>
                                     <td><a href="{{ route('editarOficina', ['id' => $oficina->id ]) }}" class="btn btn-default">Editar</a></td>

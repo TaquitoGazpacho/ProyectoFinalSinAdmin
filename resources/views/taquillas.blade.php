@@ -34,9 +34,15 @@
                         {{--<td>{{$taquilla->estado}}</td>--}}
                         <td>
                             <select onchange="estadoTaquilla(event, {{$taquilla->id}})">
-                                <option name="Funcionando">Funcionando</option>
-                                <option name="Estropeada">Estropeada</option>
-                            </select></td>
+                                @if (strtolower($taquilla->estado)=='funcionando')
+                                    <option name="Funcionando">Funcionando</option>
+                                    <option name="Estropeada">Estropeada</option>
+                                @elseif(strtolower($taquilla->estado)=='estropeada')
+                                    <option name="Estropeada">Estropeada</option>
+                                    <option name="Funcionando">Funcionando</option>
+                                @endif
+                            </select>
+                        </td>
                     </tr>
                 @endforeach
             </tbody>

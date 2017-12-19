@@ -23,15 +23,15 @@ class TaquillasController extends Controller
         $insert=[];
         $taquillaCreada = true;
         for ($i=0;$i<$taquillasG;$i++) {
-            array_push($insert,['numero_taquilla' => $max_taquilla, 'tamanio' => 'Grande', 'ocupada' => false, 'estado' => 'funcionando', 'oficina_id' => $request->oficina_id]);
+            array_push($insert,['numero_taquilla' => $max_taquilla, 'tamanio' => 'Grande', 'ocupada' => false, 'estado' => 'Funcionando', 'oficina_id' => $request->oficina_id]);
             $max_taquilla++;
         };
         for ($i=0;$i<$taquillasM;$i++) {
-            array_push($insert,['numero_taquilla' => $max_taquilla, 'tamanio' => 'Mediana', 'ocupada' => false, 'estado' => 'funcionando', 'oficina_id' => $request->oficina_id]);
+            array_push($insert,['numero_taquilla' => $max_taquilla, 'tamanio' => 'Mediana', 'ocupada' => false, 'estado' => 'Funcionando', 'oficina_id' => $request->oficina_id]);
             $max_taquilla++;
         };
         for ($i=0;$i<$taquillasS;$i++) {
-            array_push($insert,['numero_taquilla' => $max_taquilla, 'tamanio' => 'Pequeña', 'ocupada' => false, 'estado' => 'funcionando', 'oficina_id' => $request->oficina_id]);
+            array_push($insert,['numero_taquilla' => $max_taquilla, 'tamanio' => 'Pequeña', 'ocupada' => false, 'estado' => 'Funcionando', 'oficina_id' => $request->oficina_id]);
             $max_taquilla++;
         };
         DB::table('taquillas')->insert($insert);
