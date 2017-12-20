@@ -41,11 +41,13 @@
                     <tr>
                         <th>ID</th>
                         <th>Nombre</th>
+                        <th>Apellido</th>
                         <th>Email</th>
                         <th>Teléfono</th>
                         <th>Sexo</th>
                         <th>Suscripción</th>
                         <th>Oficina</th>
+                        <th>Editar</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -53,6 +55,7 @@
                             <tr>
                                 <td>{{$usuario->id}}</td>
                                 <td>{{$usuario->name}}</td>
+                                <td>{{$usuario->surname}}</td>
                                 <td>{{$usuario->email}}</td>
                                 <td>{{$usuario->phone}}</td>
                                 <td>{{$usuario->sex}}</td>
@@ -64,10 +67,12 @@
                                         <spam class="text-muted">sin oficina predeterminada</spam>
                                     @endif
                                 </td>
+                                <td><button name="{{$usuario->id}}" onclick="editarUsuario(event)" class="btn btn-default" data-toggle="modal" data-target="#editarUsuario">Editar</button></td>
                             </tr>
                         @endforeach
                     </tbody>
                 </table>
+                @include('fijas.editarUsuario');
 
             </div>
 
