@@ -51,4 +51,7 @@ class User extends Authenticatable
     public function isVerified(){
         return $this->verified;
     }
+    public static function getUsuarios(){
+        return User::get();
+    }
 }
