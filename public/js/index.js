@@ -96,6 +96,51 @@ function mostrarEmpresa(event) {
 
 }
 
+function editarUsuario(event) {
+    let url = window.location.href;
+    let urlFija = '/editarUsuario?id='+event.target.name;//document.getElementsByName('empresa')[0].value;
+    let urlCompleta = url + urlFija;
+    let http = new XMLHttpRequest();
+    http.open("GET", urlCompleta, true);
+    http.send();
+
+
+    http.onreadystatechange = function () {
+        if (http.readyState === 4) {
+            // Se ha recibido la respuesta.
+            if (http.status === 200) {
+                // Aquí escribiremos lo que queremos que
+                // se ejecute tras recibir la respuesta
+                let datosUser = JSON.parse(http.responseText);
+                console.log(datosUser);
+                document.getElementById('userId').value = datosUser[0]['id'];
+                document.getElementById('userNombre').value = datosUser[0]['name'];
+                document.getElementById('userApellido').value = datosUser[0]['surname'];
+                document.getElementById('userEmail').value = datosUser[0]['email'];
+                let sex = document.getElementsByName('userSex');
+                for (let i=0; i<sex.length;i++){
+                    if(sex[i].value.toLowerCase() == datosUser[0]['sex'].toLowerCase()){
+                        document.getElementById('user_'+sex[i].value.toLowerCase()).checked = true;
+                    }
+                }
+                let suscripciones = document.querySelectorAll('form #userSuscripcion option');
+                for (let i=0; i<suscripciones.length;i++){
+                    if(suscripciones[i].value == datosUser[0]['suscripcion_id']){
+                        document.getElementById('userSuscripcion').value= suscripciones[i].value;
+                    }
+                }
+
+
+            } else {
+                // Ha ocurrido un error
+                alert(
+                    "Error:" + http.statusText);
+            }
+        }
+    }
+
+}
+
 function estadoTaquilla(event, id){
     //event.target.value;
 

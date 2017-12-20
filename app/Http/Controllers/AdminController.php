@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Oficina;
 use App\Models\Empresa_reparto;
 use Illuminate\Support\Facades\DB;
+use App\Models\User;
 
 class AdminController extends Controller
 {
@@ -33,5 +34,27 @@ class AdminController extends Controller
             ->get();
 
         return $datos;
+    }
+
+    public function editUser(Request $request){
+        $user_id = $request->id;
+
+        $usuario = User::where('id', $user_id)->get();
+
+        return $usuario;
+    }
+
+    public function cambiarDatosUser(Request $request){
+        User::where('id', $request->id)
+            ->update([
+                'name' => $request->nombre,
+                'surname' => $request->apellido,
+                'email' => $request->email,
+                'phone' => $request->telefono,
+                'suscripcion_id' => $request->suscripcion,
+                'sex' => ucfirst($request->userSex)
+            ]);
+
+        return redirect()->route('admin.home');
     }
 }

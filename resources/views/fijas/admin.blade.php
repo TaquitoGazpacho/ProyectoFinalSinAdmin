@@ -2,10 +2,12 @@
 
     use App\Models\Oficina;
     use App\Models\Empresa_reparto;
+    use App\Models\User;
 
     $ciudad = null;
     $oficinas = Oficina::getOficinas();
     $empresas = Empresa_reparto::getEmpresas();
+    $usuarios = User::getUsuarios();
 @endphp
 @extends('fijas.master')
 
@@ -14,6 +16,7 @@
     <div class="container well">
         <ul class="nav nav-tabs" role="tablist" id="userTabs">
             <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
+            <li role="presentation"><a href="#usuarios" aria-controls="registro" role="tab" data-toggle="tab">Usuarios</a></li>
             <li role="presentation"><a href="#registros" aria-controls="registro" role="tab" data-toggle="tab">Registros</a></li>
             <li role="presentation"><a href="#empresas" aria-controls="empresas" role="tab" data-toggle="tab">Empresas</a></li>
             <li role="presentation"><a href="#oficinas" aria-controls="oficinas" role="tab" data-toggle="tab">Oficinas</a></li>
@@ -31,17 +34,48 @@
                 Hola {{ Auth::guard('admin')->user()->name}}
             </div>
 
+            <div role="tabpanel" class="tab-pane" id="usuarios">
 
-            {{--EMPIEZA PERFIL--}}
-            <div role="tabpanel" class="tab-pane" id="profile">
-                <div class="row">
-                    <div class="col-md-4 col-xs-12 col-sm-6 col-lg-4">
-                        <div style="border-bottom:1px solid black">
-                            <h2>{{Auth::guard('admin')->user()->name }}</h2>
-                        </div>
-                    </div>
-                </div>
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Email</th>
+                        <th>Teléfono</th>
+                        <th>Sexo</th>
+                        <th>Suscripción</th>
+                        <th>Oficina</th>
+                        <th>Editar</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($usuarios as $usuario)
+                            <tr>
+                                <td>{{$usuario->id}}</td>
+                                <td>{{$usuario->name}}</td>
+                                <td>{{$usuario->surname}}</td>
+                                <td>{{$usuario->email}}</td>
+                                <td>{{$usuario->phone}}</td>
+                                <td>{{$usuario->sex}}</td>
+                                <td>{{$usuario->suscripcion['name']}}</td>
+                                <td>
+                                    @if(isset($usuario->oficina))
+                                        {{$usuario->oficina['calle']." ".$usuario->oficina['num_calle']." (".$usuario->oficina['ciudad'].")"}}
+                                    @else
+                                        <spam class="text-muted">sin oficina predeterminada</spam>
+                                    @endif
+                                </td>
+                                <td><button name="{{$usuario->id}}" onclick="editarUsuario(event)" class="btn btn-default" data-toggle="modal" data-target="#editarUsuario">Editar</button></td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+                @include('fijas.editarUsuario');
+
             </div>
+
 
             {{--REGISTROS--}}
             <div role="tabpanel" class="tab-pane" id="registros">

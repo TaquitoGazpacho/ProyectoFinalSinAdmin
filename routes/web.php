@@ -47,6 +47,8 @@ Route::prefix('admin')->group(function() {
     Route::get('/login', 'Auth\Admin\LoginController@showLoginForm')->name('admin.login');
     Route::post('/login', 'Auth\Admin\LoginController@login')->name('admin.login.submit');
     Route::post('/logout', 'App\Http\Controllers\Auth\LoginController@logout')->name('admin.logout');
+    Route::get('/editarUsuario', 'AdminController@editUser')->name('admin.editUser');
+    Route::post('/editarUsuario', 'AdminController@cambiarDatosUser')->name('admin.editarUsuario');
 
     Route::prefix('editarOficina')->group(function (){
 
