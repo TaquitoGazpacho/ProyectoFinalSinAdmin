@@ -37,7 +37,7 @@
                                                     <div class="well well-sm">
                                                         <div class="row">
                                                             <div class="col-sm-6 col-md-8">
-                                                                <h4>{{ Auth::guard('empresa')->user() -> name }}/h4>
+                                                                <h4>{{ Auth::guard('empresa')->user() -> name }}</h4>
                                                                 <small><cite title="San Francisco, USA">San Francisco, USA <i class="glyphicon glyphicon-map-marker">
                                                                         </i></cite></small>
                                                                 <p>
