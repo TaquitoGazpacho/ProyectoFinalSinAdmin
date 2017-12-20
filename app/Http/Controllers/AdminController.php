@@ -52,7 +52,7 @@ class AdminController extends Controller
                 'email' => $request->email,
                 'phone' => $request->telefono,
                 'suscripcion_id' => $request->suscripcion,
-                //'sex' => $request->
+                'sex' => ucfirst($request->userSex)
             ]);
 
         return redirect()->route('admin.home');

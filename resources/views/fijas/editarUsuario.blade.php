@@ -11,27 +11,27 @@
                 {{ csrf_field() }}
                 <div class="modal-body">
                     <div class="form-group">
-                        <label for="id">ID</label>
+                        <label for="userId">ID</label>
                         <input type="text" class="form-control" id="userId" placeholder="Id" name="id" readonly>
                     </div>
                     <div class="form-group">
-                        <label for="nombre">Nombre</label>
+                        <label for="userNombre">Nombre</label>
                         <input type="text" class="form-control" id="userNombre" placeholder="Nombre" name="nombre">
                     </div>
                     <div class="form-group">
-                        <label for="apellido">Apellido</label>
+                        <label for="userApellido">Apellido</label>
                         <input type="text" class="form-control" id="userApellido" placeholder="Apellido" name="apellido">
                     </div>
                     <div class="form-group">
-                        <label for="email">Email</label>
+                        <label for="userEmail">Email</label>
                         <input type="email" class="form-control" id="userEmail" placeholder="Email" name="email">
                     </div>
                     <div class="form-group">
-                        <label for="telefono">Email</label>
+                        <label for="userTelefono">Telefono</label>
                         <input type="number" class="form-control" id="userTelefono" placeholder="Telefono" name="telefono" value="0">
                     </div>
                     <div class="form-group">
-                        <label for="sex">Sex:</label><br/>
+                        <label for="userSex">Sex:</label><br/>
                         <label><input type="radio" name="userSex" value="masculino" id="user_masculino">Masculino</label><br/>
                         <label><input type="radio" name="userSex" value="femenino" id="user_femenino">Femenino</label><br/>
                         <label><input type="radio" name="userSex" value="otro" id="user_otro" checked>Otro</label>
