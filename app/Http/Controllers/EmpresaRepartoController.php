@@ -51,18 +51,6 @@ class EmpresaRepartoController extends Controller
         return redirect()->route('admin.home', ['empresaRegistrada'=>$empresaRegistrada]);
     }
 
-    public function mostrarDatos(Request $request) {
-
-        $nombre = $request->empresa;
-
-        $datos = DB::table('empresa_repartos')
-            ->where('nombre', $nombre)
-            ->get();
-
-
-        return $datos;
-    }
-
     public function actualizar(Request $request)
     {
         DB::table('empresa_repartos')

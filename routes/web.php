@@ -62,7 +62,7 @@ Route::prefix('admin')->group(function() {
         Route::post('/', 'EmpresaRepartoController@index')->name('editarEmpresa');
         Route::post('/registrar', 'EmpresaRepartoController@store')->name('registrarEmpresaReparto');
         Route::post('/actualizar', 'EmpresaRepartoController@actualizar')->name('editarEmpresa.actualizarEmpresaReparto');
-        Route::get('/mostrarDatos', 'EmpresaRepartoController@mostrarDatos')->name('mostrarDatos');
+        Route::get('/mostrarDatos', 'AdminController@mostrarDatosEmpresa')->name('mostrarDatos');
 
     });
 
