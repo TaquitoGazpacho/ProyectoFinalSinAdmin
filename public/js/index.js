@@ -185,12 +185,7 @@ function estadoTaquilla(event, id){
                 // Aquí escribiremos lo que queremos que
                 // se ejecute tras recibir la respuesta
                 let datosDoc = http.responseText;
-                console.log(datosDoc);
-                // document.getElementById('inputId').value = datosDoc[0]['id'];
-                // document.getElementById('inputNombre').value = datosDoc[0]['nombre'];
-                // document.getElementById('inputEmail').value = datosDoc[0]['email'];
-                // document.getElementById('inputTelefono').value = datosDoc[0]['telefono'];
-                // document.getElementById('inputNif').value = datosDoc[0]['nif'];
+                // console.log(datosDoc);
 
             } else {
                 // Ha ocurrido un error
