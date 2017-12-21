@@ -65,34 +65,43 @@ function validateEmail(email) {
     return re.test(email);
 }
 
-function mostrarEmpresa(event) {
-    let url = window.location.href;
-    let urlFija = '/editarEmpresa/mostrarDatos?empresa='+event.target.name;//document.getElementsByName('empresa')[0].value;
-    let urlCompleta = url + urlFija;
-    let http = new XMLHttpRequest();
-    http.open("GET", urlCompleta, true);
-    http.send();
+// function mostrarEmpresa(event) {
+//     let url = window.location.href;
+//     let urlFija = '/editarEmpresa/mostrarDatos?empresa='+event.target.name;//document.getElementsByName('empresa')[0].value;
+//     let urlCompleta = url + urlFija;
+//     let http = new XMLHttpRequest();
+//     http.open("GET", urlCompleta, true);
+//     http.send();
+//
+//
+//     http.onreadystatechange = function () {
+//         if (http.readyState === 4) {
+//             // Se ha recibido la respuesta.
+//             if (http.status === 200) {
+//                 // Aquí escribiremos lo que queremos que
+//                 // se ejecute tras recibir la respuesta
+//                 let datosDoc = JSON.parse(http.responseText);
+//                 document.getElementById('inputId').value = datosDoc[0]['id'];
+//                 document.getElementById('inputNombre').value = datosDoc[0]['nombre'];
+//                 document.getElementById('inputEmail').value = datosDoc[0]['email'];
+//                 document.getElementById('inputTelefono').value = datosDoc[0]['telefono'];
+//                 document.getElementById('inputNif').value = datosDoc[0]['nif'];
+//             } else {
+//                 // Ha ocurrido un error
+//                 alert(
+//                     "Error:" + http.statusText);
+//             }
+//         }
+//     }
+// }
 
-
-    http.onreadystatechange = function () {
-        if (http.readyState === 4) {
-            // Se ha recibido la respuesta.
-            if (http.status === 200) {
-                // Aquí escribiremos lo que queremos que
-                // se ejecute tras recibir la respuesta
-                let datosDoc = JSON.parse(http.responseText);
-                document.getElementById('inputId').value = datosDoc[0]['id'];
-                document.getElementById('inputNombre').value = datosDoc[0]['nombre'];
-                document.getElementById('inputEmail').value = datosDoc[0]['email'];
-                document.getElementById('inputTelefono').value = datosDoc[0]['telefono'];
-                document.getElementById('inputNif').value = datosDoc[0]['nif'];
-            } else {
-                // Ha ocurrido un error
-                alert(
-                    "Error:" + http.statusText);
-            }
-        }
-    }
+function mostrarEmpresa(event){
+    var empresa_id = event.target.name;
+    $('#inputId').val(empresa_id);
+    $('#inputNombre').val($('#'+empresa_id+'_nombre').text());
+    $('#inputEmail').val($('#'+empresa_id+'_email').text());
+    $('#inputTelefono').val($('#'+empresa_id+'_telefono').text());
+    $('#inputNif').val($('#'+empresa_id+'_nif').text());
 }
 
 $( document ).ready( function() {

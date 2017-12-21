@@ -99,12 +99,13 @@
                     <tbody>
                         @foreach($empresas as $empresa)
                             <tr>
-                                <td>{{$empresa->id}}</td>
-                                <td>{{$empresa->nombre}}</td>
+                                <td id="{{$empresa->id}}_id">{{$empresa->id}}</td>
+                                <td id="{{$empresa->id}}_nombre">{{$empresa->nombre}}</td>
                                 <td id="{{$empresa->id}}_email">{{$empresa->email}}</td>
                                 <td id="{{$empresa->id}}_telefono">{{$empresa->telefono}}</td>
                                 <td id="{{$empresa->id}}_nif">{{$empresa->nif}}</td>
-                                <td><button name="{{$empresa->nombre}}" class="btn btn-default" onclick="mostrarEmpresa(event)" data-toggle="modal" data-target="#modalEditarEmpresa">Editar</button></td>
+                                {{--<td><button name="{{$empresa->nombre}}" class="btn btn-default" onclick="mostrarEmpresa(event)" data-toggle="modal" data-target="#modalEditarEmpresa">Editar</button></td>--}}
+                                <td><button name="{{$empresa->id}}" class="btn btn-default" onclick="mostrarEmpresa(event)" data-toggle="modal" data-target="#modalEditarEmpresa">Editar</button></td>
                             </tr>
                         @endforeach
                     </tbody>
