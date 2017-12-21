@@ -11,7 +11,7 @@ class EmpresaRepartoController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth:empresa')->except('logout');
+        $this->middleware('auth:empresa,admin')->except('logout');
     }
 
     public function index(){
