@@ -47,7 +47,7 @@ class EmpresaRepartoController extends Controller
         $empresaReparto=$this->create($request->all());
         $empresaReparto->save();
 
-        alert()->success('hola', 'caracola');
+        alert()->success('hola', 'caracola')->persistent("Ok");
 
         return redirect()->route('admin.home');
     }
