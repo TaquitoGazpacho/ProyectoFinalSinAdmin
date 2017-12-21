@@ -93,8 +93,33 @@ function mostrarEmpresa(event) {
             }
         }
     }
-
 }
+
+$( document ).ready( function() {
+    $("#editarEmpresaReparto").submit(function (event) {
+        event.preventDefault();
+
+        let datosFormulario = $(this).serialize();
+
+        let url = $(this).attr("action");
+
+        $.post(url, datosFormulario, function (respuesta) {
+            //recoger valores en formulario
+            let id = $("[id='inputId']").val();
+            let email = $("[id='inputEmail']").val();
+            let telefono = $("[id='inputTelefono']").val();
+            let nif = $("[id='inputNif']").val();
+
+            //escribir valores en tabla
+            $('#' + id + '_email').text(email);
+            $('#' + id + '_telefono').text(telefono);
+            $('#' + id + '_nif').text(nif);
+
+            //cerrar modal
+            $('#modalEditarEmpresa').modal('toggle');
+        });
+    });
+});
 
 function editarUsuario(event) {
     let url = window.location.href;
@@ -185,5 +210,4 @@ function estadoTaquilla(event, id){
 $('#userTabs a').click(function (e) {
     e.preventDefault()
     $(this).tab('show')
-})
-
+});

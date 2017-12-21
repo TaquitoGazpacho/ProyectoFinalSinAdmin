@@ -11,7 +11,7 @@ class EmpresaRepartoController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth:empresa,admin')->except('logout');
+        $this->middleware('auth:empresa,admin');
     }
 
     public function index(){
@@ -61,7 +61,7 @@ class EmpresaRepartoController extends Controller
                 'nif' => $request->nif,
             ]);
 
-        return redirect()->route('admin.home');
+        //return redirect()->route('admin.home');
     }
 
 }
