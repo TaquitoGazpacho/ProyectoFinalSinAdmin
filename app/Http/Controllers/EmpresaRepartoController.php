@@ -6,6 +6,7 @@ use App\Models\Empresa_reparto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use \Validator;
+use Alert;
 
 class EmpresaRepartoController extends Controller
 {
@@ -45,10 +46,10 @@ class EmpresaRepartoController extends Controller
         $this->validator($request->all())->validate();
         $empresaReparto=$this->create($request->all());
         $empresaReparto->save();
-        $empresaRegistrada = true;
 
+        alert()->success('hola', 'caracola');
 
-        return redirect()->route('admin.home', ['empresaRegistrada'=>$empresaRegistrada]);
+        return redirect()->route('admin.home');
     }
 
     public function actualizar(Request $request)

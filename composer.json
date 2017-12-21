@@ -10,6 +10,7 @@
         "greggilbert/recaptcha": "^2.2",
         "guzzlehttp/guzzle": "^6.3",
         "infinety/alerts": "*@dev",
+        "laracasts/flash": "^3.0",
         "laravel/framework": "5.5.*",
         "laravel/tinker": "~1.0",
         "uxweb/sweet-alert": "^1.4"

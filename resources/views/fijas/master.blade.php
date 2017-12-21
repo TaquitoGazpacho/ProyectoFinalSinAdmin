@@ -23,5 +23,6 @@
             {{--<!--Footer-->--}}
             @include('fijas.footer')
         {{--@endif--}}
+        @include('sweet::alert')
     </body>
 </html>
