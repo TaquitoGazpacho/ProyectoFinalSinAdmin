@@ -95,7 +95,7 @@
     <section>
         <div class="parallax" id="sobreLaEmpresa">
             <div class="descripcionServicio">
-                <h1>ServiceBox</h1>
+                <h1>LockBox</h1>
                 <h2>Tu servicio de confianza</h2>
                 <h4>¡Olvídate de tener que ir a casa corriendo para recibir un paquete! Gracias a nuestro servicio, podrás volver a casa cuando quieras y recoger tu paquete por el camino</h4>
                 <h4>Ofrecemos oficinas por toda la ciudad, solo tendrás que pedir en tu tienda que utilicen nuestro servicio. Será tan simple como recibir un código en tu móvil e introducirlo para abrir la taquilla. Sea la hora que sea.</h4>
@@ -130,7 +130,7 @@
             swal("Registro realizado", "Te has registrado satisfactoriamente", "success")
                 .then((value)=> {
                     if (value) {
-                        swal("Verifica email", "En breve recibiras un email de confirmación", "info")
+                        swal("Verifica tu correo", "En breve recibirás un email de confirmación", "info")
                     }
                 });
         </script>

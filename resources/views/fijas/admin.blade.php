@@ -166,6 +166,27 @@
         <script>
             swal("Registro realizado", "Has registrado una oficina", "success");
         </script>
+    @elseif(isset($oficinaBorrada) &&  $oficinaBorrada)
+        <script>
+            swal("Eliminado", "Has eliminado una oficina.", "success");
+        </script>
+        {{--<script>--}}
+            {{--swal({--}}
+                    {{--title: "¿Estás seguro?",--}}
+                    {{--text: "¡Las oficinas seleccionadas serán eliminadas!",--}}
+                    {{--type: "warning",--}}
+                    {{--showCancelButton: true,--}}
+                    {{--confirmButtonClass: "btn-danger",--}}
+                    {{--confirmButtonText: "Sí, eliminar.",--}}
+                    {{--closeOnConfirm: false--}}
+                {{--},--}}
+                {{--function(){--}}
+                    {{--swal("¡Eliminado!", "Las empresas seleccionadas han sido eliminadas con éxito.", "success");--}}
+                {{--});--}}
+        {{--</script>--}}
     @endif
+
+
+
 
 @endsection

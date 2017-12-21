@@ -1,9 +1,12 @@
 <?php
+
 namespace App\Http\Controllers;
+
 use App\Models\Oficina;
 use Illuminate\Support\Facades\DB;
 use \Validator;
 use Illuminate\Http\Request;
+
 class OficinaController extends Controller
 {
     protected function validator(array $data)
@@ -63,7 +66,10 @@ class OficinaController extends Controller
         for ($i=0; $i<sizeof($request->delete); $i++){
             DB::table('oficinas')->where('id',$request->delete[$i])->delete();
         }
-        return redirect()->route('admin.home');
+
+        $oficinaBorrada = true;
+
+        return redirect()->route('admin.home.swal',['oficinaBorrada'=>$oficinaBorrada]);
     }
 
     public function showTaquillas($oficina_id){
