@@ -124,18 +124,11 @@
             <div id="errores"></div>
         </form>
     </section>
-
-    @if(isset($usuarioRegistrado) &&  $usuarioRegistrado)
+    @if (alert()->ready())
         <script>
-            swal("Registro realizado", "Te has registrado satisfactoriamente", "success")
-                .then((value)=> {
-                    if (value) {
-                        swal("Verifica tu correo", "En breve recibirás un email de confirmación", "info")
-                    }
-                });
+            sweetAlertSimple("{!! alert()->message() !!}", "{!! alert()->option('text') !!}", "{!! alert()->type() !!}");
         </script>
     @endif
-
 @endsection
 
 

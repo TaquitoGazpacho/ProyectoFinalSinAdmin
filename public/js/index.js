@@ -206,12 +206,16 @@ function estadoTaquilla(event, id){
 
 }
 
-
-
-
-
 //ESTO ES PARA EL USUARIO, PARA LAS PESTAÑITAS
 $('#userTabs a').click(function (e) {
     e.preventDefault()
     $(this).tab('show')
 });
+
+function sweetAlertSimple(titulo, texto, icono) {
+    swal({
+        title: titulo,
+        text: texto,
+        type: icono
+    });
+}

@@ -57,7 +57,7 @@ class RegisterController extends Controller
             'surname' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
-            'g-recaptcha-response' => 'required|recaptcha',
+//            'g-recaptcha-response' => 'required|recaptcha',
         ]);
     }
 
@@ -82,8 +82,12 @@ class RegisterController extends Controller
         $this->validator($request->all())->validate();
         event(new Registered($user = $this->create($request->all())));
         dispatch(new SendVerificationMail($user));
-        $usuarioRegistrado = true;
-        return view('index', ['usuarioRegistrado'=>$usuarioRegistrado]);
+
+        alert()->flash('Registro casi completado', 'info', [
+            'text' => 'Se te ha enviado un email de confirmación para verificar la cuenta'
+        ]);
+
+        return redirect()->route('index');
     }
 
     protected function verify($token)

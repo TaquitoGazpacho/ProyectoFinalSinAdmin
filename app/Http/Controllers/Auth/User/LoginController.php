@@ -62,7 +62,10 @@ class LoginController extends Controller
             return redirect()->intended(route('home'));
         } elseif (Auth::check()) {
             Auth::logout();
-            return view('verification.sinVerificar');
+            alert()->flash('Email no verificado', 'warning', [
+                    'text' => 'Tendrás un email de verificación en tu correo'
+            ]);
+            return redirect()->back()->withInput();
         }
         return $this->sendFailedLoginResponse($request);
         //}

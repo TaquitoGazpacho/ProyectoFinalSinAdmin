@@ -6,7 +6,7 @@ use App\Models\Empresa_reparto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use \Validator;
-use Alert;
+
 
 class EmpresaRepartoController extends Controller
 {
@@ -47,7 +47,6 @@ class EmpresaRepartoController extends Controller
         $empresaReparto=$this->create($request->all());
         $empresaReparto->save();
 
-        alert()->success('hola', 'caracola')->persistent("Ok");
 
         return redirect()->route('admin.home');
     }

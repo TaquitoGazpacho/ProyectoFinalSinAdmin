@@ -75,4 +75,9 @@
             </div>
         </div>
     </div>
+    @if (alert()->ready())
+        <script>
+            sweetAlertSimple("{!! alert()->message() !!}", "{!! alert()->option('text') !!}", "{!! alert()->type() !!}");
+        </script>
+    @endif
 @endsection
