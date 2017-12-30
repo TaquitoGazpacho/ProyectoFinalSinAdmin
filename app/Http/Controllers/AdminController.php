@@ -55,6 +55,6 @@ class AdminController extends Controller
                 'sex' => ucfirst($request->userSex)
             ]);
 
-        return redirect()->route('admin.home');
+        //return redirect()->route('admin.home');
     }
 }
