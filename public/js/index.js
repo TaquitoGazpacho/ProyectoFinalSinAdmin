@@ -108,11 +108,10 @@ function mostrarEmpresa(event){
 
 $( document ).ready( function() {
     $("#editarEmpresaReparto").submit(function (event) {
-        event.preventDefault();
 
         let datosFormulario = $(this).serialize();
-
         let url = $(this).attr("action");
+        console.log(url);
 
         $.post(url, datosFormulario, function (respuesta) {
             //recoger valores en formulario
@@ -209,6 +208,7 @@ $( document ).ready( function() {
         event.preventDefault();
 
         let datosFormulario = $(this).serialize();
+        console.log('datos:'+datosFormulario);
 
         let url = $(this).attr("action");
 
