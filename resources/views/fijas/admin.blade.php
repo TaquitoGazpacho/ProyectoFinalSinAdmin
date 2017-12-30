@@ -53,21 +53,22 @@
                     <tbody>
                         @foreach($usuarios as $usuario)
                             <tr>
-                                <td>{{$usuario->id}}</td>
-                                <td>{{$usuario->name}}</td>
-                                <td>{{$usuario->surname}}</td>
-                                <td>{{$usuario->email}}</td>
-                                <td>{{$usuario->phone}}</td>
-                                <td>{{$usuario->sex}}</td>
-                                <td>{{$usuario->suscripcion['name']}}</td>
-                                <td>
+                                <td id="usuario_{{$usuario->id}}_id">{{$usuario->id}}</td>
+                                <td id="usuario_{{$usuario->id}}_nombre">{{$usuario->name}}</td>
+                                <td id="usuario_{{$usuario->id}}_apellido">{{$usuario->surname}}</td>
+                                <td id="usuario_{{$usuario->id}}_email">{{$usuario->email}}</td>
+                                <td id="usuario_{{$usuario->id}}_telefono">{{$usuario->phone}}</td>
+                                <td id="usuario_{{$usuario->id}}_sexo">{{$usuario->sex}}</td>
+                                <td id="usuario_{{$usuario->id}}_suscripcion">{{$usuario->suscripcion['name']}}</td>
+                                <td id="usuario">
                                     @if(isset($usuario->oficina))
                                         {{$usuario->oficina['calle']." ".$usuario->oficina['num_calle']." (".$usuario->oficina['ciudad'].")"}}
                                     @else
                                         <spam class="text-muted">sin oficina predeterminada</spam>
                                     @endif
                                 </td>
-                                <td><button name="{{$usuario->id}}" onclick="editarUsuario(event)" class="btn btn-default" data-toggle="modal" data-target="#editarUsuario">Editar</button></td>
+                                {{--<td><button name="{{$usuario->id}}" onclick="editarUsuario(event)" class="btn btn-default" data-toggle="modal" data-target="#editarUsuario">Editar</button></td>--}}
+                                <td><button name="{{$usuario->id}}" onclick="mostrarUsuario(event)" class="btn btn-default" data-toggle="modal" data-target="#editarUsuario">Editar</button></td>
                             </tr>
                         @endforeach
                     </tbody>
