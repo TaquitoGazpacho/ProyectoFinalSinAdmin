@@ -206,6 +206,7 @@ function mostrarUsuario(event){
 
 $( document ).ready( function() {
     $("#editarUsuario form").submit(function (event) {
+        console.log("holadola");
         event.preventDefault();
 
         let datosFormulario = $(this).serialize();
@@ -217,10 +218,11 @@ $( document ).ready( function() {
             //recoger valores en formulario
             let id = $("#userId").val();
             let nombre = $("#userNombre").val();
-            let apellido = $("#userId").val();
+            let apellido = $("#userApellido").val();
             let email = $("#userEmail").val();
             let telefono = $("#userTelefono").val();
             let sexo = $("input[name='userSex']:checked").val();
+            //let suscripcion = $("#userSuscripcion").text();
 
             //escribir valores en tabla
             $('#usuario_' + id + '_nombre').text(nombre);
@@ -228,9 +230,10 @@ $( document ).ready( function() {
             $('#usuario_' + id + '_email').text(email);
             $('#usuario_' + id + '_telefono').text(telefono);
             $('#usuario_' + id + '_sexo').text(sexo);
+            //$('#usuario_' + id + '_suscripcion').text(suscripcion);
 
             //cerrar modal
-            $('#modalEditarEmpresa').modal('toggle');
+            $('#editarUsuario').modal('toggle');
         });
     });
 });

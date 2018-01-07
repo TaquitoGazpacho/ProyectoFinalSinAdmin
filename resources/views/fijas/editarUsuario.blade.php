@@ -32,9 +32,9 @@
                     </div>
                     <div class="form-group">
                         <label for="userSex">Sex:</label><br/>
-                        <label><input type="radio" name="userSex" value="masculino" id="user_masculino">Masculino</label><br/>
-                        <label><input type="radio" name="userSex" value="femenino" id="user_femenino">Femenino</label><br/>
-                        <label><input type="radio" name="userSex" value="otro" id="user_otro" checked>Otro</label>
+                        <label><input type="radio" name="userSex" value="Masculino" id="user_masculino">Masculino</label><br/>
+                        <label><input type="radio" name="userSex" value="Femenino" id="user_femenino">Femenino</label><br/>
+                        <label><input type="radio" name="userSex" value="Otro" id="user_otro" checked>Otro</label>
                     </div>
                     <div class="form-group">
                         <label for="suscripcion">Select list (select one):</label>
