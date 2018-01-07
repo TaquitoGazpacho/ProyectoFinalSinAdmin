@@ -108,6 +108,7 @@ function mostrarEmpresa(event){
 
 $( document ).ready( function() {
     $("#editarEmpresaReparto").submit(function (event) {
+        event.preventDefault();
 
         let datosFormulario = $(this).serialize();
         let url = $(this).attr("action");
@@ -204,7 +205,7 @@ function mostrarUsuario(event){
 }
 
 $( document ).ready( function() {
-    $("#editarUsuario").submit(function (event) {
+    $("#editarUsuario form").submit(function (event) {
         event.preventDefault();
 
         let datosFormulario = $(this).serialize();
